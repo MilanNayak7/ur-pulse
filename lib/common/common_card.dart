@@ -103,14 +103,89 @@ class SymptomsWidgets extends StatelessWidget {
         Container(
           child: Text(
             symptoms,
-            maxLines:3,
+            maxLines: 3,
             textAlign: TextAlign.justify,
-            overflow:TextOverflow.visible,
+            overflow: TextOverflow.visible,
             style: const TextStyle(
-            fontSize: Dimensions.d3,),
+              fontSize: Dimensions.d3,
+            ),
           ),
         )
       ],
+    );
+  }
+}
+
+class MedicalCardWidget extends StatelessWidget {
+  const MedicalCardWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 350,
+      height: 100,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: Colors.lightGreen,
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          children: [
+            Flexible(
+                flex: 3,
+                child: Container(
+                  child: Image.asset(''),
+                )),
+            Flexible(
+                flex: 6,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: const [
+                      Align(
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            "Practo Care Surgeries",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: Dimensions.d5),
+                          )),
+                      Align(
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            "Multispeciality Hospital",
+                            style: TextStyle(fontSize: Dimensions.d4),
+                          )),
+                      Align(
+                          alignment: Alignment.topLeft,
+                          child: Text("Nayapalli")),
+                    ],
+                  ),
+                ))
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class CommonContainerButton extends StatelessWidget {
+   CommonContainerButton({Key? key, required this.txt}) : super(key: key);
+   String txt;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: Dimensions.d11,
+      width: MediaQuery.of(context).size.width,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(Dimensions.d2),
+          border: Border.all(
+            color: Colors.black45,
+            width: 1.5,
+          )),
+      child:Center(child: Text(txt)),
     );
   }
 }

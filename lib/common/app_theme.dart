@@ -14,6 +14,7 @@ abstract class Dimensions {
   static const d9 = _scaleFactor * 9;
   static const d10 = _scaleFactor * 10;
   static const d11 = _scaleFactor * 11;
+  static const d20 = _scaleFactor * 20;
   static const d30 = _scaleFactor * 30;
   static const d35 = _scaleFactor * 35;
   static const d40 = _scaleFactor * 40;

@@ -224,7 +224,7 @@ class HomePage extends StatelessWidget {
               padding: const EdgeInsets.only(
                   left: Dimensions.d6, right: Dimensions.d6),
               child: Column(
-                children:  [
+                children: [
                   const Padding(
                     padding: EdgeInsets.only(bottom: Dimensions.d1),
                     child: Align(
@@ -252,25 +252,160 @@ class HomePage extends StatelessWidget {
                     spacing: 34.0,
                     runSpacing: 34.0,
                     children: [
-                      SymptomsWidgets(img: '', symptoms: 'Fever',),
-                      SymptomsWidgets(img: '', symptoms: 'Toothache',),
-                      SymptomsWidgets(img: '', symptoms: 'Pregnancy \nIssues',),
-                      SymptomsWidgets(img: '', symptoms: 'Pimples &\n Acne',),
-                      SymptomsWidgets(img: '', symptoms: 'Cough In\n Children',),
-                      SymptomsWidgets(img: '', symptoms: 'Flu',),
-                      SymptomsWidgets(img: '', symptoms: 'Ear Pain',),
-                      SymptomsWidgets(img: '', symptoms: 'Breathing \nProblems',),
+                      SymptomsWidgets(
+                        img: '',
+                        symptoms: 'Fever',
+                      ),
+                      SymptomsWidgets(
+                        img: '',
+                        symptoms: 'Toothache',
+                      ),
+                      SymptomsWidgets(
+                        img: '',
+                        symptoms: 'Pregnancy \nIssues',
+                      ),
+                      SymptomsWidgets(
+                        img: '',
+                        symptoms: 'Pimples &\n Acne',
+                      ),
+                      SymptomsWidgets(
+                        img: '',
+                        symptoms: 'Cough In\n Children',
+                      ),
+                      SymptomsWidgets(
+                        img: '',
+                        symptoms: 'Flu',
+                      ),
+                      SymptomsWidgets(
+                        img: '',
+                        symptoms: 'Ear Pain',
+                      ),
+                      SymptomsWidgets(
+                        img: '',
+                        symptoms: 'Breathing \nProblems',
+                      ),
                     ],
                   ),
-                  const SizedBox(height:Dimensions.d8,),
-                  Container(
-                    height: Dimensions.d11,
-                    width:MediaQuery.of(context).size.width,
-                    decoration:BoxDecoration(borderRadius:BorderRadius.circular(Dimensions.d2),border:Border.all(color:Colors.black45,width:1.5,)),
-                    child: const Center(child: Text("View All Symptoms")),
+                  const SizedBox(
+                    height: Dimensions.d8,
                   ),
-                  const SizedBox(height: Dimensions.d8,),
-
+                  CommonContainerButton(txt: 'View All Symptoms',),
+                  const SizedBox(
+                    height: Dimensions.d8,
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        border: Border.all(color: Colors.blueGrey, width: 1.5),),
+                    child: Column(
+                      children: [
+                        Container(
+                          height: Dimensions.d30,
+                          width: MediaQuery.of(context).size.width,
+                          decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(10),
+                                topRight: Radius.circular(10)),
+                            gradient: LinearGradient(
+                                colors: [Colors.blueGrey, Colors.pinkAccent],
+                                begin: Alignment.bottomCenter),
+                          ),
+                          child: Row(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Container(
+                                  child: Text(
+                                    'Term Life \nInsurance',
+                                    style: TextStyle(fontSize: Dimensions.d5),
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                child: Image.asset(''),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Column(
+                          children: [
+                            SizedBox(
+                              height: Dimensions.d1,
+                            ),
+                            Row(
+                              children: const [
+                                Padding(
+                                  padding: EdgeInsets.all(Dimensions.d1),
+                                  child: Icon(Icons.add_alert_rounded),
+                                ),
+                                Text('Protect your loved ones in 3 easy steps'),
+                              ],
+                            ),
+                            Row(
+                              children: const [
+                                Padding(
+                                  padding: EdgeInsets.all(Dimensions.d1),
+                                  child: Icon(Icons.add_alert_rounded),
+                                ),
+                                Text('Protect your loved ones in 3 easy steps'),
+                              ],
+                            ),
+                            Row(
+                              children: const [
+                                Padding(
+                                  padding: EdgeInsets.all(Dimensions.d1),
+                                  child: Icon(Icons.add_alert_rounded),
+                                ),
+                                Text('Protect your loved ones in 3 easy steps'),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                const Text(
+                                  "Rs. 120/annum",
+                                  style: TextStyle(
+                                      color: Colors.red,
+                                      fontSize: Dimensions.d4),
+                                ),
+                                ElevatedButton(
+                                  onPressed: () {},
+                                  child: const Text(
+                                    "View Plan",
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height:Dimensions.d20,),
+                  const Padding(
+                    padding: EdgeInsets.all(Dimensions.d1),
+                    child: Align(alignment:Alignment.bottomLeft,child: Text("Top hospitals that are open and safe",style:TextStyle(fontWeight:FontWeight.bold,fontSize:Dimensions.d5),)),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.all(Dimensions.d1),
+                    child: Align(alignment:Alignment.bottomLeft,child: Text("Maximum safety followed for you and your family")),
+                  ),
+                  SizedBox(height:Dimensions.d2,),
+                  Wrap(
+                    direction: Axis.vertical,
+                    spacing: 8,
+                    runSpacing:8,
+                    children: const [
+                      MedicalCardWidget(),
+                      MedicalCardWidget(),
+                      MedicalCardWidget(),
+                      MedicalCardWidget(),
+                    ],
+                  ),
+                  const SizedBox(height:Dimensions.d4,),
+                  CommonContainerButton(txt:'See All Hospitals',),
+                  const SizedBox(height:Dimensions.d8,),
                 ],
               ),
             )
