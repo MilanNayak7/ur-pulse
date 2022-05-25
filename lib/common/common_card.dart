@@ -10,8 +10,8 @@ class CommonCard extends StatelessWidget {
       required this.containerColor,
       required this.height,
       required this.width,
-      required this.defaultSubText,
-      required this.defaultTextHeader})
+      required this.defaultSubTextSize,
+      required this.defaultTextHeaderSize})
       : super(key: key);
   String img;
   String mainText;
@@ -19,8 +19,8 @@ class CommonCard extends StatelessWidget {
   Color containerColor;
   double height;
   double width;
-  double defaultTextHeader = Dimensions.d4;
-  double defaultSubText = Dimensions.d3;
+  double defaultTextHeaderSize = Dimensions.d4;
+  double defaultSubTextSize = Dimensions.d3;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -31,8 +31,8 @@ class CommonCard extends StatelessWidget {
           Flexible(
             flex: 4,
             child: Container(
-              height: 190,
-              width: 160,
+              height: height,
+              width: width,
               decoration: const BoxDecoration(
                   color: Colors.amber,
                   borderRadius: BorderRadius.only(
@@ -49,8 +49,8 @@ class CommonCard extends StatelessWidget {
                   borderRadius: const BorderRadius.only(
                       bottomLeft: Radius.circular(9),
                       bottomRight: Radius.circular(9))),
-              height: 190,
-              width: 160,
+              height: height,
+              width: width,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
@@ -59,13 +59,13 @@ class CommonCard extends StatelessWidget {
                       mainText,
                       overflow: TextOverflow.visible,
                       style: TextStyle(
-                          fontSize: defaultTextHeader,
+                          fontSize: defaultTextHeaderSize,
                           fontWeight: FontWeight.bold),
                     ),
                     Text(
                       subText ?? '',
                       overflow: TextOverflow.visible,
-                      style: TextStyle(fontSize: defaultSubText),
+                      style: TextStyle(fontSize: defaultSubTextSize),
                     ),
                   ],
                 ),
@@ -122,7 +122,7 @@ class MedicalCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 350,
+      width: MediaQuery.of(context).size.width,
       height: 100,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
@@ -189,6 +189,65 @@ class CommonContainerButton extends StatelessWidget {
     );
   }
 }
+
+class ProductCard extends StatelessWidget {
+   ProductCard({Key? key, required this.img, required this.productType}) : super(key: key);
+   String img;
+   String productType;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: const BoxDecoration(borderRadius:BorderRadius.only(topLeft:Radius.circular(11),topRight:Radius.circular(11))),
+      width: 140,
+      height: 150,
+      child:Column(
+        children: [
+          Flexible(
+            flex:5,
+              child:Container(
+                width: 140,
+                height: 150,
+                decoration: BoxDecoration(color:Colors.blue,borderRadius:BorderRadius.circular(10)),
+                child:Image.asset(img),
+              ),
+          ),
+          SizedBox(height:Dimensions.d2,),
+          Flexible(
+            flex:2,
+            child:Container(
+              width: 140,
+              height: 160,
+              decoration: BoxDecoration(borderRadius:BorderRadius.circular(10)),
+              child:Padding(
+                padding: const EdgeInsets.all(1.0),
+                child: Text(productType,style:TextStyle(fontWeight:FontWeight.bold,fontSize:Dimensions.d4),),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class PractoDataWidget extends StatelessWidget {
+  const PractoDataWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(
+        crossAxisAlignment:CrossAxisAlignment.start,
+        children: const [
+          Icon(Icons.person),
+          Text("Our Users",style:TextStyle(fontWeight:FontWeight.w600,fontSize:Dimensions.d4),),
+          Text("30 Crores",style:TextStyle(fontWeight:FontWeight.bold,fontSize:Dimensions.d7),)
+        ],
+      ),
+    );
+  }
+}
+
 
 // Widget CardCommonComp() {
 //   return SizedBox(
