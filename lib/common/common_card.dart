@@ -29,15 +29,15 @@ class CommonCard extends StatelessWidget {
       child: Column(
         children: [
           Flexible(
-            flex: 4,
+            flex: Dimensions.f1,
             child: Container(
               height: height,
               width: width,
               decoration: const BoxDecoration(
                   color: Colors.amber,
                   borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(9),
-                      topRight: Radius.circular(9))),
+                      topLeft: Radius.circular(Dimensions.d2),
+                      topRight: Radius.circular(Dimensions.d2))),
               // child:Image.asset(img,width:140,),
             ),
           ),
@@ -47,12 +47,12 @@ class CommonCard extends StatelessWidget {
               decoration: BoxDecoration(
                   color: containerColor,
                   borderRadius: const BorderRadius.only(
-                      bottomLeft: Radius.circular(9),
-                      bottomRight: Radius.circular(9))),
+                      bottomLeft: Radius.circular(Dimensions.d2),
+                      bottomRight: Radius.circular(Dimensions.d2))),
               height: height,
               width: width,
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(Dimensions.d2),
                 child: Column(
                   children: [
                     Text(
@@ -89,11 +89,11 @@ class SymptomsWidgets extends StatelessWidget {
     return Column(
       children: [
         Container(
-          width: 60,
-          height: 60,
+          width: Dimensions.d15,
+          height: Dimensions.d15,
           decoration: BoxDecoration(
             color: Colors.blue,
-            borderRadius: BorderRadius.circular(50),
+            borderRadius: BorderRadius.circular(Dimensions.d12),
           ),
           child: Image.asset(img),
         ),
@@ -123,13 +123,13 @@ class MedicalCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      height: 100,
+      height: Dimensions.d25,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(Dimensions.d3),
         color: Colors.lightGreen,
       ),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(Dimensions.d2),
         child: Row(
           children: [
             Flexible(
@@ -140,7 +140,7 @@ class MedicalCardWidget extends StatelessWidget {
             Flexible(
                 flex: 6,
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(Dimensions.d2),
                   child: Column(
                     children: const [
                       Align(
@@ -197,17 +197,17 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(borderRadius:BorderRadius.only(topLeft:Radius.circular(11),topRight:Radius.circular(11))),
-      width: 140,
-      height: 150,
+      decoration: const BoxDecoration(borderRadius:BorderRadius.only(topLeft:Radius.circular(Dimensions.d3),topRight:Radius.circular(Dimensions.d3))),
+      width: Dimensions.d35,
+      height:Dimensions.d35,
       child:Column(
         children: [
           Flexible(
             flex:5,
               child:Container(
-                width: 140,
-                height: 150,
-                decoration: BoxDecoration(color:Colors.blue,borderRadius:BorderRadius.circular(10)),
+                width: Dimensions.d35,
+                height: Dimensions.d35,
+                decoration: BoxDecoration(color:Colors.blue,borderRadius:BorderRadius.circular(Dimensions.d3)),
                 child:Image.asset(img),
               ),
           ),
@@ -215,9 +215,9 @@ class ProductCard extends StatelessWidget {
           Flexible(
             flex:2,
             child:Container(
-              width: 140,
-              height: 160,
-              decoration: BoxDecoration(borderRadius:BorderRadius.circular(10)),
+              width: Dimensions.d35,
+              height: Dimensions.d40,
+              decoration: BoxDecoration(borderRadius:BorderRadius.circular(Dimensions.d3)),
               child:Padding(
                 padding: const EdgeInsets.all(1.0),
                 child: Text(productType,style:TextStyle(fontWeight:FontWeight.bold,fontSize:Dimensions.d4),),
