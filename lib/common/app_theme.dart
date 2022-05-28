@@ -1,35 +1,38 @@
-
+import 'package:get/get.dart';
 
 abstract class Dimensions {
+ static double screenHeight = Get.context!.height; //813
+ static double screenWidth = Get.context!.width;  //392
+ static double commomcardheight = screenHeight/4.00;
+ static double commomcardwidth = screenWidth/2.48;
 
 
-  static const _scaleFactor = 4.0;
-  static const d0 = 0.0;
-  static const d1 = _scaleFactor * 1;
-  static const d2 = _scaleFactor * 2;
-  static const d3 = _scaleFactor * 3;
-  static const d4 = _scaleFactor * 4;
-  static const d5 = _scaleFactor * 5;
-  static const d6 = _scaleFactor * 6;
-  static const d7 = _scaleFactor * 7;
-  static const d8 = _scaleFactor * 8;
-  static const d9 = _scaleFactor * 9;
-  static const d10 = _scaleFactor * 10;
-  static const d11 = _scaleFactor * 11;
-  static const d12 = _scaleFactor * 12;
-  static const d15 = _scaleFactor * 15;
-  static const d20 = _scaleFactor * 20;
-  static const d25 = _scaleFactor * 25;
-  static const d30 = _scaleFactor * 30;
-  static const d35 = _scaleFactor * 35;
-  static const d40 = _scaleFactor * 40;
-  static const d45 = _scaleFactor * 45;
-  static const d75 = _scaleFactor * 75;
-  static const d95 = _scaleFactor * 95;
 
-
-  static const _scaleFactorFlex = 4;
-  static const f1 = _scaleFactorFlex * 1;
-  static const f2 = _scaleFactorFlex * 2;
+ static double d1 = screenWidth/98;
+ static double d2 = screenWidth/49;
+ static double d3  = screenWidth/32.6;
+ static double d4 = screenWidth/24.5;
+ static double d5 = screenWidth/19.6;
+ static double d6 = screenWidth/16.3;
+ static double d7 = screenWidth/14;
+ static double d8 = screenWidth/12.2;
+ static double d9 = screenWidth/10.8;
+ static double d10 = screenWidth/9.8;
+ static double d11 = screenWidth/8.9;
+ static double d12 = screenWidth/8.1;
+ static double d15 = screenWidth/6.5;
+ static double d20 = screenWidth/4.9;
+ static double d25 = screenWidth/3.9;
+ static double d30 = screenWidth/3.2;
+ static double d35 = screenWidth/2.8;
+ static double d40 = screenWidth/2.4;
+ static double d75 = screenWidth/1.30;
+ static double d95 = screenWidth/1.0;
+ // static double d30 = screenWidth/3.2;
+ // static double d35 = screenWidth/4.9;
+ // static double d20 = screenWidth/4.9;
+ // static double d40 = screenWidth/2.45;
+ // static double d75 = screenWidth/5.22;
+ // static double d95 = screenWidth/4.12;
   static arbitrary(double value) => value;
 }

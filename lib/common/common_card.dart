@@ -1,26 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:ur_pulse_modified/common/app_theme.dart';
 
+import '../data_model/data_model.dart';
+
 class CommonCard extends StatelessWidget {
   CommonCard(
       {Key? key,
-      required this.img,
-      required this.mainText,
-      this.subText,
       required this.containerColor,
+      required this.commonCardModel,
       required this.height,
       required this.width,
       required this.defaultSubTextSize,
       required this.defaultTextHeaderSize})
       : super(key: key);
-  String img;
-  String mainText;
-  String? subText;
+
   Color containerColor;
   double height;
   double width;
   double defaultTextHeaderSize = Dimensions.d4;
   double defaultSubTextSize = Dimensions.d3;
+  CommonCardModel commonCardModel;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -29,16 +29,16 @@ class CommonCard extends StatelessWidget {
       child: Column(
         children: [
           Flexible(
-            flex: Dimensions.f1,
+            flex: 4,
             child: Container(
-              height: height,
-              width: width,
-              decoration: const BoxDecoration(
+               height: height,
+               width: width,
+              decoration:  BoxDecoration(
                   color: Colors.amber,
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(Dimensions.d2),
                       topRight: Radius.circular(Dimensions.d2))),
-              // child:Image.asset(img,width:140,),
+               child:Image.asset(commonCardModel.img),
             ),
           ),
           Flexible(
@@ -46,24 +46,25 @@ class CommonCard extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                   color: containerColor,
-                  borderRadius: const BorderRadius.only(
+                  borderRadius:  BorderRadius.only(
                       bottomLeft: Radius.circular(Dimensions.d2),
                       bottomRight: Radius.circular(Dimensions.d2))),
-              height: height,
-              width: width,
+               height:height,
+               width: width,
               child: Padding(
-                padding: const EdgeInsets.all(Dimensions.d2),
+                padding:  EdgeInsets.all(Dimensions.d2),
                 child: Column(
+                  crossAxisAlignment:CrossAxisAlignment.start,
                   children: [
                     Text(
-                      mainText,
+                      commonCardModel.mainText,
                       overflow: TextOverflow.visible,
                       style: TextStyle(
                           fontSize: defaultTextHeaderSize,
                           fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      subText ?? '',
+                      commonCardModel.subText??'',
                       overflow: TextOverflow.visible,
                       style: TextStyle(fontSize: defaultSubTextSize),
                     ),
@@ -97,7 +98,7 @@ class SymptomsWidgets extends StatelessWidget {
           ),
           child: Image.asset(img),
         ),
-        const SizedBox(
+         SizedBox(
           height: Dimensions.d3,
         ),
         Container(
@@ -106,7 +107,7 @@ class SymptomsWidgets extends StatelessWidget {
             maxLines: 3,
             textAlign: TextAlign.justify,
             overflow: TextOverflow.visible,
-            style: const TextStyle(
+            style:  TextStyle(
               fontSize: Dimensions.d3,
             ),
           ),
@@ -129,7 +130,7 @@ class MedicalCardWidget extends StatelessWidget {
         color: Colors.lightGreen,
       ),
       child: Padding(
-        padding: const EdgeInsets.all(Dimensions.d2),
+        padding:  EdgeInsets.all(Dimensions.d2),
         child: Row(
           children: [
             Flexible(
@@ -140,9 +141,9 @@ class MedicalCardWidget extends StatelessWidget {
             Flexible(
                 flex: 6,
                 child: Padding(
-                  padding: const EdgeInsets.all(Dimensions.d2),
+                  padding:  EdgeInsets.all(Dimensions.d2),
                   child: Column(
-                    children: const [
+                    children:  [
                       Align(
                           alignment: Alignment.topLeft,
                           child: Text(
@@ -171,8 +172,8 @@ class MedicalCardWidget extends StatelessWidget {
 }
 
 class CommonContainerButton extends StatelessWidget {
-   CommonContainerButton({Key? key, required this.txt}) : super(key: key);
-   String txt;
+  CommonContainerButton({Key? key, required this.txt}) : super(key: key);
+  String txt;
 
   @override
   Widget build(BuildContext context) {
@@ -185,42 +186,55 @@ class CommonContainerButton extends StatelessWidget {
             color: Colors.black45,
             width: 1.5,
           )),
-      child:Center(child: Text(txt)),
+      child: Center(child: Text(txt)),
     );
   }
 }
 
 class ProductCard extends StatelessWidget {
-   ProductCard({Key? key, required this.img, required this.productType}) : super(key: key);
-   String img;
-   String productType;
+  ProductCard({Key? key, required this.img, required this.productType})
+      : super(key: key);
+  String img;
+  String productType;
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(borderRadius:BorderRadius.only(topLeft:Radius.circular(Dimensions.d3),topRight:Radius.circular(Dimensions.d3))),
+      decoration:  BoxDecoration(
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(Dimensions.d3),
+              topRight: Radius.circular(Dimensions.d3))),
       width: Dimensions.d35,
-      height:Dimensions.d35,
-      child:Column(
+      height: Dimensions.d35,
+      child: Column(
         children: [
           Flexible(
-            flex:5,
-              child:Container(
-                width: Dimensions.d35,
-                height: Dimensions.d35,
-                decoration: BoxDecoration(color:Colors.blue,borderRadius:BorderRadius.circular(Dimensions.d3)),
-                child:Image.asset(img),
-              ),
+            flex: 5,
+            child: Container(
+              width: Dimensions.d35,
+              height: Dimensions.d35,
+              decoration: BoxDecoration(
+                  color: Colors.blue,
+                  borderRadius: BorderRadius.circular(Dimensions.d3)),
+              child: Image.asset(img),
+            ),
           ),
-          SizedBox(height:Dimensions.d2,),
+          SizedBox(
+            height: Dimensions.d2,
+          ),
           Flexible(
-            flex:2,
-            child:Container(
+            flex: 2,
+            child: Container(
               width: Dimensions.d35,
               height: Dimensions.d40,
-              decoration: BoxDecoration(borderRadius:BorderRadius.circular(Dimensions.d3)),
-              child:Padding(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(Dimensions.d3)),
+              child: Padding(
                 padding: const EdgeInsets.all(1.0),
-                child: Text(productType,style:TextStyle(fontWeight:FontWeight.bold,fontSize:Dimensions.d4),),
+                child: Text(
+                  productType,
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold, fontSize: Dimensions.d4),
+                ),
               ),
             ),
           ),
@@ -237,17 +251,24 @@ class PractoDataWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Column(
-        crossAxisAlignment:CrossAxisAlignment.start,
-        children: const [
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children:  [
           Icon(Icons.person),
-          Text("Our Users",style:TextStyle(fontWeight:FontWeight.w600,fontSize:Dimensions.d4),),
-          Text("30 Crores",style:TextStyle(fontWeight:FontWeight.bold,fontSize:Dimensions.d7),)
+          Text(
+            "Our Users",
+            style:
+                TextStyle(fontWeight: FontWeight.w600, fontSize: Dimensions.d4),
+          ),
+          Text(
+            "30 Crores",
+            style:
+                TextStyle(fontWeight: FontWeight.bold, fontSize: Dimensions.d7),
+          )
         ],
       ),
     );
   }
 }
-
 
 // Widget CardCommonComp() {
 //   return SizedBox(

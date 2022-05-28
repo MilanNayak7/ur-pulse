@@ -13,6 +13,8 @@ class _ImageCarouselState extends State<ImageCarousel> {
   final CarouselController controller = CarouselController();
   @override
   Widget build(BuildContext context) {
+    print("current height is"+MediaQuery.of(context).size.height.toString());
+    print("current width is"+MediaQuery.of(context).size.width.toString());
     return Container(
       child: Column(
         children: [

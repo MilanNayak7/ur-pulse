@@ -3,6 +3,7 @@ import 'package:ur_pulse_modified/common/app_theme.dart';
 
 import '../common/carousel/carousel.dart';
 import '../common/common_card.dart';
+import '../data_model/data_model.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -15,124 +16,105 @@ class HomePage extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              height:Dimensions.d10,
+              height: Dimensions.d10,
               color: Colors.cyan,
             ),
             Padding(
-              padding: const EdgeInsets.only(
+              padding: EdgeInsets.only(
                   left: Dimensions.d6,
                   right: Dimensions.d6,
                   top: Dimensions.d9),
               child: Column(
                 children: [
                   posterOneContainer(),
-                  const SizedBox(
+                  SizedBox(
                     height: Dimensions.d9,
                   ),
                   // CardCommonComp()
                   Wrap(
-                    direction: Axis.horizontal,
                     spacing: Dimensions.d6,
-                    runSpacing:Dimensions.d6,
-                    children: [
-                      CommonCard(
-                        img: 'assets/images/doctor1.png',
-                        subText: 'Connect within 60 sec',
-                        mainText: 'Instant Video Consultation',
+                    runSpacing: Dimensions.d6,
+                    children: List<Widget>.generate(
+                        CommonCardModelDummyData.length, (index) {
+                      return CommonCard(
                         containerColor: Colors.blue,
-                        width: Dimensions.d40,
-                        height:Dimensions.d45,
-                        defaultTextHeaderSize: Dimensions.d4,
-                        defaultSubTextSize: Dimensions.d3,
-                      ),
-                      CommonCard(
-                        img: 'assets/images/doctor1.png',
-                        subText: 'Connect within 60 sec',
-                        mainText: 'Instant Video Consultation',
-                        containerColor: Colors.blue,
-                        width: Dimensions.d40,
-                        height:Dimensions.d45,
+                        height: Dimensions.commomcardheight,
+                        commonCardModel: CommonCardModelDummyData[index],
                         defaultSubTextSize: Dimensions.d3,
                         defaultTextHeaderSize: Dimensions.d4,
-                      )
-                    ],
+                        width: Dimensions.commomcardwidth,
+                      );
+                    }),
                   ),
-                  const SizedBox(
+                  SizedBox(
                     height: Dimensions.d6,
                   ),
                   Wrap(
-                    direction: Axis.horizontal,
-                    spacing:Dimensions.d5,
-                    runSpacing:Dimensions.d5,
-                    children: [
-                      CommonCard(
-                        img: 'assets/images/doctor1.png',
-                        mainText: 'Medicines',
-                        containerColor: Colors.blue,
-                        width:Dimensions.d25,
-                        height:Dimensions.d30,
-                        defaultSubTextSize: Dimensions.d3,
-                        defaultTextHeaderSize: Dimensions.d4,
-                      ),
-                      CommonCard(
-                        img: 'assets/images/doctor1.png',
-                        //subText: 'test',
-                        mainText: 'Lab Tests',
-                        containerColor: Colors.blue,
-                        width: Dimensions.d25,
-                        height:Dimensions.d30,
-                        defaultSubTextSize: Dimensions.d3,
-                        defaultTextHeaderSize: Dimensions.d4,
-                      ),
-                      CommonCard(
-                        img: 'assets/images/doctor1.png',
-                        mainText: 'Surgeries',
-                        containerColor: Colors.blue,
-                        width: Dimensions.d25,
-                        height: Dimensions.d30,
-                        defaultSubTextSize: Dimensions.d3,
-                        defaultTextHeaderSize: Dimensions.d4,
-                      ),
-                    ],
+                    spacing: Dimensions.d5,
+                    runSpacing: Dimensions.d5,
+                    children: List<Widget>.generate(
+                        CommonServiceModelDummyData.length,
+                        (index) => CommonCard(
+                            containerColor: Colors.blue,
+                            commonCardModel: CommonServiceModelDummyData[index],
+                            height: Dimensions.d30,
+                            width: Dimensions.d25,
+                            defaultSubTextSize: Dimensions.d3,
+                            defaultTextHeaderSize: Dimensions.d4)),
                   ),
                 ],
               ),
             ),
-            const SizedBox(
+            SizedBox(
               height: Dimensions.d9,
             ),
             Container(
-              height:Dimensions.d75,
+              height: Dimensions.d75,
               color: Colors.blue,
               width: MediaQuery.of(context).size.width,
-              child:Column(
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children:  [
+                children: [
                   Padding(
-                    padding: const EdgeInsets.only(left:Dimensions.d8,top:Dimensions.d4),
-                    child: Text("In the spotlight",style:TextStyle(color:Colors.white,fontWeight:FontWeight.w800,fontSize:Dimensions.d5),),
+                    padding: EdgeInsets.only(
+                        left: Dimensions.d8, top: Dimensions.d4),
+                    child: Text(
+                      "In the spotlight",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w800,
+                          fontSize: Dimensions.d5),
+                    ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left:Dimensions.d8,bottom:Dimensions.d3,top:Dimensions.d1),
-                    child: Text("Explore deals, offers, health updates and more",style:TextStyle(color:Colors.white,fontWeight:FontWeight.w400,fontSize:Dimensions.d4)),
+                    padding: EdgeInsets.only(
+                        left: Dimensions.d8,
+                        bottom: Dimensions.d3,
+                        top: Dimensions.d1),
+                    child: Text(
+                        "Explore deals, offers, health updates and more",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w400,
+                            fontSize: Dimensions.d4)),
                   ),
                   ImageCarousel(),
                 ],
               ),
             ),
-            const SizedBox(
+            SizedBox(
               height: Dimensions.d9,
             ),
             Padding(
-              padding: const EdgeInsets.only(
-                  left: Dimensions.d6, right: Dimensions.d6),
+              padding:
+                  EdgeInsets.only(left: Dimensions.d6, right: Dimensions.d6),
               child: Column(
                 children: [
                   TermLifeInsurancePoster(context),
-                  const SizedBox(
+                  SizedBox(
                     height: Dimensions.d11,
                   ),
-                  const Padding(
+                  Padding(
                     padding: EdgeInsets.only(bottom: Dimensions.d1),
                     child: Align(
                       alignment: Alignment.topLeft,
@@ -151,11 +133,11 @@ class HomePage extends StatelessWidget {
                       style: TextStyle(color: Colors.black45),
                     ),
                   ),
-                  const SizedBox(
+                  SizedBox(
                     height: Dimensions.d4,
                   ),
                   Wrap(
-                    direction: Axis.horizontal,
+                    //direction: Axis.horizontal,
                     spacing: Dimensions.d8,
                     runSpacing: Dimensions.d5,
                     children: [
@@ -193,16 +175,16 @@ class HomePage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const SizedBox(
+                  SizedBox(
                     height: Dimensions.d6,
                   ),
                   CommonContainerButton(
                     txt: 'View All Symptoms',
                   ),
-                  const SizedBox(
+                  SizedBox(
                     height: Dimensions.d10,
                   ),
-                  const Padding(
+                  Padding(
                     padding: EdgeInsets.all(Dimensions.d1),
                     child: Align(
                         alignment: Alignment.bottomLeft,
@@ -213,9 +195,9 @@ class HomePage extends StatelessWidget {
                               fontSize: Dimensions.d5),
                         )),
                   ),
-                  const Padding(
+                  Padding(
                     padding: EdgeInsets.all(Dimensions.d1),
-                    child: Align(
+                    child: const Align(
                         alignment: Alignment.bottomLeft,
                         child: Text(
                             "Maximum safety followed for you and your family")),
@@ -225,7 +207,7 @@ class HomePage extends StatelessWidget {
                   ),
                   Wrap(
                     spacing: Dimensions.d2,
-                    runSpacing:Dimensions.d4,
+                    runSpacing: Dimensions.d4,
                     children: const [
                       MedicalCardWidget(),
                       MedicalCardWidget(),
@@ -233,25 +215,25 @@ class HomePage extends StatelessWidget {
                       MedicalCardWidget(),
                     ],
                   ),
-                  const SizedBox(
+                  SizedBox(
                     height: Dimensions.d8,
                   ),
                   CommonContainerButton(
                     txt: 'See All Hospitals',
                   ),
-                  const SizedBox(
+                  SizedBox(
                     height: Dimensions.d20,
                   ),
-                  const Text(
+                  Text(
                     "Order medicines, health and wellness products",
                     style: TextStyle(
                         fontWeight: FontWeight.bold, fontSize: Dimensions.d5),
                   ),
-                  const SizedBox(
+                  SizedBox(
                     height: Dimensions.d4,
                   ),
                   Wrap(
-                    spacing:Dimensions.d6,
+                    spacing: Dimensions.d6,
                     children: [
                       ProductCard(
                         img: '',
@@ -271,19 +253,19 @@ class HomePage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const SizedBox(
+                  SizedBox(
                     height: Dimensions.d8,
                   ),
                   CommonContainerButton(txt: 'View More Products'),
-                  const SizedBox(
+                  SizedBox(
                     height: Dimensions.d8,
                   ),
-                  const Text(
+                  Text(
                     "Preventive Full Body Health Checkups",
                     style: TextStyle(
                         fontWeight: FontWeight.bold, fontSize: Dimensions.d5),
                   ),
-                  const SizedBox(
+                  SizedBox(
                     height: Dimensions.d2,
                   ),
                 ],
@@ -293,12 +275,12 @@ class HomePage extends StatelessWidget {
               color: Colors.pinkAccent,
               width: MediaQuery.of(context).size.width,
               child: Padding(
-                padding: const EdgeInsets.only(
-                    left: Dimensions.d8, right: Dimensions.d8),
+                padding:
+                    EdgeInsets.only(left: Dimensions.d8, right: Dimensions.d8),
                 child: Column(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(
+                      padding: EdgeInsets.only(
                           top: Dimensions.d8, bottom: Dimensions.d8),
                       child: Text(
                         "Our community of doctors and patients drive us to create technologies for better and affordable healthcare",
@@ -327,23 +309,30 @@ class HomePage extends StatelessWidget {
               ),
             ),
             Container(
-              height:Dimensions.d95,
+              height: Dimensions.d95,
               width: MediaQuery.of(context).size.width,
               color: Colors.indigo,
               child: Padding(
-                padding: const EdgeInsets.all(Dimensions.d6),
+                padding: EdgeInsets.all(Dimensions.d6),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Image.asset('assets/images/ur_pulse.png',width:Dimensions.d40,),
-                    const Text(
-                      "Our vision is to help mankind live healthier,longer lives by making quality healthcare accessible, affordable and convenient.",
-                      style: TextStyle(color:Colors.white70,fontSize: Dimensions.d6),
+                    Image.asset(
+                      'assets/images/ur_pulse.png',
+                      width: Dimensions.d40,
                     ),
-                    SizedBox(height:Dimensions.d4,),
-                    const Text(
+                    Text(
+                      "Our vision is to help mankind live healthier,longer lives by making quality healthcare accessible, affordable and convenient.",
+                      style: TextStyle(
+                          color: Colors.white70, fontSize: Dimensions.d6),
+                    ),
+                    SizedBox(
+                      height: Dimensions.d4,
+                    ),
+                    Text(
                       "Made by Milan @ Odisha University of Technology and research ",
-                      style: TextStyle(color:Colors.white60,fontSize: Dimensions.d4),
+                      style: TextStyle(
+                          color: Colors.white60, fontSize: Dimensions.d4),
                     )
                   ],
                 ),
@@ -357,65 +346,67 @@ class HomePage extends StatelessWidget {
 
   Container posterOneContainer() {
     return Container(
-                  height: Dimensions.d35,
-                  decoration: BoxDecoration(
-                    color: Colors.cyan,
-                    borderRadius: BorderRadius.circular(Dimensions.d2),
-                    gradient: const LinearGradient(colors: [
-                      Colors.blue,
-                      Colors.indigo,
-                    ], begin: Alignment.bottomLeft),
+      height: Dimensions.d35,
+      decoration: BoxDecoration(
+        color: Colors.cyan,
+        borderRadius: BorderRadius.circular(Dimensions.d2),
+        gradient: const LinearGradient(colors: [
+          Colors.blue,
+          Colors.indigo,
+        ], begin: Alignment.bottomLeft),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Image.asset(
+                'assets/images/ur_pulse.png',
+                width: Dimensions.d35,
+                height: Dimensions.d10,
+              ),
+              Text(
+                'You are in safe hands',
+                style: TextStyle(
+                    fontSize: Dimensions.d4,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
+              ),
+              Text('Choose the experts in \nend to end surgical care',
+                  style: TextStyle(
+                      fontSize: Dimensions.d4, color: Colors.white60)),
+              SizedBox(
+                height: Dimensions.d3,
+              ),
+              Container(
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.white),
+                    borderRadius: BorderRadius.circular(Dimensions.d1)),
+                child: Padding(
+                  padding: EdgeInsets.only(
+                      left: Dimensions.d4,
+                      right: Dimensions.d4,
+                      top: Dimensions.d1,
+                      bottom: Dimensions.d1),
+                  child: Text(
+                    'Know More',
+                    style: TextStyle(color: Colors.white),
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Image.asset(
-                            'assets/images/ur_pulse.png',
-                            width: Dimensions.d35,
-                            height: Dimensions.d10,
-                          ),
-                          const Text(
-                            'You are in safe hands',
-                            style: TextStyle(
-                                fontSize: Dimensions.d4,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
-                          ),
-                          const Text(
-                              'Choose the experts in \nend to end surgical care',
-                              style: TextStyle(
-                                  fontSize: Dimensions.d4, color: Colors.white60)),
-                          const SizedBox(
-                            height: Dimensions.d3,
-                          ),
-                          Container(
-                            decoration: BoxDecoration(
-                                border: Border.all(color: Colors.white),
-                                borderRadius: BorderRadius.circular(Dimensions.d1)),
-                            child: const Padding(
-                              padding: EdgeInsets.only(
-                                  left: Dimensions.d4, right:Dimensions.d4, top:Dimensions.d1, bottom:Dimensions.d1),
-                              child: Text(
-                                'Know More',
-                                style: TextStyle(color: Colors.white),
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                      SizedBox(
-                          height:Dimensions.d30,
-                          width: Dimensions.d25,
-                          child: Image.asset(
-                            'assets/images/doctor1.png',
-                            fit: BoxFit.fitHeight,
-                          )),
-                    ],
-                  ),
-                );
+                ),
+              )
+            ],
+          ),
+          SizedBox(
+              height: Dimensions.d30,
+              width: Dimensions.d25,
+              child: Image.asset(
+                'assets/images/doctor1.png',
+                fit: BoxFit.fitHeight,
+              )),
+        ],
+      ),
+    );
   }
 
   AppBar buildAppBar() {
@@ -426,19 +417,19 @@ class HomePage extends StatelessWidget {
         icon: Image.asset(
           'assets/images/menu.png',
           width: Dimensions.d5,
-          height:Dimensions.d5,
+          height: Dimensions.d5,
         ),
         onPressed: () {},
       ),
       actions: <Widget>[
         Padding(
-          padding: const EdgeInsets.only(top:Dimensions.d3, bottom:Dimensions.d3),
+          padding: EdgeInsets.only(top: Dimensions.d3, bottom: Dimensions.d3),
           child: Container(
             decoration: BoxDecoration(
                 color: Colors.cyanAccent,
                 borderRadius: BorderRadius.circular(Dimensions.d1)),
             child: Padding(
-              padding: const EdgeInsets.all(Dimensions.d1),
+              padding: EdgeInsets.all(Dimensions.d1),
               child: Row(
                 children: [
                   const Text(
@@ -446,14 +437,14 @@ class HomePage extends StatelessWidget {
                     style: TextStyle(
                         color: Colors.black, fontWeight: FontWeight.bold),
                   ),
-                  const SizedBox(
-                    width:Dimensions.d1,
+                  SizedBox(
+                    width: Dimensions.d1,
                   ),
                   Container(
                     decoration: BoxDecoration(
                         color: Colors.black12,
                         borderRadius: BorderRadius.circular(Dimensions.d1)),
-                    child: const Padding(
+                    child: Padding(
                       padding: EdgeInsets.all(Dimensions.d1),
                       child: Text('PLUS'),
                     ),
@@ -477,94 +468,93 @@ class HomePage extends StatelessWidget {
 
   Container TermLifeInsurancePoster(BuildContext context) {
     return Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(Dimensions.d3),
-                    border: Border.all(color: Colors.blueGrey, width: 1.5),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(Dimensions.d3),
+        border: Border.all(color: Colors.blueGrey, width: 1.5),
+      ),
+      child: Column(
+        children: [
+          Container(
+            height: Dimensions.d30,
+            width: MediaQuery.of(context).size.width,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(Dimensions.d3),
+                  topRight: Radius.circular(Dimensions.d3)),
+              gradient: LinearGradient(
+                  colors: [Colors.blueGrey, Colors.pinkAccent],
+                  begin: Alignment.bottomCenter),
+            ),
+            child: Row(
+              children: [
+                Padding(
+                  padding: EdgeInsets.all(Dimensions.d2),
+                  child: Container(
+                    child: Text(
+                      'Term Life \nInsurance',
+                      style: TextStyle(fontSize: Dimensions.d5),
+                    ),
                   ),
-                  child: Column(
-                    children: [
-                      Container(
-                        height: Dimensions.d30,
-                        width: MediaQuery.of(context).size.width,
-                        decoration: const BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(Dimensions.d3),
-                              topRight: Radius.circular(Dimensions.d3)),
-                          gradient: LinearGradient(
-                              colors: [Colors.blueGrey, Colors.pinkAccent],
-                              begin: Alignment.bottomCenter),
-                        ),
-                        child: Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(Dimensions.d2),
-                              child: Container(
-                                child: Text(
-                                  'Term Life \nInsurance',
-                                  style: TextStyle(fontSize: Dimensions.d5),
-                                ),
-                              ),
-                            ),
-                            Container(
-                              child: Image.asset(''),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Column(
-                        children: [
-                          SizedBox(
-                            height: Dimensions.d1,
-                          ),
-                          Row(
-                            children: const [
-                              Padding(
-                                padding: EdgeInsets.all(Dimensions.d1),
-                                child: Icon(Icons.add_alert_rounded),
-                              ),
-                              Text('Protect your loved ones in 3 easy steps'),
-                            ],
-                          ),
-                          Row(
-                            children: const [
-                              Padding(
-                                padding: EdgeInsets.all(Dimensions.d1),
-                                child: Icon(Icons.add_alert_rounded),
-                              ),
-                              Text('Protect your loved ones in 3 easy steps'),
-                            ],
-                          ),
-                          Row(
-                            children: const [
-                              Padding(
-                                padding: EdgeInsets.all(Dimensions.d1),
-                                child: Icon(Icons.add_alert_rounded),
-                              ),
-                              Text('Protect your loved ones in 3 easy steps'),
-                            ],
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              const Text(
-                                "Rs. 120/annum",
-                                style: TextStyle(
-                                    color: Colors.red,
-                                    fontSize: Dimensions.d4),
-                              ),
-                              ElevatedButton(
-                                onPressed: () {},
-                                child: const Text(
-                                  "View Plan",
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ],
+                ),
+                Container(
+                  child: Image.asset(''),
+                ),
+              ],
+            ),
+          ),
+          Column(
+            children: [
+              SizedBox(
+                height: Dimensions.d1,
+              ),
+              Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.all(Dimensions.d1),
+                    child: Icon(Icons.add_alert_rounded),
                   ),
-                );
+                  Text('Protect your loved ones in 3 easy steps'),
+                ],
+              ),
+              Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.all(Dimensions.d1),
+                    child: Icon(Icons.add_alert_rounded),
+                  ),
+                  Text('Protect your loved ones in 3 easy steps'),
+                ],
+              ),
+              Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.all(Dimensions.d1),
+                    child: Icon(Icons.add_alert_rounded),
+                  ),
+                  Text('Protect your loved ones in 3 easy steps'),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Text(
+                    "Rs. 120/annum",
+                    style:
+                        TextStyle(color: Colors.red, fontSize: Dimensions.d4),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: const Text(
+                      "View Plan",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
   }
 }
