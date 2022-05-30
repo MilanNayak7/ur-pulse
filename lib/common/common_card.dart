@@ -31,14 +31,14 @@ class CommonCard extends StatelessWidget {
           Flexible(
             flex: 4,
             child: Container(
-               height: height,
-               width: width,
-              decoration:  BoxDecoration(
+              height: height,
+              width: width,
+              decoration: BoxDecoration(
                   color: Colors.amber,
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(Dimensions.d2),
                       topRight: Radius.circular(Dimensions.d2))),
-               child:Image.asset(commonCardModel.img),
+              child: Image.asset(commonCardModel.img),
             ),
           ),
           Flexible(
@@ -46,15 +46,15 @@ class CommonCard extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                   color: containerColor,
-                  borderRadius:  BorderRadius.only(
+                  borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(Dimensions.d2),
                       bottomRight: Radius.circular(Dimensions.d2))),
-               height:height,
-               width: width,
+              height: height,
+              width: width,
               child: Padding(
-                padding:  EdgeInsets.all(Dimensions.d2),
+                padding: EdgeInsets.all(Dimensions.d2),
                 child: Column(
-                  crossAxisAlignment:CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       commonCardModel.mainText,
@@ -64,7 +64,7 @@ class CommonCard extends StatelessWidget {
                           fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      commonCardModel.subText??'',
+                      commonCardModel.subText ?? '',
                       overflow: TextOverflow.visible,
                       style: TextStyle(fontSize: defaultSubTextSize),
                     ),
@@ -98,7 +98,7 @@ class SymptomsWidgets extends StatelessWidget {
           ),
           child: Image.asset(img),
         ),
-         SizedBox(
+        SizedBox(
           height: Dimensions.d3,
         ),
         Container(
@@ -107,7 +107,7 @@ class SymptomsWidgets extends StatelessWidget {
             maxLines: 3,
             textAlign: TextAlign.justify,
             overflow: TextOverflow.visible,
-            style:  TextStyle(
+            style: TextStyle(
               fontSize: Dimensions.d3,
             ),
           ),
@@ -130,7 +130,7 @@ class MedicalCardWidget extends StatelessWidget {
         color: Colors.lightGreen,
       ),
       child: Padding(
-        padding:  EdgeInsets.all(Dimensions.d2),
+        padding: EdgeInsets.all(Dimensions.d2),
         child: Row(
           children: [
             Flexible(
@@ -141,9 +141,9 @@ class MedicalCardWidget extends StatelessWidget {
             Flexible(
                 flex: 6,
                 child: Padding(
-                  padding:  EdgeInsets.all(Dimensions.d2),
+                  padding: EdgeInsets.all(Dimensions.d2),
                   child: Column(
-                    children:  [
+                    children: [
                       Align(
                           alignment: Alignment.topLeft,
                           child: Text(
@@ -199,7 +199,7 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration:  BoxDecoration(
+      decoration: BoxDecoration(
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(Dimensions.d3),
               topRight: Radius.circular(Dimensions.d3))),
@@ -252,7 +252,7 @@ class PractoDataWidget extends StatelessWidget {
     return Container(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children:  [
+        children: [
           Icon(Icons.person),
           Text(
             "Our Users",
@@ -270,51 +270,67 @@ class PractoDataWidget extends StatelessWidget {
   }
 }
 
-// Widget CardCommonComp() {
-//   return SizedBox(
-//     // height:Dimensions.d40,
-//     width: 150,
-//     child: Column(
-//       children: [
-//         Container(
-//           decoration: const BoxDecoration(
-//               color: Colors.blue,
-//               borderRadius: BorderRadius.only(
-//                 topLeft: Radius.circular(10),
-//                 topRight: Radius.circular(10),
-//               )),
-//           height: 110,
-//           child: Image.asset(
-//             'assets/images/mobile.png',
-//             fit: BoxFit.fitHeight,
-//           ),
-//         ),
-//         Container(
-//           decoration: const BoxDecoration(
-//               color: Colors.amberAccent,
-//               borderRadius: BorderRadius.only(
-//                 bottomLeft: Radius.circular(10),
-//                 bottomRight: Radius.circular(10),
-//               )),
-//           // height:90,
-//           child: Padding(
-//             padding: const EdgeInsets.all(Dimensions.d2),
-//             child: Column(
-//               children: const [
-//                 Text(
-//                   "Instant Video Consultation",
-//                   overflow: TextOverflow.visible,
-//                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-//                 ),
-//                 Text(
-//                   "Connect within 60 sec",
-//                   overflow: TextOverflow.visible,
-//                 )
-//               ],
-//             ),
-//           ),
-//         )
-//       ],
-//     ),
-//   );
-// }
+class MenuCard extends StatelessWidget {
+  final DrawerMenuModel contact;
+
+  MenuCard(this.contact);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding:  EdgeInsets.symmetric(horizontal:Dimensions.d3),
+      decoration: const BoxDecoration(
+        border: Border(
+          bottom: BorderSide(
+            color: Colors.grey,
+            width: 0.5,
+          ),
+        ),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            padding:  EdgeInsets.only(top: Dimensions.d4, right: Dimensions.d4, bottom: Dimensions.d4),
+            child: ClipOval(
+              child: Image.network(
+                contact.imageUrl,
+                width: Dimensions.d13,
+                height: Dimensions.d13,
+              ),
+            ),
+          ),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('${contact.Header} ${contact.lastName}'),
+                SizedBox(height: 2),
+                Text('${contact.phone}'),
+              ],
+            ),
+          ),
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(
+                Icons.create,
+                color: Colors.grey[600],
+              ),
+              SizedBox(width: 15.0),
+              Icon(
+                Icons.message,
+                color: Colors.grey[600],
+              ),
+              SizedBox(width:Dimensions.d4),
+              Icon(
+                Icons.call,
+                color: Colors.grey[600],
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}

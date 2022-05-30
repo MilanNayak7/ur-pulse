@@ -1,8 +1,10 @@
+
 import 'package:flutter/material.dart';
 import 'package:ur_pulse_modified/common/app_theme.dart';
 
 import '../common/carousel/carousel.dart';
 import '../common/common_card.dart';
+import '../common/main_drawer/drawer_body.dart';
 import '../data_model/data_model.dart';
 
 class HomePage extends StatelessWidget {
@@ -11,6 +13,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: DrawerBody(),
       appBar: buildAppBar(),
       body: SingleChildScrollView(
         child: Column(
@@ -412,15 +415,15 @@ class HomePage extends StatelessWidget {
   AppBar buildAppBar() {
     return AppBar(
       elevation: 0,
-      backgroundColor: Colors.white,
-      leading: IconButton(
-        icon: Image.asset(
-          'assets/images/menu.png',
-          width: Dimensions.d5,
-          height: Dimensions.d5,
-        ),
-        onPressed: () {},
-      ),
+     backgroundColor: Colors.greenAccent,
+      // leading: IconButton(
+      //   icon: Image.asset(
+      //     'assets/images/menu.png',
+      //     width: Dimensions.d5,
+      //     height: Dimensions.d5,
+      //   ),
+      //   onPressed:(){Scaffold.of(context).openDrawer();},
+      // ),
       actions: <Widget>[
         Padding(
           padding: EdgeInsets.only(top: Dimensions.d3, bottom: Dimensions.d3),

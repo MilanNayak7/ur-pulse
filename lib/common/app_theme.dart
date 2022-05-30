@@ -20,6 +20,7 @@ abstract class Dimensions {
  static double d10 = screenWidth/9.8;
  static double d11 = screenWidth/8.9;
  static double d12 = screenWidth/8.1;
+ static double d13 = screenWidth/7.5;
  static double d15 = screenWidth/6.5;
  static double d20 = screenWidth/4.9;
  static double d25 = screenWidth/3.9;
@@ -34,5 +35,6 @@ abstract class Dimensions {
  // static double d40 = screenWidth/2.45;
  // static double d75 = screenWidth/5.22;
  // static double d95 = screenWidth/4.12;
+ static double d290 = screenWidth/1.35;
   static arbitrary(double value) => value;
 }
