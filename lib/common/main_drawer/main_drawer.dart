@@ -6,6 +6,7 @@ import '../common_card.dart';
 class CustomDrawer extends StatefulWidget {
   const CustomDrawer({Key? key}) : super(key: key);
 
+
   @override
   State<CustomDrawer> createState() => _CustomDrawerState();
 }
@@ -15,7 +16,6 @@ class _CustomDrawerState extends State<CustomDrawer> {
 
   Future<List<DrawerMenuModel>> _getContacts() async {
     List<DrawerMenuModel> contacts = dummyData;
-    // await Future.delayed(Duration(seconds:3));
     return Future.value(contacts);
   }
 
@@ -49,6 +49,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
 
 Widget _buildListView(List<DrawerMenuModel> contacts) {
   return ListView.builder(
+    padding: EdgeInsets.zero,
     physics: NeverScrollableScrollPhysics(),
     scrollDirection: Axis.vertical,
     shrinkWrap: true,

@@ -279,24 +279,17 @@ class MenuCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding:  EdgeInsets.symmetric(horizontal:Dimensions.d3),
-      decoration: const BoxDecoration(
-        border: Border(
-          bottom: BorderSide(
-            color: Colors.grey,
-            width: 0.5,
-          ),
-        ),
-      ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Container(
-            padding:  EdgeInsets.only(top: Dimensions.d4, right: Dimensions.d4, bottom: Dimensions.d4),
-            child: ClipOval(
-              child: Image.network(
+          Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: Container(
+              padding:  EdgeInsets.only(top: Dimensions.d4, right: Dimensions.d4, bottom: Dimensions.d4),
+              child: Image.asset(
                 contact.imageUrl,
-                width: Dimensions.d13,
-                height: Dimensions.d13,
+                width: Dimensions.d7,
+                height: Dimensions.d7,
               ),
             ),
           ),
@@ -304,31 +297,12 @@ class MenuCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('${contact.Header} ${contact.lastName}'),
+                Text('${contact.Header}'),
                 SizedBox(height: 2),
-                Text('${contact.phone}'),
               ],
             ),
           ),
-          Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(
-                Icons.create,
-                color: Colors.grey[600],
-              ),
-              SizedBox(width: 15.0),
-              Icon(
-                Icons.message,
-                color: Colors.grey[600],
-              ),
-              SizedBox(width:Dimensions.d4),
-              Icon(
-                Icons.call,
-                color: Colors.grey[600],
-              ),
-            ],
-          ),
+          Icon(Icons.arrow_right)
         ],
       ),
     );

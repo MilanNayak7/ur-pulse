@@ -16,6 +16,7 @@ class _DrawerBodyState extends State<DrawerBody> {
     return Padding(
       padding: const EdgeInsets.only(left:0),
       child: Container(
+        height: MediaQuery.of(context).size.height,
         width: Dimensions.d290,
         decoration: BoxDecoration(
           color: Colors.white,
@@ -40,7 +41,40 @@ class _DrawerBodyState extends State<DrawerBody> {
                 ),
                 height:110,
               ),
+              Container(
+                height:90,
+                width: MediaQuery.of(context).size.width,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            const Text("Practo"),
+                            const SizedBox(width:8,),
+                            Container(
+                              decoration: BoxDecoration( color: Colors.green,borderRadius:BorderRadius.circular(5)),
+                              child: const Padding(
+                                padding: EdgeInsets.all(4.0),
+                                child: Text("Plus"),
+                              ),
+                            )
+                          ],
+                        ),
+                        SizedBox(height:Dimensions.d2,),
+                        const Text("Health Plan for your Family")
+                      ],
+                    ),
+                    const Icon(Icons.arrow_right)
+                  ],
+                ),
+              ),
+              Divider(thickness:Dimensions.d2,color:Colors.indigo,),
               const CustomDrawer(),
+              Divider(thickness:Dimensions.d2,color:Colors.indigo,)
             ],
           ),
         ),

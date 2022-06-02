@@ -32,80 +32,51 @@ List<CommonCardModel> CommonServiceModelDummyData = [
 ///////////////////////////////////////////////////////
 class DrawerMenuModel {
   final String Header;
-  final String lastName;
   final String imageUrl;
-  final String phone;
 
   DrawerMenuModel({
     required this.Header,
-    required this.lastName,
     required this.imageUrl,
-    required this.phone,
   });
 }
 
 
 List<DrawerMenuModel> dummyData = [
   DrawerMenuModel(
-    Header: 'Bryan',
-    lastName: 'Adams',
-    imageUrl: 'https://picsum.photos/id/1005/100',
-    phone: '+91 98120 43912',
+    Header: 'Appointments',
+    imageUrl: 'assets/drawer/appointment.png',
   ),
   DrawerMenuModel(
-    Header: 'Julia',
-    lastName: 'Roberts',
-    imageUrl: 'https://picsum.photos/id/1012/100',
-    phone: '+91 78230 21385',
+    Header: 'Test Bookings',
+    imageUrl: 'assets/drawer/test.png',
   ),
   DrawerMenuModel(
-    Header: 'Samantha',
-    lastName: 'Drisco',
-    imageUrl: 'https://picsum.photos/id/1011/100',
-    phone: '+91 89067 24129',
+    Header: 'Orders',
+    imageUrl: 'assets/drawer/order.png',
   ),
   DrawerMenuModel(
-    Header: 'Sean',
-    lastName: 'Connery',
-    imageUrl: 'https://picsum.photos/id/1066/100',
-    phone: '+91 92143 79785',
+    Header: 'Consultations',
+    imageUrl: 'assets/drawer/consultation.png',
   ),
   DrawerMenuModel(
-    Header: 'Sean',
-    lastName: 'Connery',
-    imageUrl: 'https://picsum.photos/id/1066/100',
-    phone: '+91 92143 79785',
+    Header: 'My Doctors',
+    imageUrl: 'assets/drawer/doctor.png',
   ),
   DrawerMenuModel(
-    Header: 'Sean',
-    lastName: 'Connery',
-    imageUrl: 'https://picsum.photos/id/1066/100',
-    phone: '+91 92143 79785',
+    Header: 'Medical Records',
+    imageUrl: 'assets/drawer/record.png',
   ),
   DrawerMenuModel(
-    Header: 'Sean',
-    lastName: 'Connery',
-    imageUrl: 'https://picsum.photos/id/1066/100',
-    phone: '+91 92143 79785',
+    Header: 'My Insurance Policy',
+    imageUrl: 'assets/drawer/insurance.png',
   ),
   DrawerMenuModel(
-    Header: 'Sean',
-    lastName: 'Connery',
-    imageUrl: 'https://picsum.photos/id/1066/100',
-    phone: '+91 92143 79785',
+    Header: 'Reminders',
+    imageUrl: 'assets/drawer/notification.png',
   ),
   DrawerMenuModel(
-    Header: 'Sean',
-    lastName: 'Connery',
-    imageUrl: 'https://picsum.photos/id/1066/100',
-    phone: '+91 92143 79785',
+    Header: 'Payments & HealthCash',
+    imageUrl: 'assets/drawer/card.png',
   ),
-  DrawerMenuModel(
-    Header: 'Sean',
-    lastName: 'Connery',
-    imageUrl: 'https://picsum.photos/id/1066/100',
-    phone: '+91 92143 79785',
-  ),
-
 
 ];
