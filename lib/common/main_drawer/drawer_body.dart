@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ur_pulse_modified/common/app_theme.dart';
 
+import '../../data_model/data_model.dart';
 import 'main_drawer.dart';
 
 class DrawerBody extends StatefulWidget {
@@ -73,8 +74,10 @@ class _DrawerBodyState extends State<DrawerBody> {
                 ),
               ),
               Divider(thickness:Dimensions.d2,color:Colors.indigo,),
-              const CustomDrawer(),
-              Divider(thickness:Dimensions.d2,color:Colors.indigo,)
+               //CustomDrawer(dummydata: dummyData,),
+              CustomDrawer(dummydata:dummyData,),
+              Divider(thickness:Dimensions.d2,color:Colors.indigo,),
+              CustomDrawer(dummydata:dummyData2,),
             ],
           ),
         ),

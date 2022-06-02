@@ -80,3 +80,28 @@ List<DrawerMenuModel> dummyData = [
   ),
 
 ];
+
+
+
+List<DrawerMenuModel> dummyData2 = [
+  DrawerMenuModel(
+    Header: 'Read about health',
+    imageUrl: 'assets/drawer/healthcare.png',
+  ),
+  DrawerMenuModel(
+    Header: 'Help Center',
+    imageUrl: 'assets/drawer/help.png',
+  ),
+  DrawerMenuModel(
+    Header: 'Settings',
+    imageUrl: 'assets/drawer/settings.png',
+  ),
+  DrawerMenuModel(
+    Header: 'Like us? Give us 5 stars',
+    imageUrl: 'assets/drawer/like.png',
+  ),
+  DrawerMenuModel(
+    Header: 'Are you a doctor ?',
+    imageUrl: 'assets/drawer/doctor_1.png',
+  ),
+];

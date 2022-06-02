@@ -4,7 +4,8 @@ import '../../data_model/data_model.dart';
 import '../common_card.dart';
 
 class CustomDrawer extends StatefulWidget {
-  const CustomDrawer({Key? key}) : super(key: key);
+  const CustomDrawer({Key? key, required this.dummydata}) : super(key: key);
+  final List<DrawerMenuModel> dummydata;
 
 
   @override
@@ -15,7 +16,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
   late Future<List<DrawerMenuModel>> _contacts;
 
   Future<List<DrawerMenuModel>> _getContacts() async {
-    List<DrawerMenuModel> contacts = dummyData;
+    List<DrawerMenuModel> contacts =widget.dummydata;
     return Future.value(contacts);
   }
 
