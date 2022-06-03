@@ -2,6 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ur_pulse_modified/common/main_drawer/drawer_body.dart';
 
+import 'features_module/appointments.dart';
+import 'features_module/are_you_a_doctor.dart';
+import 'features_module/consultation.dart';
+import 'features_module/help_center.dart';
+import 'features_module/like_us_give_us_5_stars.dart';
+import 'features_module/medical_records.dart';
+import 'features_module/my_doctors.dart';
+import 'features_module/my_insurance_policy.dart';
+import 'features_module/orders.dart';
+import 'features_module/payments_health_cash.dart';
+import 'features_module/read_about_health.dart';
+import 'features_module/reminder.dart';
+import 'features_module/setting.dart';
+import 'features_module/test_booking.dart';
 import 'home/home.dart';
 
 void main() {
@@ -11,7 +25,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
@@ -20,7 +33,21 @@ class MyApp extends StatelessWidget {
       ),
       home: const HomePage(),
       getPages: [
-        GetPage(name:"/drawer", page:()=>const DrawerBody())
+        GetPage(name:"/drawer", page:()=>const DrawerBody()),
+        GetPage(name:"/appointment", page:()=>const Appointment()),
+        GetPage(name:"/testBooking", page:()=>const TestBooking()),
+        GetPage(name:"/orders", page:()=>const Orders()),
+        GetPage(name:"/consultations", page:()=>const Consultation()),
+        GetPage(name:"/myDoctors", page:()=>const MyDoctors()),
+        GetPage(name:"/medicalRecords", page:()=>const MedicalRecords()),
+        GetPage(name:"/myInsurance", page:()=>const Insurance()),
+        GetPage(name:"/reminders", page:()=>const Reminder()),
+        GetPage(name:"/payments", page:()=>const Payment()),
+        GetPage(name:"/readAboutHealth", page:()=>const AboutHealth()),
+        GetPage(name:"/helpCenter", page:()=>const HelpCenter()),
+        GetPage(name:"/setting", page:()=>const Setting()),
+        GetPage(name:"/likeUs", page:()=>const LikeUs()),
+        GetPage(name:"/areYouADoctor", page:()=>const AreYouADoctor()),
       ],
     );
   }

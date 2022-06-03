@@ -6,19 +6,17 @@ class CommonAppBar extends StatelessWidget with PreferredSizeWidget {
   CommonAppBar(
       {Key? key,
       required this.context,
-      required this.actionWidgets,
       required this.addBackButton,
       required this.appBarTitle,
-      required this.preferredSize})
+      })
       : super(key: key);
 
-  List<Widget> actionWidgets = const [];
   bool addBackButton = true;
   BuildContext context;
   String appBarTitle;
 
   @override
-  final Size preferredSize;
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 
   @override
   Widget build(BuildContext context) {

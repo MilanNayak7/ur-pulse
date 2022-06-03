@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ur_pulse_modified/common/theme/app_theme.dart';
 
 import '../../data_model/data_model.dart';
@@ -271,39 +272,76 @@ class PractoDataWidget extends StatelessWidget {
 }
 
 class MenuCard extends StatelessWidget {
-  final DrawerMenuModel contact;
+  final DrawerMenuModel menuModel;
 
-  MenuCard(this.contact);
+  MenuCard(this.menuModel);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding:  EdgeInsets.symmetric(horizontal:Dimensions.d3),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(4.0),
-            child: Container(
-              padding:  EdgeInsets.only(top: Dimensions.d4, right: Dimensions.d4, bottom: Dimensions.d4),
-              child: Image.asset(
-                contact.imageUrl,
-                width: Dimensions.d7,
-                height: Dimensions.d7,
+    return InkWell(
+      onTap: () {
+        switch (menuModel.Header) {
+          case "Appointments":{Get.toNamed('appointment');}
+            break;
+          case "Test Bookings":{Get.toNamed('testBooking');}
+            break;
+          case "Orders":{Get.toNamed('orders');}
+            break;
+          case "Consultations":{Get.toNamed('consultations');}
+            break;
+          case "My Doctors":{Get.toNamed('myDoctors');}
+            break;
+          case "Medical Records":{Get.toNamed('medicalRecords');}
+            break;
+          case "My Insurance Policy":{Get.toNamed('myInsurance');}
+            break;
+          case "Reminders":{Get.toNamed('reminders');}
+            break;
+          case "Payments & HealthCash":{Get.toNamed('payments');}
+            break;
+          case "Read about health":{Get.toNamed('readAboutHealth');}
+            break;
+          case "Help Center":{Get.toNamed('helpCenter');}
+            break;
+          case "Settings":{Get.toNamed('setting');}
+            break;
+          case "Like us? Give us 5 stars":{Get.toNamed('likeUs');}
+            break;
+          case "Are you a doctor ?":{Get.toNamed('areYouADoctor');}
+            break;
+        }
+      },
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: Dimensions.d3),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(4.0),
+              child: Container(
+                padding: EdgeInsets.only(
+                    top: Dimensions.d4,
+                    right: Dimensions.d4,
+                    bottom: Dimensions.d4),
+                child: Image.asset(
+                  menuModel.imageUrl,
+                  width: Dimensions.d7,
+                  height: Dimensions.d7,
+                ),
               ),
             ),
-          ),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('${contact.Header}'),
-                SizedBox(height: 2),
-              ],
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('${menuModel.Header}'),
+                  SizedBox(height: 2),
+                ],
+              ),
             ),
-          ),
-          Icon(Icons.arrow_right)
-        ],
+            Icon(Icons.arrow_right)
+          ],
+        ),
       ),
     );
   }
