@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:ur_pulse_modified/common/theme/app_theme.dart';
 
 import '../common/app_bar/common_app_bar.dart';
+import '../common/card/empty_screen.dart';
+
 class Appointment extends StatefulWidget {
   const Appointment({Key? key}) : super(key: key);
 
@@ -12,12 +15,22 @@ class _AppontmentsState extends State<Appointment> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:CommonAppBar(appBarTitle: 'Appointment', addBackButton: true, context:context,),
+      appBar: CommonAppBar(
+        appBarTitle: 'Appointment',
+        addBackButton: true,
+        context: context,
+      ),
       body: Center(
-        child: Container(
-          child: Text("appointment"),
-
-        ),
+        child: Padding(
+            padding: EdgeInsets.only(left: Dimensions.d3, right: Dimensions.d3),
+            child: EmptyScreen(
+              img: 'assets/drawer/calendar.png',
+              callback: () {},
+              buttonText: 'Book Now',
+              subText:
+                  'Start by looking for doctors near you, \nread patient stories and book appointments',
+              header: "You haven't booked any appointments yet", buttonVisible: true,
+            )),
       ),
     );
   }

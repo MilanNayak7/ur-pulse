@@ -27,8 +27,10 @@ abstract class Dimensions {
  static double d30 = screenWidth/3.2;
  static double d35 = screenWidth/2.8;
  static double d40 = screenWidth/2.4;
+ static double d60 = screenHeight/13.55;
  static double d75 = screenWidth/1.30;
  static double d95 = screenWidth/1.0;
+ static double d300 = screenWidth/1.30;
  // static double d30 = screenWidth/3.2;
  // static double d35 = screenWidth/4.9;
  // static double d20 = screenWidth/4.9;
