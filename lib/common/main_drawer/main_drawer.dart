@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../data_model/data_model.dart';
-import '../common_card.dart';
+import '../card/common_card.dart';
 
 class CustomDrawer extends StatefulWidget {
   const CustomDrawer({Key? key, required this.dummydata}) : super(key: key);
@@ -48,15 +48,15 @@ class _CustomDrawerState extends State<CustomDrawer> {
   }
 }
 
-Widget _buildListView(List<DrawerMenuModel> contacts) {
+Widget _buildListView(List<DrawerMenuModel> drawerTitle) {
   return ListView.builder(
     padding: EdgeInsets.zero,
     physics: NeverScrollableScrollPhysics(),
     scrollDirection: Axis.vertical,
     shrinkWrap: true,
     itemBuilder: (ctx, idx) {
-      return MenuCard(contacts[idx]);
+      return MenuCard(drawerTitle[idx]);
     },
-    itemCount: contacts.length,
+    itemCount: drawerTitle.length,
   );
 }

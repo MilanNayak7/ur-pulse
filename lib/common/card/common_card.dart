@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ur_pulse_modified/common/app_theme.dart';
+import 'package:ur_pulse_modified/common/theme/app_theme.dart';
 
-import '../data_model/data_model.dart';
+import '../../data_model/data_model.dart';
 
 class CommonCard extends StatelessWidget {
   CommonCard(

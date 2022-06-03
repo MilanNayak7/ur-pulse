@@ -1,9 +1,9 @@
-
 import 'package:flutter/material.dart';
-import 'package:ur_pulse_modified/common/app_theme.dart';
+import 'package:ur_pulse_modified/common/theme/app_theme.dart';
+import 'package:ur_pulse_modified/common/app_bar/common_appbar.dart';
 
 import '../common/carousel/carousel.dart';
-import '../common/common_card.dart';
+import '../common/card/common_card.dart';
 import '../common/main_drawer/drawer_body.dart';
 import '../data_model/data_model.dart';
 
@@ -14,7 +14,9 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: DrawerBody(),
-      appBar: buildAppBar(),
+      appBar: commonAppBar(
+        appBarTitle: 'Go to back',
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -415,7 +417,7 @@ class HomePage extends StatelessWidget {
   AppBar buildAppBar() {
     return AppBar(
       elevation: 0,
-     backgroundColor: Colors.greenAccent,
+      backgroundColor: Colors.greenAccent,
       // leading: IconButton(
       //   icon: Image.asset(
       //     'assets/images/menu.png',

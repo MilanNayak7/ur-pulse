@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:get/get.dart';
+import 'package:ur_pulse_modified/common/main_drawer/drawer_body.dart';
 
 import 'home/home.dart';
 
@@ -18,6 +19,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const HomePage(),
+      getPages: [
+        GetPage(name:"/drawer", page:()=>const DrawerBody())
+      ],
     );
   }
 }

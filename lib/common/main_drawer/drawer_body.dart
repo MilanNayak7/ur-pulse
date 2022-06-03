@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ur_pulse_modified/common/app_theme.dart';
+import 'package:ur_pulse_modified/common/theme/app_theme.dart';
 
 import '../../data_model/data_model.dart';
 import 'main_drawer.dart';
@@ -14,11 +14,8 @@ class DrawerBody extends StatefulWidget {
 class _DrawerBodyState extends State<DrawerBody> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left:0),
+    return Drawer(
       child: Container(
-        height: MediaQuery.of(context).size.height,
-        width: Dimensions.d290,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(

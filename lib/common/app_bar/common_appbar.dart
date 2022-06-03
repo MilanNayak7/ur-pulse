@@ -1,32 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:ur_pulse_modified/common/main_drawer/drawer_body.dart';
+import '../theme/app_theme.dart';
 
-import 'app_theme.dart';
-
-class CommonAppBar extends StatefulWidget with PreferredSizeWidget {
-  const CommonAppBar({Key? key}) : super(key: key);
+class commonAppBar extends StatefulWidget with PreferredSizeWidget {
+   commonAppBar({Key? key,required this.appBarTitle}) : super(key: key);
+   String appBarTitle;
   @override
-  State<CommonAppBar> createState() => _CommonAppBarState();
+  State<commonAppBar> createState() => _commonAppBarState();
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
 
-class _CommonAppBarState extends State<CommonAppBar> {
+class _commonAppBarState extends State<commonAppBar> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading: IconButton(
-        icon: Image.asset("assets/images/menu.png",
-            width: Dimensions.d6, height: Dimensions.d6),
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const DrawerBody()),
-          );
-        },
-      ),
-      title: Text("Appbar"),
+      // leading:IconButton(
+      //   icon: Image.asset("assets/images/menu.png",
+      //       width: Dimensions.d6, height: Dimensions.d6),
+      //   onPressed: (){},
+      // ),
+      title: Text(widget.appBarTitle??''),
       elevation: 0,
       backgroundColor: Colors.greenAccent,
       actions: <Widget>[
