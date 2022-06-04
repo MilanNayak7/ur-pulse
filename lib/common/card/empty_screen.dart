@@ -48,7 +48,7 @@ class EmptyScreen extends StatelessWidget {
             Visibility(
               visible: buttonVisible,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed:callback,
                 child: Container(
                   width: Dimensions.d300,
                   height: Dimensions.d60,

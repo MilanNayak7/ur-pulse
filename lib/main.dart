@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ur_pulse_modified/common/main_drawer/drawer_body.dart';
 
+import 'after_empty_screen/symptoms_screen.dart';
 import 'features_module/appointments.dart';
 import 'features_module/are_you_a_doctor.dart';
 import 'features_module/consultation.dart';
@@ -48,6 +49,7 @@ class MyApp extends StatelessWidget {
         GetPage(name:"/setting", page:()=>const Setting()),
         GetPage(name:"/likeUs", page:()=>const LikeUs()),
         GetPage(name:"/areYouADoctor", page:()=>const AreYouADoctor()),
+        GetPage(name:"/symptoms", page:()=> const SymptomsScreen())
       ],
     );
   }
