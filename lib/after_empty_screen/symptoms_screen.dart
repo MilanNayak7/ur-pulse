@@ -73,7 +73,8 @@ class SymptomsScreen extends StatelessWidget {
               ),
               CommonContainerButton(
                 callback: () {
-                  ModalBottomSheet.moreModalBottomSheet(context);
+                  ModalBottomSheet.moreModalBottomSheet(context,
+                      heading: 'Choose from top specialities', listOfData:commonSymptoms);
                 },
                 txt: 'View All Specialities',
               ),
@@ -134,21 +135,46 @@ class SymptomsScreen extends StatelessWidget {
                       fontWeight: FontWeight.w800, fontSize: Dimensions.d5),
                 ),
               ),
-              SizedBox(height:20),
+              SizedBox(height: 20),
               Wrap(
                 spacing: Dimensions.d6,
                 runSpacing: Dimensions.d6,
-                children: List<Widget>.generate(
-                    CommonCardModelDummyData.length, (index) {
-                  return CommonCard(
-                    bottomLeftRadius:Dimensions.d2,
-                    bottomRightRadius: Dimensions.d2,
-                    height: Dimensions.commomcardheight,
-                    commonCardModel: symptomCommonCardModelDummyData[index],
-                    defaultSubTextSize: Dimensions.d3,
-                    defaultTextHeaderSize: Dimensions.d4,
-                    width: Dimensions.commomcardwidth,
-                    //callback: ,
+                children: List<Widget>.generate(symptomCommonCardModelDummyData.length,
+                    (index) {
+                  return InkWell(
+                    onTap: (){
+                      print(symptomCommonCardModelDummyData[index].mainText);
+                      switch(symptomCommonCardModelDummyData[index].mainText){
+                        case 'Skin and hair': {ModalBottomSheet.moreModalBottomSheet(context,
+                            heading: 'Skin & Hair', listOfData:skinAndHair);}
+                          break;
+                        case "Women's health" :{
+                          ModalBottomSheet.moreModalBottomSheet(context,
+                              heading: "Women's health concerns", listOfData:womensHealthConcerns);
+                        }
+                        break;
+                        case "Chronic problems" :{
+                          ModalBottomSheet.moreModalBottomSheet(context,
+                              heading: 'Chronic problems', listOfData:chronicProblems);
+                        }
+                        break;
+                        case "Bone and joint" :{
+                          ModalBottomSheet.moreModalBottomSheet(context,
+                              heading: 'Bone and joint issues', listOfData:boneAndJoint);
+                        }
+                        break;
+                      }
+                    },
+                    child: CommonCard(
+                      bottomLeftRadius: Dimensions.d2,
+                      bottomRightRadius: Dimensions.d2,
+                      height: Dimensions.commomcardheight,
+                      commonCardModel: symptomCommonCardModelDummyData[index],
+                      defaultSubTextSize: Dimensions.d3,
+                      defaultTextHeaderSize: Dimensions.d4,
+                      width: Dimensions.commomcardwidth,
+                      //callback: ,
+                    ),
                   );
                 }),
               ),

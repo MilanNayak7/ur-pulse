@@ -212,5 +212,70 @@ List<DrawerMenuModel> mostCommonSymptoms = [
 ];
 
 
+List<DrawerMenuModel> skinAndHair = [
+  DrawerMenuModel(Header: "Psoriasis/Scaly patches", imageUrl: 'assets/symptoms/coronavirus.png'),
+  DrawerMenuModel(Header: "Skin Allergies", imageUrl: 'assets/symptoms/hair.png'),
+  DrawerMenuModel(
+      Header: "Eczema/itchy red skin", imageUrl: 'assets/symptoms/women.png'),
+  DrawerMenuModel(
+      Header: "Acne", imageUrl: 'assets/symptoms/general.png'),
+  DrawerMenuModel(
+      Header: "Vitiligo/ white patches", imageUrl: 'assets/symptoms/dental.png'),
+  DrawerMenuModel(
+      Header: "Hair loss", imageUrl: 'assets/symptoms/bones.png'),
+  DrawerMenuModel(
+      Header: "Fungal Infection", imageUrl: 'assets/symptoms/headache.png'),
+  DrawerMenuModel(
+      Header: "Dandruff problems", imageUrl: 'assets/symptoms/ear.png'),
+];
 
+List<DrawerMenuModel> womensHealthConcerns = [
+  DrawerMenuModel(Header: "PCOS", imageUrl: 'assets/symptoms/coronavirus.png'),
+  DrawerMenuModel(Header: "Menopause", imageUrl: 'assets/symptoms/hair.png'),
+  DrawerMenuModel(
+      Header: "Ovarian Cysts", imageUrl: 'assets/symptoms/women.png'),
+  DrawerMenuModel(
+      Header: "Pregnancy", imageUrl: 'assets/symptoms/general.png'),
+  DrawerMenuModel(
+      Header: "Infertility", imageUrl: 'assets/symptoms/dental.png'),
+  DrawerMenuModel(
+      Header: "Vaginal Discharge", imageUrl: 'assets/symptoms/bones.png'),
+  DrawerMenuModel(
+      Header: "Irregular Periods", imageUrl: 'assets/symptoms/headache.png'),
+  DrawerMenuModel(
+      Header: "Urinary Tract Infection", imageUrl: 'assets/symptoms/ear.png'),
+];
+
+
+List<DrawerMenuModel> chronicProblems = [
+  DrawerMenuModel(Header: "Diabetes", imageUrl: 'assets/symptoms/coronavirus.png'),
+  DrawerMenuModel(Header: "Cholestrol", imageUrl: 'assets/symptoms/hair.png'),
+  DrawerMenuModel(
+      Header: "Asthma", imageUrl: 'assets/symptoms/women.png'),
+  DrawerMenuModel(
+      Header: "Hypertension", imageUrl: 'assets/symptoms/general.png'),
+  DrawerMenuModel(
+      Header: "Cancer", imageUrl: 'assets/symptoms/dental.png'),
+  DrawerMenuModel(
+      Header: "Insomnia/sleeplessness", imageUrl: 'assets/symptoms/bones.png'),
+  DrawerMenuModel(
+      Header: "Kidney failure", imageUrl: 'assets/symptoms/headache.png'),
+  DrawerMenuModel(
+      Header: "Thyroid", imageUrl: 'assets/symptoms/ear.png'),
+];
+
+List<DrawerMenuModel> boneAndJoint = [
+  DrawerMenuModel(Header: "Knee Pain", imageUrl: 'assets/symptoms/coronavirus.png'),
+  DrawerMenuModel(Header: "Arthritis", imageUrl: 'assets/symptoms/hair.png'),
+  DrawerMenuModel(
+      Header: "Osteoporosis/ week bones", imageUrl: 'assets/symptoms/women.png'),
+  DrawerMenuModel(
+      Header: "Fibromyalgia/Muscle pain", imageUrl: 'assets/symptoms/general.png'),
+  DrawerMenuModel(
+      Header: "Lower Back Pain", imageUrl: 'assets/symptoms/dental.png'),
+  DrawerMenuModel(
+      Header: "Fractures/Sprains", imageUrl: 'assets/symptoms/bones.png'),
+  DrawerMenuModel(
+      Header: "Carpal Tunnel", imageUrl: 'assets/symptoms/headache.png'),
+];
 

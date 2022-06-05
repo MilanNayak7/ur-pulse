@@ -404,9 +404,11 @@ class SymptomsWidgets extends StatelessWidget {
 }
 
 class ModalBottomSheet{
-  // ModalBottomSheet(this.str);
-  // String str;
-  static void moreModalBottomSheet(context){
+  static void moreModalBottomSheet(BuildContext context,{
+    required String heading,
+    required List<DrawerMenuModel> listOfData,
+  }){
+
     Size size = MediaQuery.of(context).size;
     showModalBottomSheet(
         isScrollControlled: true,
@@ -425,7 +427,7 @@ class ModalBottomSheet{
               ),
             ),
             child: Padding(
-              padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+              padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
               child: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment:CrossAxisAlignment.start,
@@ -433,8 +435,8 @@ class ModalBottomSheet{
                     SizedBox(height: Dimensions.d8,),
                     IconButton(onPressed:(){Get.back();}, icon:Icon(Icons.close),),
                     SizedBox(height: Dimensions.d2,),
-                    Text("Chose from top specialities",style:TextStyle(fontWeight:FontWeight.w800,fontSize:Dimensions.d6),),
-                    CustomDrawer(dummydata:commonSymptoms,),
+                    Text(heading,style:TextStyle(fontWeight:FontWeight.w800,fontSize:Dimensions.d6),),
+                    CustomDrawer(dummydata:listOfData,),
                   ],
                 ),
               )
