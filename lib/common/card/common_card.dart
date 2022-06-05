@@ -1,122 +1,135 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_rx/src/rx_typedefs/rx_typedefs.dart';
 import 'package:ur_pulse_modified/common/theme/app_theme.dart';
 
 import '../../data_model/data_model.dart';
+import '../main_drawer/main_drawer.dart';
 
 class CommonCard extends StatelessWidget {
   CommonCard(
       {Key? key,
-      required this.containerColor,
+       this.containerColor,
       required this.commonCardModel,
       required this.height,
       required this.width,
+        this.callback,
+       required this.bottomLeftRadius,
+       required this.bottomRightRadius,
       required this.defaultSubTextSize,
       required this.defaultTextHeaderSize})
       : super(key: key);
 
-  Color containerColor;
+  Color? containerColor;
   double height;
   double width;
   double defaultTextHeaderSize = Dimensions.d4;
   double defaultSubTextSize = Dimensions.d3;
   CommonCardModel commonCardModel;
+  double bottomLeftRadius = 1.0;
+  double bottomRightRadius = 1.0;
+  Callback? callback ;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: height,
-      width: width,
-      child: Column(
-        children: [
-          Flexible(
-            flex: 4,
-            child: Container(
-              height: height,
-              width: width,
-              decoration: BoxDecoration(
-                  color: Colors.amber,
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(Dimensions.d2),
-                      topRight: Radius.circular(Dimensions.d2))),
-              child: Image.asset(commonCardModel.img),
+    return InkWell(
+      onTap: callback,
+      child: Container(
+        height: height,
+        width: width,
+        child: Column(
+          children: [
+            Flexible(
+              flex: 4,
+              child: Container(
+                height: height,
+                width: width,
+                decoration: BoxDecoration(
+                    color: Colors.amber,
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(Dimensions.d2),
+                        bottomLeft:Radius.circular(bottomLeftRadius),
+                        bottomRight:Radius.circular(bottomRightRadius),
+                        topRight: Radius.circular(Dimensions.d2))),
+                child: Image.asset(commonCardModel.img),
+              ),
             ),
-          ),
-          Flexible(
-            flex: 3,
-            child: Container(
-              decoration: BoxDecoration(
-                  color: containerColor,
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(Dimensions.d2),
-                      bottomRight: Radius.circular(Dimensions.d2))),
-              height: height,
-              width: width,
-              child: Padding(
-                padding: EdgeInsets.all(Dimensions.d2),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      commonCardModel.mainText,
-                      overflow: TextOverflow.visible,
-                      style: TextStyle(
-                          fontSize: defaultTextHeaderSize,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      commonCardModel.subText ?? '',
-                      overflow: TextOverflow.visible,
-                      style: TextStyle(fontSize: defaultSubTextSize),
-                    ),
-                  ],
+            Flexible(
+              flex: 3,
+              child: Container(
+                decoration: BoxDecoration(
+                    color: containerColor,
+                    borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(Dimensions.d2),
+                        bottomRight: Radius.circular(Dimensions.d2))),
+                height: height,
+                width: width,
+                child: Padding(
+                  padding: EdgeInsets.all(Dimensions.d2),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        commonCardModel.mainText,
+                        overflow: TextOverflow.visible,
+                        style: TextStyle(
+                            fontSize: defaultTextHeaderSize,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        commonCardModel.subText ?? '',
+                        overflow: TextOverflow.visible,
+                        style: TextStyle(fontSize: defaultSubTextSize),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
 }
 
-class SymptomsWidgets extends StatelessWidget {
-  SymptomsWidgets({Key? key, required this.img, required this.symptoms})
-      : super(key: key);
-  String img;
-  String symptoms;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          width: Dimensions.d15,
-          height: Dimensions.d15,
-          decoration: BoxDecoration(
-            color: Colors.blue,
-            borderRadius: BorderRadius.circular(Dimensions.d12),
-          ),
-          child: Image.asset(img),
-        ),
-        SizedBox(
-          height: Dimensions.d3,
-        ),
-        Container(
-          child: Text(
-            symptoms,
-            maxLines: 3,
-            textAlign: TextAlign.justify,
-            overflow: TextOverflow.visible,
-            style: TextStyle(
-              fontSize: Dimensions.d3,
-            ),
-          ),
-        )
-      ],
-    );
-  }
-}
+// class SymptomsWidgets extends StatelessWidget {
+//   SymptomsWidgets({Key? key, required this.img, required this.symptoms})
+//       : super(key: key);
+//   String img;
+//   String symptoms;
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Column(
+//       children: [
+//         Container(
+//           width: Dimensions.d15,
+//           height: Dimensions.d15,
+//           decoration: BoxDecoration(
+//             color: Colors.blue,
+//             borderRadius: BorderRadius.circular(Dimensions.d12),
+//           ),
+//           child: Image.asset(img),
+//         ),
+//         SizedBox(
+//           height: Dimensions.d3,
+//         ),
+//         Container(
+//           child: Text(
+//             symptoms,
+//             maxLines: 3,
+//             textAlign: TextAlign.justify,
+//             overflow: TextOverflow.visible,
+//             style: TextStyle(
+//               fontSize: Dimensions.d3,
+//             ),
+//           ),
+//         )
+//       ],
+//     );
+//   }
+// }
 
 class MedicalCardWidget extends StatelessWidget {
   const MedicalCardWidget({Key? key}) : super(key: key);
@@ -173,21 +186,25 @@ class MedicalCardWidget extends StatelessWidget {
 }
 
 class CommonContainerButton extends StatelessWidget {
-  CommonContainerButton({Key? key, required this.txt}) : super(key: key);
+  CommonContainerButton({Key? key, required this.txt,required this.callback}) : super(key: key);
+  Callback? callback;
   String txt;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: Dimensions.d11,
-      width: MediaQuery.of(context).size.width,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(Dimensions.d2),
-          border: Border.all(
-            color: Colors.black45,
-            width: 1.5,
-          )),
-      child: Center(child: Text(txt)),
+    return InkWell(
+      onTap: callback,
+      child: Container(
+        height: Dimensions.d11,
+        width: MediaQuery.of(context).size.width,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(Dimensions.d2),
+            border: Border.all(
+              color: Colors.black45,
+              width: 1.5,
+            )),
+        child: Center(child: Text(txt)),
+      ),
     );
   }
 }
@@ -346,6 +363,93 @@ class MenuCard extends StatelessWidget {
     );
   }
 }
+
+
+class SymptomsWidgets extends StatelessWidget {
+  SymptomsWidgets( this.symptomsModel);
+  final DrawerMenuModel symptomsModel;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Container(
+          width: Dimensions.d12,
+          height: Dimensions.d12,
+          decoration: BoxDecoration(
+           // color: Colors.blue,
+            borderRadius: BorderRadius.circular(Dimensions.d6),
+          ),
+          child: Image.asset(symptomsModel.imageUrl,width:10,height:10,fit:BoxFit.scaleDown,),
+        ),
+        SizedBox(
+          height: Dimensions.d3,
+        ),
+        Container(
+          width:Dimensions.d12,
+          child: Text(
+            symptomsModel.Header,
+            overflow: TextOverflow.clip,
+            // maxLines: 3,
+            // textAlign: TextAlign.justify,
+            // overflow: TextOverflow.ellipsis,
+            style: TextStyle(
+              fontSize: Dimensions.d3,
+            ),
+          ),
+        )
+      ],
+    );
+  }
+}
+
+class ModalBottomSheet{
+  // ModalBottomSheet(this.str);
+  // String str;
+  static void moreModalBottomSheet(context){
+    Size size = MediaQuery.of(context).size;
+    showModalBottomSheet(
+        isScrollControlled: true,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(40.0),
+        ),
+        context: context,
+        builder: (BuildContext bc) {
+          return Container(
+            height:650,
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                topRight: Radius.circular(20.0),
+                topLeft: Radius.circular(20.0),
+              ),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment:CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(height: Dimensions.d8,),
+                    IconButton(onPressed:(){Get.back();}, icon:Icon(Icons.close),),
+                    SizedBox(height: Dimensions.d2,),
+                    Text("Chose from top specialities",style:TextStyle(fontWeight:FontWeight.w800,fontSize:Dimensions.d6),),
+                    CustomDrawer(dummydata:commonSymptoms,),
+                  ],
+                ),
+              )
+            ),
+          );
+        });
+  }
+}
+
+
+
+
+
+
+
 
 
 

@@ -19,15 +19,41 @@ List<CommonCardModel> CommonCardModelDummyData = [
       mainText: "Book appointment",
       subText: "Confirmed appointments",
       img: "assets/images/doctor1.png"),
+  CommonCardModel(
+      mainText: "Book appointment",
+      subText: "Confirmed appointments",
+      img: "assets/images/doctor1.png"),
+  CommonCardModel(
+      mainText: "Book appointment",
+      subText: "Confirmed appointments",
+      img: "assets/images/doctor1.png"),
 ];
+
+List<CommonCardModel> symptomCommonCardModelDummyData = [
+  CommonCardModel(
+      mainText: "Skin and hair",
+      subText: "Find doctors for issues like acne, hair fall, and other skin & hair ",
+      img: "assets/images/doctor1.png"),
+  CommonCardModel(
+      mainText: "Women's health",
+      subText: "Find doctors for women's gynaecological issue",
+      img: "assets/images/doctor1.png"),
+  CommonCardModel(
+      mainText: "Chronic problems",
+      subText: "Find doctors who treat diabetes, asthma and other chronic problems",
+      img: "assets/images/doctor1.png"),
+  CommonCardModel(
+      mainText: "Bone and joint",
+      subText: "Find doctors body aches and other bone & joints",
+      img: "assets/images/doctor1.png"),
+];
+
 
 List<CommonCardModel> CommonServiceModelDummyData = [
   CommonCardModel(mainText: "Medicines", img: "assets/images/doctor1.png"),
   CommonCardModel(mainText: "Lab Tests", img: "assets/images/doctor1.png"),
   CommonCardModel(mainText: "Surgeries", img: "assets/images/doctor1.png"),
 ];
-
-
 
 ///////////////////////////////////////////////////////
 class DrawerMenuModel {
@@ -39,7 +65,6 @@ class DrawerMenuModel {
     required this.imageUrl,
   });
 }
-
 
 List<DrawerMenuModel> dummyData = [
   DrawerMenuModel(
@@ -78,10 +103,7 @@ List<DrawerMenuModel> dummyData = [
     Header: 'Payments & HealthCash',
     imageUrl: 'assets/drawer/card.png',
   ),
-
 ];
-
-
 
 List<DrawerMenuModel> dummyData2 = [
   DrawerMenuModel(
@@ -106,30 +128,89 @@ List<DrawerMenuModel> dummyData2 = [
   ),
 ];
 
-// List<DrawerMenuModel> symptoms =[
-//   DrawerMenuModel(Header: "COVID", imageUrl: imageUrl),
-//   DrawerMenuModel(Header: "Skin & Hair", imageUrl: imageUrl),
-//   DrawerMenuModel(Header: "Women's Health", imageUrl: imageUrl),
-//   DrawerMenuModel(Header: "General Physician", imageUrl: imageUrl),
-//   DrawerMenuModel(Header: "Dental Care", imageUrl: imageUrl),
-//   DrawerMenuModel(Header: "Bones & Joints", imageUrl: imageUrl),
-//   DrawerMenuModel(Header: "Mental Wellness", imageUrl: imageUrl),
-//   DrawerMenuModel(Header: "Ear, Nose, Throat", imageUrl: imageUrl),
-//   DrawerMenuModel(Header: "Sexual Health", imageUrl: imageUrl),
-//   DrawerMenuModel(Header: "Child Specialist", imageUrl: imageUrl),
-//   DrawerMenuModel(Header: "Homeopathy", imageUrl: imageUrl),
-//   DrawerMenuModel(Header: "Digestive Issues", imageUrl: imageUrl),
-//   DrawerMenuModel(Header: "Eye Specialist", imageUrl: imageUrl),
-//   DrawerMenuModel(Header: "Heart", imageUrl: imageUrl),
-//   DrawerMenuModel(Header: "Physiotherapy", imageUrl: imageUrl),
-//   DrawerMenuModel(Header: "Brain and Nerves", imageUrl: imageUrl),
-//   DrawerMenuModel(Header: "Lungs and Breathing", imageUrl: imageUrl),
-//   DrawerMenuModel(Header: "Kidney Issues", imageUrl: imageUrl),
-//   DrawerMenuModel(Header: "General Surgery", imageUrl: imageUrl),
-//   DrawerMenuModel(Header: "Diabetes Management", imageUrl: imageUrl),
-//   DrawerMenuModel(Header: "Ayurveda ", imageUrl: imageUrl),
-//   DrawerMenuModel(Header: "Cancer", imageUrl: imageUrl),
-//   DrawerMenuModel(Header: "Urinary Issues", imageUrl: imageUrl),
-//   DrawerMenuModel(Header: "Veterinary", imageUrl: imageUrl),
-//   DrawerMenuModel(Header: "Diet & Nutrition", imageUrl: imageUrl),
-// ];
+List<DrawerMenuModel> commonSymptoms = [
+  DrawerMenuModel(Header: "COVID", imageUrl: 'assets/symptoms/coronavirus.png'),
+  DrawerMenuModel(Header: "Skin & Hair", imageUrl: 'assets/symptoms/hair.png'),
+  DrawerMenuModel(
+      Header: "Women's\nHealth", imageUrl: 'assets/symptoms/women.png'),
+  DrawerMenuModel(
+      Header: "General\nPhysician", imageUrl: 'assets/symptoms/general.png'),
+  DrawerMenuModel(
+      Header: "Dental Care", imageUrl: 'assets/symptoms/dental.png'),
+  DrawerMenuModel(
+      Header: "Bones &\nJoints", imageUrl: 'assets/symptoms/bones.png'),
+  DrawerMenuModel(
+      Header: "Mental\nWellness", imageUrl: 'assets/symptoms/headache.png'),
+  DrawerMenuModel(
+      Header: "Ear,\nNose, Throat", imageUrl: 'assets/symptoms/ear.png'),
+  DrawerMenuModel(
+      Header: "Sexual Health", imageUrl: 'assets/symptoms/sextual.png'),
+  DrawerMenuModel(
+      Header: "Child \nSpecialist", imageUrl: 'assets/symptoms/child.png'),
+  DrawerMenuModel(
+      Header: "Homeopathy", imageUrl: 'assets/symptoms/medicine.png'),
+  DrawerMenuModel(
+      Header: "Digestive \nIssues", imageUrl: 'assets/symptoms/digestive.png'),
+  DrawerMenuModel(
+      Header: "Eye \nSpecialist", imageUrl: 'assets/symptoms/digestive.png'),
+  DrawerMenuModel(Header: "Heart", imageUrl: 'assets/symptoms/heart.png'),
+  DrawerMenuModel(
+      Header: "Physiotherapy", imageUrl: 'assets/symptoms/physiotherapy.png'),
+  DrawerMenuModel(
+      Header: "Brain \nand Nerves", imageUrl: 'assets/symptoms/brain.png'),
+  DrawerMenuModel(
+      Header: "Lungs \nand Breathing", imageUrl: 'assets/symptoms/brain.png'),
+  DrawerMenuModel(
+      Header: "Kidney Issues", imageUrl: 'assets/symptoms/kidney.png'),
+  DrawerMenuModel(
+      Header: "General Surgery", imageUrl: 'assets/symptoms/surgery.png'),
+  DrawerMenuModel(
+      Header: "Diabetes \nManagement", imageUrl: 'assets/symptoms/surgery.png'),
+  DrawerMenuModel(Header: "Ayurveda ", imageUrl: 'assets/symptoms/surgery.png'),
+  DrawerMenuModel(Header: "Cancer", imageUrl: 'assets/symptoms/surgery.png'),
+  DrawerMenuModel(Header: "Urinary \nIssues", imageUrl: 'assets/symptoms/surgery.png'),
+  DrawerMenuModel(Header: "Veterinary", imageUrl: 'assets/symptoms/surgery.png'),
+  DrawerMenuModel(
+      Header: "Diet & \nNutrition", imageUrl: 'assets/symptoms/surgery.png'),
+];
+
+
+
+List<DrawerMenuModel> surgeriesSymptoms = [
+  DrawerMenuModel(Header: "Piles\n/Hemorrhoids", imageUrl: 'assets/symptoms/coronavirus.png'),
+  DrawerMenuModel(Header: "Hernia", imageUrl: 'assets/symptoms/hair.png'),
+  DrawerMenuModel(
+      Header: "Appendicitis", imageUrl: 'assets/symptoms/women.png'),
+  DrawerMenuModel(
+      Header: "AnalFissure", imageUrl: 'assets/symptoms/general.png'),
+  DrawerMenuModel(
+      Header: "Varicose \nVein", imageUrl: 'assets/symptoms/dental.png'),
+  DrawerMenuModel(
+      Header: "Kidney \nStone", imageUrl: 'assets/symptoms/bones.png'),
+  DrawerMenuModel(
+      Header: "Gall stones", imageUrl: 'assets/symptoms/headache.png'),
+  DrawerMenuModel(
+      Header: "Circumcision", imageUrl: 'assets/symptoms/ear.png'),
+];
+
+
+List<DrawerMenuModel> mostCommonSymptoms = [
+  DrawerMenuModel(Header: "COVID", imageUrl: 'assets/symptoms/coronavirus.png'),
+  DrawerMenuModel(Header: "Stomach Pain", imageUrl: 'assets/symptoms/hair.png'),
+  DrawerMenuModel(
+      Header: "Headache", imageUrl: 'assets/symptoms/women.png'),
+  DrawerMenuModel(
+      Header: "Sinusitis", imageUrl: 'assets/symptoms/general.png'),
+  DrawerMenuModel(
+      Header: "Vertigo", imageUrl: 'assets/symptoms/dental.png'),
+  DrawerMenuModel(
+      Header: "Cold & Cough", imageUrl: 'assets/symptoms/bones.png'),
+  DrawerMenuModel(
+      Header: "Fever", imageUrl: 'assets/symptoms/headache.png'),
+  DrawerMenuModel(
+      Header: "Constipation", imageUrl: 'assets/symptoms/ear.png'),
+];
+
+
+
+

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:ur_pulse_modified/common/main_drawer/main_drawer2.dart';
 import 'package:ur_pulse_modified/common/theme/app_theme.dart';
 import 'package:ur_pulse_modified/common/app_bar/common_appbar.dart';
 
 import '../common/carousel/carousel.dart';
 import '../common/card/common_card.dart';
 import '../common/main_drawer/drawer_body.dart';
+import '../common/main_drawer/main_drawer.dart';
 import '../data_model/data_model.dart';
 
 class HomePage extends StatelessWidget {
@@ -39,8 +41,7 @@ class HomePage extends StatelessWidget {
                   Wrap(
                     spacing: Dimensions.d6,
                     runSpacing: Dimensions.d6,
-                    children: List<Widget>.generate(
-                        CommonCardModelDummyData.length, (index) {
+                    children: List<Widget>.generate(2, (index) {
                       return CommonCard(
                         containerColor: Colors.blue,
                         height: Dimensions.commomcardheight,
@@ -48,6 +49,8 @@ class HomePage extends StatelessWidget {
                         defaultSubTextSize: Dimensions.d3,
                         defaultTextHeaderSize: Dimensions.d4,
                         width: Dimensions.commomcardwidth,
+                        bottomRightRadius: 0.0,
+                        bottomLeftRadius: 0.0,
                       );
                     }),
                   ),
@@ -58,14 +61,19 @@ class HomePage extends StatelessWidget {
                     spacing: Dimensions.d5,
                     runSpacing: Dimensions.d5,
                     children: List<Widget>.generate(
-                        CommonServiceModelDummyData.length,
-                        (index) => CommonCard(
-                            containerColor: Colors.blue,
-                            commonCardModel: CommonServiceModelDummyData[index],
-                            height: Dimensions.d30,
-                            width: Dimensions.d25,
-                            defaultSubTextSize: Dimensions.d3,
-                            defaultTextHeaderSize: Dimensions.d4)),
+                      CommonServiceModelDummyData.length,
+                      (index) => CommonCard(
+                          containerColor: Colors.blue,
+                          commonCardModel: CommonServiceModelDummyData[index],
+                          height: Dimensions.d30,
+                          width: Dimensions.d25,
+                          defaultSubTextSize: Dimensions.d3,
+                          defaultTextHeaderSize: Dimensions.d4,
+                        bottomRightRadius: 0.0,
+                        bottomLeftRadius: 0.0,
+                      ),
+
+                    ),
                   ),
                 ],
               ),
@@ -142,49 +150,18 @@ class HomePage extends StatelessWidget {
                     height: Dimensions.d4,
                   ),
                   Wrap(
-                    //direction: Axis.horizontal,
                     spacing: Dimensions.d8,
-                    runSpacing: Dimensions.d5,
-                    children: [
-                      SymptomsWidgets(
-                        img: '',
-                        symptoms: 'Fever',
-                      ),
-                      SymptomsWidgets(
-                        img: '',
-                        symptoms: 'Toothache',
-                      ),
-                      SymptomsWidgets(
-                        img: '',
-                        symptoms: 'Pregnancy \nIssues',
-                      ),
-                      SymptomsWidgets(
-                        img: '',
-                        symptoms: 'Pimples &\n Acne',
-                      ),
-                      SymptomsWidgets(
-                        img: '',
-                        symptoms: 'Cough In\n Children',
-                      ),
-                      SymptomsWidgets(
-                        img: '',
-                        symptoms: 'Flu',
-                      ),
-                      SymptomsWidgets(
-                        img: '',
-                        symptoms: 'Ear Pain',
-                      ),
-                      SymptomsWidgets(
-                        img: '',
-                        symptoms: 'Breathing \nProblems',
-                      ),
-                    ],
+                    runSpacing: Dimensions.d4,
+                    children: List<Widget>.generate(8, (index) {
+                      return SymptomsWidgets(commonSymptoms[index]);
+                    }),
                   ),
                   SizedBox(
                     height: Dimensions.d6,
                   ),
                   CommonContainerButton(
                     txt: 'View All Symptoms',
+                    callback: () {},
                   ),
                   SizedBox(
                     height: Dimensions.d10,
@@ -225,6 +202,7 @@ class HomePage extends StatelessWidget {
                   ),
                   CommonContainerButton(
                     txt: 'See All Hospitals',
+                    callback: () {},
                   ),
                   SizedBox(
                     height: Dimensions.d20,
@@ -261,7 +239,10 @@ class HomePage extends StatelessWidget {
                   SizedBox(
                     height: Dimensions.d8,
                   ),
-                  CommonContainerButton(txt: 'View More Products'),
+                  CommonContainerButton(
+                    txt: 'View More Products',
+                    callback: () {},
+                  ),
                   SizedBox(
                     height: Dimensions.d8,
                   ),
@@ -418,14 +399,6 @@ class HomePage extends StatelessWidget {
     return AppBar(
       elevation: 0,
       backgroundColor: Colors.greenAccent,
-      // leading: IconButton(
-      //   icon: Image.asset(
-      //     'assets/images/menu.png',
-      //     width: Dimensions.d5,
-      //     height: Dimensions.d5,
-      //   ),
-      //   onPressed:(){Scaffold.of(context).openDrawer();},
-      // ),
       actions: <Widget>[
         Padding(
           padding: EdgeInsets.only(top: Dimensions.d3, bottom: Dimensions.d3),
