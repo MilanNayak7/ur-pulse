@@ -9,13 +9,13 @@ import '../main_drawer/main_drawer.dart';
 class CommonCard extends StatelessWidget {
   CommonCard(
       {Key? key,
-       this.containerColor,
+      this.containerColor,
       required this.commonCardModel,
       required this.height,
       required this.width,
-        this.callback,
-       required this.bottomLeftRadius,
-       required this.bottomRightRadius,
+      this.callback,
+      required this.bottomLeftRadius,
+      required this.bottomRightRadius,
       required this.defaultSubTextSize,
       required this.defaultTextHeaderSize})
       : super(key: key);
@@ -28,7 +28,7 @@ class CommonCard extends StatelessWidget {
   CommonCardModel commonCardModel;
   double bottomLeftRadius = 1.0;
   double bottomRightRadius = 1.0;
-  Callback? callback ;
+  Callback? callback;
 
   @override
   Widget build(BuildContext context) {
@@ -48,8 +48,8 @@ class CommonCard extends StatelessWidget {
                     color: Colors.amber,
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(Dimensions.d2),
-                        bottomLeft:Radius.circular(bottomLeftRadius),
-                        bottomRight:Radius.circular(bottomRightRadius),
+                        bottomLeft: Radius.circular(bottomLeftRadius),
+                        bottomRight: Radius.circular(bottomRightRadius),
                         topRight: Radius.circular(Dimensions.d2))),
                 child: Image.asset(commonCardModel.img),
               ),
@@ -186,9 +186,12 @@ class MedicalCardWidget extends StatelessWidget {
 }
 
 class CommonContainerButton extends StatelessWidget {
-  CommonContainerButton({Key? key, required this.txt,required this.callback}) : super(key: key);
+  CommonContainerButton(
+      {Key? key, this.icon, required this.txt, required this.callback})
+      : super(key: key);
   Callback? callback;
   String txt;
+  IconData? icon;
 
   @override
   Widget build(BuildContext context) {
@@ -198,12 +201,21 @@ class CommonContainerButton extends StatelessWidget {
         height: Dimensions.d11,
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(Dimensions.d2),
-            border: Border.all(
-              color: Colors.black45,
-              width: 1.5,
-            )),
-        child: Center(child: Text(txt)),
+          borderRadius: BorderRadius.circular(Dimensions.d2),
+          border: Border.all(
+            color: Colors.black45,
+            width: 1.5,
+          ),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Flexible(fit: FlexFit.loose, child: Icon(icon)),
+            Center(
+              child: Flexible(fit: FlexFit.loose, child: Text(txt)),
+            )
+          ],
+        ),
       ),
     );
   }
@@ -298,33 +310,75 @@ class MenuCard extends StatelessWidget {
     return InkWell(
       onTap: () {
         switch (menuModel.Header) {
-          case "Appointments":{Get.toNamed('appointment');}
+          case "Appointments":
+            {
+              Get.toNamed('appointment');
+            }
             break;
-          case "Test Bookings":{Get.toNamed('testBooking');}
+          case "Test Bookings":
+            {
+              Get.toNamed('testBooking');
+            }
             break;
-          case "Orders":{Get.toNamed('orders');}
+          case "Orders":
+            {
+              Get.toNamed('orders');
+            }
             break;
-          case "Consultations":{Get.toNamed('consultations');}
+          case "Consultations":
+            {
+              Get.toNamed('consultations');
+            }
             break;
-          case "My Doctors":{Get.toNamed('myDoctors');}
+          case "My Doctors":
+            {
+              Get.toNamed('myDoctors');
+            }
             break;
-          case "Medical Records":{Get.toNamed('medicalRecords');}
+          case "Medical Records":
+            {
+              Get.toNamed('medicalRecords');
+            }
             break;
-          case "My Insurance Policy":{Get.toNamed('myInsurance');}
+          case "My Insurance Policy":
+            {
+              Get.toNamed('myInsurance');
+            }
             break;
-          case "Reminders":{Get.toNamed('reminders');}
+          case "Reminders":
+            {
+              Get.toNamed('reminders');
+            }
             break;
-          case "Payments & HealthCash":{Get.toNamed('payments');}
+          case "Payments & HealthCash":
+            {
+              Get.toNamed('payments');
+            }
             break;
-          case "Read about health":{Get.toNamed('readAboutHealth');}
+          case "Read about health":
+            {
+              Get.toNamed('readAboutHealth');
+            }
             break;
-          case "Help Center":{Get.toNamed('helpCenter');}
+          case "Help Center":
+            {
+              Get.toNamed('helpCenter');
+            }
             break;
-          case "Settings":{Get.toNamed('setting');}
+          case "Settings":
+            {
+              Get.toNamed('setting');
+            }
             break;
-          case "Like us? Give us 5 stars":{Get.toNamed('likeUs');}
+          case "Like us? Give us 5 stars":
+            {
+              Get.toNamed('likeUs');
+            }
             break;
-          case "Are you a doctor ?":{Get.toNamed('areYouADoctor');}
+          case "Are you a doctor ?":
+            {
+              Get.toNamed('areYouADoctor');
+            }
             break;
         }
       },
@@ -364,51 +418,55 @@ class MenuCard extends StatelessWidget {
   }
 }
 
-
 class SymptomsWidgets extends StatelessWidget {
-  SymptomsWidgets( this.symptomsModel);
+  SymptomsWidgets(this.symptomsModel);
   final DrawerMenuModel symptomsModel;
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          width: Dimensions.d12,
-          height: Dimensions.d12,
-          decoration: BoxDecoration(
-           // color: Colors.blue,
-            borderRadius: BorderRadius.circular(Dimensions.d6),
-          ),
-          child: Image.asset(symptomsModel.imageUrl,width:10,height:10,fit:BoxFit.scaleDown,),
-        ),
-        SizedBox(
-          height: Dimensions.d3,
-        ),
-        Container(
-          width:Dimensions.d12,
-          child: Text(
-            symptomsModel.Header,
-            overflow: TextOverflow.clip,
-            // maxLines: 3,
-            // textAlign: TextAlign.justify,
-            // overflow: TextOverflow.ellipsis,
-            style: TextStyle(
-              fontSize: Dimensions.d3,
+    return InkWell(
+      onTap: (){Get.toNamed('/doctorList');},
+      child: Column(
+        children: [
+          Container(
+            width: Dimensions.d12,
+            height: Dimensions.d12,
+            decoration: BoxDecoration(
+              // color: Colors.blue,
+              borderRadius: BorderRadius.circular(Dimensions.d6),
+            ),
+            child: Image.asset(
+              symptomsModel.imageUrl,
+              width: 10,
+              height: 10,
+              fit: BoxFit.scaleDown,
             ),
           ),
-        )
-      ],
+          SizedBox(
+            height: Dimensions.d3,
+          ),
+          Container(
+            width: Dimensions.d12,
+            child: Text(
+              symptomsModel.Header,
+              overflow: TextOverflow.clip,
+              style: TextStyle(
+                fontSize: Dimensions.d3,
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 }
 
-class ModalBottomSheet{
-  static void moreModalBottomSheet(BuildContext context,{
+class ModalBottomSheet {
+  static void moreModalBottomSheet(
+    BuildContext context, {
     required String heading,
     required List<DrawerMenuModel> listOfData,
-  }){
-
+  }) {
     Size size = MediaQuery.of(context).size;
     showModalBottomSheet(
         isScrollControlled: true,
@@ -418,7 +476,7 @@ class ModalBottomSheet{
         context: context,
         builder: (BuildContext bc) {
           return Container(
-            height:650,
+            height: 650,
             decoration: const BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(
@@ -427,32 +485,56 @@ class ModalBottomSheet{
               ),
             ),
             child: Padding(
-              padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
-              child: SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment:CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(height: Dimensions.d8,),
-                    IconButton(onPressed:(){Get.back();}, icon:Icon(Icons.close),),
-                    SizedBox(height: Dimensions.d2,),
-                    Text(heading,style:TextStyle(fontWeight:FontWeight.w800,fontSize:Dimensions.d6),),
-                    CustomDrawer(dummydata:listOfData,),
-                  ],
-                ),
-              )
-            ),
+                padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                        height: Dimensions.d8,
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          Get.back();
+                        },
+                        icon: Icon(Icons.close),
+                      ),
+                      SizedBox(
+                        height: Dimensions.d2,
+                      ),
+                      Text(
+                        heading,
+                        style: TextStyle(
+                            fontWeight: FontWeight.w800,
+                            fontSize: Dimensions.d6),
+                      ),
+                      CustomDrawer(
+                        dummydata: listOfData,
+                      ),
+                    ],
+                  ),
+                )),
           );
         });
   }
 }
 
+class ConsultationTypeWidget extends StatelessWidget {
+   ConsultationTypeWidget({Key? key,required this.consultationType}) : super(key: key);
+   ConsultationType consultationType;
 
-
-
-
-
-
-
-
-
+  @override
+  Widget build(BuildContext context) {
+    return  InkWell(
+      onTap:(){},
+      child: Container(
+        decoration:BoxDecoration(border:Border.all(color:Colors.black),borderRadius:BorderRadius.circular(Dimensions.d5)),
+        child: Padding(
+          padding:  EdgeInsets.all(Dimensions.d3),
+          child: Text(consultationType.type,style:TextStyle(fontSize:Dimensions.d4),),
+        ),
+      ),
+    );
+  }
+}
 

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ur_pulse_modified/after_empty_screen/consult_a_doctor.dart';
+import 'package:ur_pulse_modified/after_empty_screen/doctor_list_screen.dart';
 import 'package:ur_pulse_modified/common/main_drawer/drawer_body.dart';
 
 import 'after_empty_screen/symptoms_screen.dart';
@@ -49,7 +51,9 @@ class MyApp extends StatelessWidget {
         GetPage(name:"/setting", page:()=>const Setting()),
         GetPage(name:"/likeUs", page:()=>const LikeUs()),
         GetPage(name:"/areYouADoctor", page:()=>const AreYouADoctor()),
-        GetPage(name:"/symptoms", page:()=> const SymptomsScreen())
+        GetPage(name:"/symptoms", page:()=> const SymptomsScreen()),
+        GetPage(name:"/doctorList", page:()=> const DoctorListScreen()),
+        GetPage(name:"/consultADoctor", page:()=> const ConsultADoctor())
       ],
     );
   }

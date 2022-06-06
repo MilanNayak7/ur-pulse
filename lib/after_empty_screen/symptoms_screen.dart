@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:ur_pulse_modified/common/app_bar/common_app_bar.dart';
 import 'package:ur_pulse_modified/common/theme/app_theme.dart';
 
@@ -26,26 +28,10 @@ class SymptomsScreen extends StatelessWidget {
               SizedBox(
                 height: Dimensions.d8,
               ),
-              Container(
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.brown),
-                    borderRadius: BorderRadius.circular(Dimensions.d2),
-                    color: Colors.white),
-                height: Dimensions.d12,
-                width: MediaQuery.of(context).size.width,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      width: Dimensions.d4,
-                    ),
-                    const Icon(Icons.search),
-                    SizedBox(
-                      width: Dimensions.d4,
-                    ),
-                    const Text("Search Symptoms/Specialities")
-                  ],
-                ),
+              CommonContainerButton(
+                callback: () {},
+                txt: 'Search Symptoms/ Specialities',
+                icon: Icons.search,
               ),
               SizedBox(
                 height: Dimensions.d8,
@@ -74,7 +60,8 @@ class SymptomsScreen extends StatelessWidget {
               CommonContainerButton(
                 callback: () {
                   ModalBottomSheet.moreModalBottomSheet(context,
-                      heading: 'Choose from top specialities', listOfData:commonSymptoms);
+                      heading: 'Choose from top specialities',
+                      listOfData: commonSymptoms);
                 },
                 txt: 'View All Specialities',
               ),
@@ -139,30 +126,40 @@ class SymptomsScreen extends StatelessWidget {
               Wrap(
                 spacing: Dimensions.d6,
                 runSpacing: Dimensions.d6,
-                children: List<Widget>.generate(symptomCommonCardModelDummyData.length,
-                    (index) {
+                children: List<Widget>.generate(
+                    symptomCommonCardModelDummyData.length, (index) {
                   return InkWell(
-                    onTap: (){
+                    onTap: () {
                       print(symptomCommonCardModelDummyData[index].mainText);
-                      switch(symptomCommonCardModelDummyData[index].mainText){
-                        case 'Skin and hair': {ModalBottomSheet.moreModalBottomSheet(context,
-                            heading: 'Skin & Hair', listOfData:skinAndHair);}
+                      switch (symptomCommonCardModelDummyData[index].mainText) {
+                        case 'Skin and hair':
+                          {
+                            ModalBottomSheet.moreModalBottomSheet(context,
+                                heading: 'Skin & Hair',
+                                listOfData: skinAndHair);
+                          }
                           break;
-                        case "Women's health" :{
-                          ModalBottomSheet.moreModalBottomSheet(context,
-                              heading: "Women's health concerns", listOfData:womensHealthConcerns);
-                        }
-                        break;
-                        case "Chronic problems" :{
-                          ModalBottomSheet.moreModalBottomSheet(context,
-                              heading: 'Chronic problems', listOfData:chronicProblems);
-                        }
-                        break;
-                        case "Bone and joint" :{
-                          ModalBottomSheet.moreModalBottomSheet(context,
-                              heading: 'Bone and joint issues', listOfData:boneAndJoint);
-                        }
-                        break;
+                        case "Women's health":
+                          {
+                            ModalBottomSheet.moreModalBottomSheet(context,
+                                heading: "Women's health concerns",
+                                listOfData: womensHealthConcerns);
+                          }
+                          break;
+                        case "Chronic problems":
+                          {
+                            ModalBottomSheet.moreModalBottomSheet(context,
+                                heading: 'Chronic problems',
+                                listOfData: chronicProblems);
+                          }
+                          break;
+                        case "Bone and joint":
+                          {
+                            ModalBottomSheet.moreModalBottomSheet(context,
+                                heading: 'Bone and joint issues',
+                                listOfData: boneAndJoint);
+                          }
+                          break;
                       }
                     },
                     child: CommonCard(
