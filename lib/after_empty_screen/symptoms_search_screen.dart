@@ -10,7 +10,7 @@ class SymptomsSearch extends StatelessWidget {
       appBar: CommonAppBar(
         context: context,
         addBackButton: true,
-        appBarTitle: 'Find Your Health Concern',
+        appBarTitle: 'Find Your Health Concern', actionWidgets: const [],
       ),
       body: Container(),
     );

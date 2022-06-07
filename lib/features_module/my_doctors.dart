@@ -12,7 +12,7 @@ class MyDoctors extends StatelessWidget {
       appBar: CommonAppBar(
         context: context,
         appBarTitle: 'My Doctor',
-        addBackButton: true,
+        addBackButton: true, actionWidgets: const [],
       ),
       body: Container(
         child: Center(

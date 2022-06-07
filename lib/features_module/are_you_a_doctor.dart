@@ -7,7 +7,7 @@ class AreYouADoctor extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CommonAppBar(context: context, appBarTitle: 'Are You Doctor', addBackButton: true,),
+      appBar: CommonAppBar(context: context, appBarTitle: 'Are You Doctor', addBackButton: true, actionWidgets: const [],),
       body: Container(
         child: Center(child: Text("Are you doctor")),
       ),

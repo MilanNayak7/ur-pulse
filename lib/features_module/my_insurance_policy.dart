@@ -12,7 +12,7 @@ class Insurance extends StatelessWidget {
       appBar: CommonAppBar(
         context: context,
         appBarTitle: 'Insurance',
-        addBackButton: true,
+        addBackButton: true, actionWidgets: const [],
       ),
       body: Container(
         child: Center(

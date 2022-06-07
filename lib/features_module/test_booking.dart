@@ -9,7 +9,7 @@ class TestBooking extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CommonAppBar(
-          addBackButton: true, appBarTitle: 'Test Booking', context: context),
+          addBackButton: true, appBarTitle: 'Test Booking', context: context, actionWidgets: const [],),
       body: Center(
         child: EmptyScreen(
           callback: () {},

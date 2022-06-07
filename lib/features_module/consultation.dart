@@ -13,7 +13,7 @@ class Consultation extends StatelessWidget {
       appBar: CommonAppBar(
         context: context,
         appBarTitle: 'Consultation',
-        addBackButton: true,
+        addBackButton: true, actionWidgets: const [],
       ),
       body: Container(
         child: Center(

@@ -8,7 +8,7 @@ class Reminder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CommonAppBar(appBarTitle: 'Reminder', addBackButton: true, context: context,),
+      appBar: CommonAppBar(appBarTitle: 'Reminder', addBackButton: true, context: context, actionWidgets: const [],),
       body: Container(
         child: Center(
           child: EmptyScreen(

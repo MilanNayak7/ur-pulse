@@ -14,7 +14,7 @@ class DoctorDetail extends StatelessWidget {
       appBar: CommonAppBar(
         context: context,
         appBarTitle: 'Doctor Detail',
-        addBackButton: true,
+        addBackButton: true, actionWidgets: const [],
       ),
       body: SingleChildScrollView(
         child: Column(

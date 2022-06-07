@@ -14,7 +14,7 @@ class SymptomsScreen extends StatelessWidget {
       appBar: CommonAppBar(
         appBarTitle: 'Find Your Health Concern',
         addBackButton: true,
-        context: context,
+        context: context, actionWidgets: const [],
       ),
       body: SingleChildScrollView(
         child: Padding(

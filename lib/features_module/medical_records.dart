@@ -12,7 +12,7 @@ class MedicalRecords extends StatelessWidget {
       appBar: CommonAppBar(
         context: context,
         appBarTitle: 'Medical Records',
-        addBackButton: true,
+        addBackButton: true, actionWidgets: const [],
       ),
       body: Container(
         child: Center(

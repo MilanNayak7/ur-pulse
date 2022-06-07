@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:ur_pulse_modified/common/card/empty_screen.dart';
 
 import '../common/app_bar/common_app_bar.dart';
@@ -12,7 +14,7 @@ class Orders extends StatelessWidget {
       appBar: CommonAppBar(
         context: context,
         appBarTitle: 'Orders',
-        addBackButton: true,
+        addBackButton: true, actionWidgets: const [],
       ),
       body: Container(
         child: Center(
@@ -20,7 +22,7 @@ class Orders extends StatelessWidget {
             buttonText: 'Order medicines',
             subText: 'Place your first order now',
             header: 'No orders placed yet',
-            callback: () {},
+            callback: () {Get.toNamed('/orderScreen');},
             img: 'assets/drawer/delivery.png', buttonVisible: true,
           ),
         ),

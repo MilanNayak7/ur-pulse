@@ -19,7 +19,7 @@ class _AppontmentsState extends State<Appointment> {
       appBar: CommonAppBar(
         appBarTitle: 'Appointment',
         addBackButton: true,
-        context: context,
+        context: context, actionWidgets: const [],
       ),
       body: Center(
         child: Padding(

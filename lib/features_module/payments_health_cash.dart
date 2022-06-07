@@ -8,7 +8,7 @@ class Payment extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CommonAppBar(context: context, appBarTitle: 'Payment', addBackButton: true,),
+      appBar: CommonAppBar(context: context, appBarTitle: 'Payment', addBackButton: true, actionWidgets: const [],),
       body: Container(
         child: Center(child: Text("payment")),
       ),

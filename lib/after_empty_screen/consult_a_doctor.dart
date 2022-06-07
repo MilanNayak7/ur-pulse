@@ -10,7 +10,7 @@ class ConsultADoctor extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CommonAppBar(context: context, addBackButton: true, appBarTitle: 'Consult a Doctor',),
+      appBar: CommonAppBar(context: context, addBackButton: true, appBarTitle: 'Consult a Doctor', actionWidgets: const [],),
       body: Container(
           child: Padding(
             padding: EdgeInsets.only(left:Dimensions.d5,right:Dimensions.d5,top:Dimensions.d5),

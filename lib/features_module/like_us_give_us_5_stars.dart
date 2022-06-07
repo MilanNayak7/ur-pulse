@@ -8,7 +8,7 @@ class LikeUs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CommonAppBar(context: context, appBarTitle: 'Like Us', addBackButton: true,),
+      appBar: CommonAppBar(context: context, appBarTitle: 'Like Us', addBackButton: true, actionWidgets: const [],),
       body: Container(
         child: Center(child: Text("LikeUs")),
       ),

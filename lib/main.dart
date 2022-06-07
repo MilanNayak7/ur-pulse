@@ -6,6 +6,7 @@ import 'package:ur_pulse_modified/common/main_drawer/drawer_body.dart';
 
 import 'after_empty_screen/appointment_conformation_screen.dart';
 import 'after_empty_screen/doctor_detail.dart';
+import 'after_empty_screen/order_screen.dart';
 import 'after_empty_screen/symptoms_screen.dart';
 import 'features_module/appointments.dart';
 import 'features_module/are_you_a_doctor.dart';
@@ -58,6 +59,7 @@ class MyApp extends StatelessWidget {
         GetPage(name:"/consultADoctor", page:()=> const ConsultADoctor()),
         GetPage(name:"/doctorDetail", page:()=> const DoctorDetail()),
         GetPage(name:"/appointmentConform", page:()=> const AppointmentConformationScreen()),
+        GetPage(name:"/orderScreen", page:()=> const OrderScreen()),
       ],
     );
   }

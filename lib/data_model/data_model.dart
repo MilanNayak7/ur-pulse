@@ -1,3 +1,8 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_rx/src/rx_typedefs/rx_typedefs.dart';
+
 class CommonCardModel {
   final String mainText;
   String? subText;
@@ -379,3 +384,4 @@ List<TimeModel> timedata = [
   TimeModel(time:'11:00', hour: 'AM'),
 
 ];
+

@@ -14,7 +14,7 @@ class DoctorListScreen extends StatelessWidget {
       appBar: CommonAppBar(
         context: context,
         addBackButton: true,
-        appBarTitle: 'Find your Health Concern',
+        appBarTitle: 'Find your Health Concern', actionWidgets: const [],
       ),
       body: Padding(
         padding: EdgeInsets.only(bottom: Dimensions.d4),
