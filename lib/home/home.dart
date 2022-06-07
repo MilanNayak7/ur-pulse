@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:ur_pulse_modified/common/main_drawer/main_drawer2.dart';
 import 'package:ur_pulse_modified/common/theme/app_theme.dart';
 import 'package:ur_pulse_modified/common/app_bar/common_appbar.dart';
 
 import '../common/carousel/carousel.dart';
 import '../common/card/common_card.dart';
 import '../common/main_drawer/drawer_body.dart';
-import '../common/main_drawer/main_drawer.dart';
 import '../data_model/data_model.dart';
 
 class HomePage extends StatelessWidget {
@@ -37,7 +35,6 @@ class HomePage extends StatelessWidget {
                   SizedBox(
                     height: Dimensions.d9,
                   ),
-                  // CardCommonComp()
                   Wrap(
                     spacing: Dimensions.d6,
                     runSpacing: Dimensions.d6,
@@ -274,7 +271,6 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      //color:Colors.blue,
                       width: MediaQuery.of(context).size.width,
                       child: Wrap(
                         spacing: Dimensions.d11,

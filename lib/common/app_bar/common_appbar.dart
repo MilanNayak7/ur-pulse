@@ -15,11 +15,6 @@ class _commonAppBarState extends State<commonAppBar> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      // leading:IconButton(
-      //   icon: Image.asset("assets/images/menu.png",
-      //       width: Dimensions.d6, height: Dimensions.d6),
-      //   onPressed: (){},
-      // ),
       title: Text(widget.appBarTitle??''),
       elevation: 0,
       backgroundColor: Colors.greenAccent,

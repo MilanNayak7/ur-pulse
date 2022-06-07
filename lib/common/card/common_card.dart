@@ -93,44 +93,6 @@ class CommonCard extends StatelessWidget {
   }
 }
 
-// class SymptomsWidgets extends StatelessWidget {
-//   SymptomsWidgets({Key? key, required this.img, required this.symptoms})
-//       : super(key: key);
-//   String img;
-//   String symptoms;
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Column(
-//       children: [
-//         Container(
-//           width: Dimensions.d15,
-//           height: Dimensions.d15,
-//           decoration: BoxDecoration(
-//             color: Colors.blue,
-//             borderRadius: BorderRadius.circular(Dimensions.d12),
-//           ),
-//           child: Image.asset(img),
-//         ),
-//         SizedBox(
-//           height: Dimensions.d3,
-//         ),
-//         Container(
-//           child: Text(
-//             symptoms,
-//             maxLines: 3,
-//             textAlign: TextAlign.justify,
-//             overflow: TextOverflow.visible,
-//             style: TextStyle(
-//               fontSize: Dimensions.d3,
-//             ),
-//           ),
-//         )
-//       ],
-//     );
-//   }
-// }
-
 class MedicalCardWidget extends StatelessWidget {
   const MedicalCardWidget({Key? key}) : super(key: key);
 
@@ -388,7 +350,7 @@ class MenuCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
-              padding: const EdgeInsets.all(4.0),
+              padding: EdgeInsets.all(Dimensions.d1),
               child: Container(
                 padding: EdgeInsets.only(
                     top: Dimensions.d4,
@@ -425,7 +387,9 @@ class SymptomsWidgets extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){Get.toNamed('/doctorList');},
+      onTap: () {
+        Get.toNamed('/doctorList');
+      },
       child: Column(
         children: [
           Container(
@@ -437,8 +401,8 @@ class SymptomsWidgets extends StatelessWidget {
             ),
             child: Image.asset(
               symptomsModel.imageUrl,
-              width: 10,
-              height: 10,
+              width: Dimensions.d2,
+              height: Dimensions.d2,
               fit: BoxFit.scaleDown,
             ),
           ),
@@ -467,25 +431,25 @@ class ModalBottomSheet {
     required String heading,
     required List<DrawerMenuModel> listOfData,
   }) {
-    Size size = MediaQuery.of(context).size;
+   // Size size = MediaQuery.of(context).size;
     showModalBottomSheet(
         isScrollControlled: true,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(40.0),
+          borderRadius: BorderRadius.circular(Dimensions.d10),
         ),
         context: context,
         builder: (BuildContext bc) {
           return Container(
-            height: 650,
-            decoration: const BoxDecoration(
+            height: Dimensions.dh650,
+            decoration:  BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(
-                topRight: Radius.circular(20.0),
-                topLeft: Radius.circular(20.0),
+                topRight: Radius.circular(Dimensions.d5),
+                topLeft: Radius.circular(Dimensions.d5),
               ),
             ),
             child: Padding(
-                padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+                padding:  EdgeInsets.fromLTRB(Dimensions.d5, Dimensions.d5, Dimensions.d5, 0),
                 child: SingleChildScrollView(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -520,21 +484,323 @@ class ModalBottomSheet {
 }
 
 class ConsultationTypeWidget extends StatelessWidget {
-   ConsultationTypeWidget({Key? key,required this.consultationType}) : super(key: key);
-   ConsultationType consultationType;
+  ConsultationTypeWidget({Key? key, required this.consultationType})
+      : super(key: key);
+  ConsultationType consultationType;
 
   @override
   Widget build(BuildContext context) {
-    return  InkWell(
-      onTap:(){},
+    return InkWell(
+      onTap: () {},
       child: Container(
-        decoration:BoxDecoration(border:Border.all(color:Colors.black),borderRadius:BorderRadius.circular(Dimensions.d5)),
+        decoration: BoxDecoration(
+            border: Border.all(color: Colors.black),
+            borderRadius: BorderRadius.circular(Dimensions.d5)),
         child: Padding(
-          padding:  EdgeInsets.all(Dimensions.d3),
-          child: Text(consultationType.type,style:TextStyle(fontSize:Dimensions.d4),),
+          padding: EdgeInsets.all(Dimensions.d3),
+          child: Text(
+            consultationType.type,
+            style: TextStyle(fontSize: Dimensions.d4),
+          ),
         ),
       ),
     );
   }
 }
 
+class DoctorDetailCard extends StatelessWidget {
+  DoctorDetailCard(
+      {Key? key, required this.commonDoctorDetailCard, required this.visible})
+      : super(key: key);
+  CommonDoctorDetailCard commonDoctorDetailCard;
+  bool visible;
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        Get.toNamed('/doctorDetail');
+      },
+      child: Container(
+        child: Padding(
+          padding: EdgeInsets.all(Dimensions.d2),
+          child: Column(
+            children: [
+              SizedBox(
+                height: Dimensions.d1,
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                height: Dimensions.dh140,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Flexible(
+                      flex: 3,
+                      child: Container(
+                        width: Dimensions.dw120,
+                        height: Dimensions.dh120,
+                        decoration: BoxDecoration(
+                           // color: Colors.red,
+                            borderRadius:
+                                BorderRadius.circular(Dimensions.d15)),
+                        child: Image.asset(
+                          'assets/images/doctor1.png',
+                        ),
+                      ),
+                    ),
+                    Flexible(
+                      flex: 4,
+                      child: Container(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              commonDoctorDetailCard.name,
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: Dimensions.d5),
+                            ),
+                            Text(commonDoctorDetailCard.type,
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                )),
+                            Text(
+                              '${commonDoctorDetailCard.experience}  years experience overall',
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                            Row(
+                              children: [
+                                Icon(Icons.message),
+                                SizedBox(
+                                  width: Dimensions.d1,
+                                ),
+                                Text("1 Patient Story",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: Dimensions.d4))
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                    Flexible(
+                      flex: 1,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [Icon(Icons.check_circle)],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              Divider(
+                height: 1,
+                thickness: 1,
+              ),
+              Visibility(
+                visible: visible,
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: Dimensions.d2,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          commonDoctorDetailCard.medicalName,
+                          style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: Dimensions.d4),
+                        ),
+                        SizedBox(
+                          width: Dimensions.d1,
+                        ),
+                        Container(
+                          height: Dimensions.d1,
+                          width: Dimensions.d1,
+                          decoration: BoxDecoration(
+                              color: Colors.black,
+                              borderRadius: BorderRadius.circular(Dimensions.d5)),
+                        ),
+                        SizedBox(
+                          width: Dimensions.d1,
+                        ),
+                        Text(
+                          commonDoctorDetailCard.medicalName,
+                          style: TextStyle(fontSize: Dimensions.d3),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: Dimensions.d1,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          "~",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: Dimensions.d4),
+                        ),
+                        Text(
+                          "Rs.",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: Dimensions.d4),
+                        ),
+                        SizedBox(
+                          width: Dimensions.d1,
+                        ),
+                        Text(
+                          commonDoctorDetailCard.fees,
+                          style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: Dimensions.d4),
+                        ),
+                        SizedBox(
+                          width: Dimensions.d1,
+                        ),
+                        Text(
+                          "Consultation Fees",
+                          style: TextStyle(fontSize: Dimensions.d4),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: Dimensions.d2,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          children: [
+                            Text(
+                              "NEXT AVAILABLE AT",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.red,
+                                  fontSize: Dimensions.d4),
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Icon(Icons.home),
+                                SizedBox(
+                                  width: Dimensions.d1,
+                                ),
+                                Text(commonDoctorDetailCard.availableTime,
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w300,
+                                        fontSize: Dimensions.d4)),
+                                SizedBox(
+                                  width: Dimensions.d1,
+                                ),
+                                Text("AM,",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w300,
+                                        fontSize: Dimensions.d4)),
+                                SizedBox(
+                                  width: Dimensions.d1,
+                                ),
+                                Text("tomorrow",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w300,
+                                        fontSize: Dimensions.d4)),
+                              ],
+                            )
+                          ],
+                        ),
+                        ElevatedButton(
+                          onPressed: () {},
+                          child: Text("Book Appointment"),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: Dimensions.d5,
+                    ),
+                    Divider(
+                      thickness: Dimensions.d2,
+                      height: 1,
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class TimeSlotHorizontalBar extends StatelessWidget {
+  TimeSlotHorizontalBar({Key? key, required this.slotTimeModel})
+      : super(key: key);
+  SlotTimeModel slotTimeModel;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.all(Dimensions.d3),
+      child: Container(
+        // width:110,
+        // color:Colors.black26,
+        child: Row(
+          children: [
+            Text(
+              slotTimeModel.day,
+              style: TextStyle(
+                  fontWeight: FontWeight.w500, fontSize: Dimensions.d4),
+            ),
+            SizedBox(
+              width: Dimensions.d1,
+            ),
+            Text(slotTimeModel.month,
+                style: TextStyle(
+                    fontWeight: FontWeight.w500, fontSize: Dimensions.d4)),
+            SizedBox(
+              width: Dimensions.d1,
+            ),
+            Text(
+              '${slotTimeModel.slotNo} Slot',
+              style: TextStyle(color: Colors.red),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class TimeCard extends StatelessWidget {
+  TimeCard({Key? key, required this.timeModel}) : super(key: key);
+  TimeModel timeModel;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding:  EdgeInsets.only(left:Dimensions.d3),
+      child: InkWell(
+        onTap: (){Get.toNamed('/appointmentConform');},
+        child: Container(
+          decoration:BoxDecoration(color: Colors.blue,borderRadius:BorderRadius.circular(Dimensions.d1)),
+          child: Center(
+              child: Padding(
+                padding: EdgeInsets.only(left:Dimensions.d2,right:Dimensions.d2),
+                child: Text(
+            "${timeModel.time} ${timeModel.hour}",
+            style:
+                  const TextStyle(fontWeight: FontWeight.w500, color: Colors.white),
+          ),
+              )),
+        ),
+      ),
+    );
+  }
+}

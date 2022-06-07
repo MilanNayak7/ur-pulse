@@ -30,8 +30,8 @@ class EmptyScreen extends StatelessWidget {
           children: [
             Image.asset(
               img,
-              width: 180,
-              height: 180,
+              width:Dimensions.dw180,
+              height:Dimensions.dh180,
             ),
             Text(
               header,
@@ -39,7 +39,7 @@ class EmptyScreen extends StatelessWidget {
                   fontWeight: FontWeight.w800, fontSize: Dimensions.d4),
             ),
             SizedBox(
-              height: 10,
+              height: Dimensions.d3,
             ),
             Text(subText!),
             SizedBox(

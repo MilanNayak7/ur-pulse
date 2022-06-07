@@ -32,15 +32,14 @@ class _DrawerBodyState extends State<DrawerBody> {
                 decoration: BoxDecoration(
                   color: Colors.blue,
                   borderRadius: BorderRadius.only(
-                    // bottomRight: Radius.circular(10),
-                    topRight: Radius.circular(Dimensions.d3),
+                   //topRight: Radius.circular(Dimensions.d3),
                     topLeft: Radius.circular(Dimensions.d3),
                   ),
                 ),
-                height:110,
+                height:Dimensions.dh110,
               ),
               Container(
-                height:90,
+                height:Dimensions.d91,
                 width: MediaQuery.of(context).size.width,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -52,11 +51,11 @@ class _DrawerBodyState extends State<DrawerBody> {
                         Row(
                           children: [
                             const Text("Practo"),
-                            const SizedBox(width:8,),
+                             SizedBox(width:Dimensions.d2,),
                             Container(
-                              decoration: BoxDecoration( color: Colors.green,borderRadius:BorderRadius.circular(5)),
-                              child: const Padding(
-                                padding: EdgeInsets.all(4.0),
+                              decoration: BoxDecoration( color: Colors.green,borderRadius:BorderRadius.circular(Dimensions.d1)),
+                              child:  Padding(
+                                padding: EdgeInsets.all(Dimensions.d1),
                                 child: Text("Plus"),
                               ),
                             )

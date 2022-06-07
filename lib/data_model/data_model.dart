@@ -281,8 +281,101 @@ class ConsultationType {
 }
 
 List<ConsultationType> consultation = [
-  ConsultationType(type:"Now or Later"),
-  ConsultationType(type:"Video Consult"),
-  ConsultationType(type:"Plus"),
+  ConsultationType(type: "Now or Later"),
+  ConsultationType(type: "Video Consult"),
+  ConsultationType(type: "Plus"),
   ConsultationType(type: "Sort/Filters")
+];
+
+class CommonDoctorDetailCard {
+  String type;
+  String name;
+  String experience;
+  String address;
+  String medicalName;
+  String fees;
+  String availableTime;
+  String flag;
+  CommonDoctorDetailCard(
+      {required this.type,
+      required this.name,
+      required this.flag,
+      required this.experience,
+      required this.address,
+      required this.medicalName,
+      required this.fees,
+      required this.availableTime});
+}
+
+List<CommonDoctorDetailCard> doctorDetail = [
+  CommonDoctorDetailCard(
+      type: 'General Physician',
+      name: 'Dr. Manish Kumar',
+      experience: '16',
+      address: 'Saheed Nagar',
+      medicalName: 'Apoorv Multispeciality Clinic',
+      fees: '500',
+      availableTime: '08:00',
+      flag: 'generalPhysician'),
+  CommonDoctorDetailCard(
+      type: 'General Physician',
+      name: 'Dr. Manish Kumar',
+      experience: '16',
+      address: 'Saheed Nagar',
+      medicalName: 'Apoorv Multispeciality Clinic',
+      fees: '500',
+      availableTime: '08:00',
+      flag: 'generalPhysician'),
+  CommonDoctorDetailCard(
+      type: 'General Physician',
+      name: 'Dr. Manish Kumar',
+      experience: '16',
+      address: 'Saheed Nagar',
+      medicalName: 'Apoorv Multispeciality Clinic',
+      fees: '500',
+      availableTime: '08:00',
+      flag: 'generalPhysician'),
+  CommonDoctorDetailCard(
+      type: 'General Physician',
+      name: 'Dr. Manish Kumar',
+      experience: '16',
+      address: 'Saheed Nagar',
+      medicalName: 'Apoorv Multispeciality Clinic',
+      fees: '500',
+      availableTime: '08:00',
+      flag: 'generalPhysician'),
+];
+
+class SlotTimeModel {
+  String day;
+  String month;
+  String slotNo;
+  SlotTimeModel({required this.day, required this.month, required this.slotNo});
+}
+List<SlotTimeModel> slotTimeData =[
+  SlotTimeModel(day: 'Today', slotNo: 'No', month: 'Jun'),
+  SlotTimeModel(day: 'Tomorrow', slotNo: '6', month: 'Jun'),
+  SlotTimeModel(day: '8',month: 'Jun',slotNo: '6'),
+  SlotTimeModel(day: '9',month: 'Jun', slotNo: '6'),
+  SlotTimeModel(day: '10',month: 'Jun', slotNo: '6'),
+  SlotTimeModel(day: '11',month: 'Jun', slotNo: '6'),
+  SlotTimeModel(day: '12',month: 'Jun', slotNo: 'No'),
+  SlotTimeModel(day: '13',month: 'Jun', slotNo: '6'),
+];
+
+class TimeModel {
+  String time;
+  String hour;
+  TimeModel({required this.time,required this.hour});
+}
+
+List<TimeModel> timedata = [
+  TimeModel(time:'11:00', hour: 'AM'),
+  TimeModel(time:'11:00', hour: 'AM'),
+  TimeModel(time:'11:00', hour: 'AM'),
+  TimeModel(time:'11:00', hour: 'AM'),
+  TimeModel(time:'11:00', hour: 'AM'),
+  TimeModel(time:'11:00', hour: 'AM'),
+  TimeModel(time:'11:00', hour: 'AM'),
+
 ];

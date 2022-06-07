@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:ur_pulse_modified/common/theme/app_theme.dart';
 
 class ImageCarousel extends StatefulWidget {
   const ImageCarousel({Key? key}) : super(key: key);
@@ -41,9 +42,9 @@ class _ImageCarouselState extends State<ImageCarousel> {
               return GestureDetector(
                 onTap: () => controller.animateToPage(entry.key),
                 child: Container(
-                  width: 10.0,
-                  height: 10.0,
-                  margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
+                  width: Dimensions.d2,
+                  height: Dimensions.d2,
+                  margin: EdgeInsets.symmetric(vertical: Dimensions.d2, horizontal:Dimensions.d1),
                   decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: (Theme.of(context).brightness == Brightness.dark
@@ -63,9 +64,9 @@ class _ImageCarouselState extends State<ImageCarousel> {
 final List<Widget> imageSliders = imgList
     .map((item) => Container(
           child: Container(
-            margin: EdgeInsets.all(5.0),
+            margin: EdgeInsets.all(Dimensions.d1),
             child: ClipRRect(
-                borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                borderRadius: BorderRadius.all(Radius.circular(Dimensions.d1)),
                 child: Stack(
                   children: <Widget>[
                     Image.network(item, fit: BoxFit.cover, width: 1000.0),
@@ -85,12 +86,12 @@ final List<Widget> imageSliders = imgList
                           ),
                         ),
                         padding: EdgeInsets.symmetric(
-                            vertical: 10.0, horizontal: 20.0),
+                            vertical: Dimensions.d2, horizontal:Dimensions.d5),
                         child: Text(
                           'No. ${imgList.indexOf(item)} image',
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 20.0,
+                            fontSize:Dimensions.d5,
                             fontWeight: FontWeight.bold,
                           ),
                         ),

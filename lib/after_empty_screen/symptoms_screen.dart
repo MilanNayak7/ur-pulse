@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:ur_pulse_modified/common/app_bar/common_app_bar.dart';
 import 'package:ur_pulse_modified/common/theme/app_theme.dart';
 
@@ -23,7 +21,6 @@ class SymptomsScreen extends StatelessWidget {
           padding: EdgeInsets.only(
               top: Dimensions.d6, left: Dimensions.d6, right: Dimensions.d6),
           child: Column(
-            // crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
                 height: Dimensions.d8,
