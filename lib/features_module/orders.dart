@@ -14,7 +14,8 @@ class Orders extends StatelessWidget {
       appBar: CommonAppBar(
         context: context,
         appBarTitle: 'Orders',
-        addBackButton: true, actionWidgets: const [],
+        addBackButton: true,
+        actionWidgets: const [],
       ),
       body: Container(
         child: Center(
@@ -22,8 +23,11 @@ class Orders extends StatelessWidget {
             buttonText: 'Order medicines',
             subText: 'Place your first order now',
             header: 'No orders placed yet',
-            callback: () {Get.toNamed('/orderScreen');},
-            img: 'assets/drawer/delivery.png', buttonVisible: true,
+            callback: () {
+              Get.toNamed('/orderScreen');
+            },
+            img: 'assets/drawer/delivery.png',
+            buttonVisible: true,
           ),
         ),
       ),

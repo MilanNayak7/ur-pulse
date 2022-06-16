@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ur_pulse_modified/common/theme/app_theme.dart';
 import 'package:ur_pulse_modified/common/app_bar/common_appbar.dart';
 
+import '../ad_card/ad_card.dart';
 import '../common/carousel/carousel.dart';
 import '../common/card/common_card.dart';
 import '../common/main_drawer/drawer_body.dart';
@@ -15,7 +16,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       drawer: DrawerBody(),
       appBar: commonAppBar(
-        appBarTitle: 'Go to back',
+        appBarTitle: 'UrPulse Pharmacy',
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -48,6 +49,7 @@ class HomePage extends StatelessWidget {
                         width: Dimensions.commomcardwidth,
                         bottomRightRadius: 0.0,
                         bottomLeftRadius: 0.0,
+                        imageBackground:Color(0xFF7b909a), borderColor:Colors.black26,
                       );
                     }),
                   ),
@@ -60,16 +62,16 @@ class HomePage extends StatelessWidget {
                     children: List<Widget>.generate(
                       CommonServiceModelDummyData.length,
                       (index) => CommonCard(
-                          containerColor: Colors.blue,
-                          commonCardModel: CommonServiceModelDummyData[index],
-                          height: Dimensions.d30,
-                          width: Dimensions.d25,
-                          defaultSubTextSize: Dimensions.d3,
-                          defaultTextHeaderSize: Dimensions.d4,
+                        containerColor: Colors.blue,
+                        commonCardModel: CommonServiceModelDummyData[index],
+                        height: Dimensions.d30,
+                        width: Dimensions.d25,
+                        defaultSubTextSize: Dimensions.d3,
+                        defaultTextHeaderSize: Dimensions.d4,
                         bottomRightRadius: 0.0,
                         bottomLeftRadius: 0.0,
+                        imageBackground:Color(0xFFa1bbc7), borderColor:Colors.black26,
                       ),
-
                     ),
                   ),
                 ],
@@ -254,41 +256,10 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
-            Container(
-              color: Colors.pinkAccent,
-              width: MediaQuery.of(context).size.width,
-              child: Padding(
-                padding:
-                    EdgeInsets.only(left: Dimensions.d8, right: Dimensions.d8),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(
-                          top: Dimensions.d8, bottom: Dimensions.d8),
-                      child: Text(
-                        "Our community of doctors and patients drive us to create technologies for better and affordable healthcare",
-                        style: TextStyle(fontSize: Dimensions.d6),
-                      ),
-                    ),
-                    Container(
-                      width: MediaQuery.of(context).size.width,
-                      child: Wrap(
-                        spacing: Dimensions.d11,
-                        runSpacing: Dimensions.d8,
-                        children: [
-                          PractoDataWidget(),
-                          PractoDataWidget(),
-                          PractoDataWidget(),
-                          PractoDataWidget(),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      height: Dimensions.d8,
-                    )
-                  ],
-                ),
-              ),
+            PractoShowOffCard(
+              showOffCardModel: showoffcarddata,
+              text:
+                  '"Our community of doctors and patients drive us to create technologies for better and affordable healthcare","Our community of doctors and patients drive us to create technologies for better and affordable healthcare",',
             ),
             Container(
               height: Dimensions.d95,
@@ -460,6 +431,7 @@ class HomePage extends StatelessWidget {
                   begin: Alignment.bottomCenter),
             ),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Padding(
                   padding: EdgeInsets.all(Dimensions.d2),
@@ -471,7 +443,7 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  child: Image.asset(''),
+                  child: Image.asset('assets/doctors/family.png'),
                 ),
               ],
             ),

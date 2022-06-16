@@ -51,7 +51,7 @@ class EmptyScreen extends StatelessWidget {
                 onPressed:callback,
                 child: Container(
                   width: Dimensions.d300,
-                  height: Dimensions.d60,
+                  height: Dimensions.d13,
                   child: Center(
                       child: Text(
                     buttonText!,

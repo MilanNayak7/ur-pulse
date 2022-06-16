@@ -19,11 +19,11 @@ List<CommonCardModel> CommonCardModelDummyData = [
   CommonCardModel(
       mainText: "Instant Video consultation",
       subText: "Connect within 60 secs",
-      img: "assets/images/doctor1.png"),
+      img: "assets/images/mobile.png"),
   CommonCardModel(
       mainText: "Book appointment",
       subText: "Confirmed appointments",
-      img: "assets/images/doctor1.png"),
+      img: "assets/doctors/maleDoctor2.png"),
   CommonCardModel(
       mainText: "Book appointment",
       subText: "Confirmed appointments",
@@ -55,10 +55,45 @@ List<CommonCardModel> symptomCommonCardModelDummyData = [
       img: "assets/images/doctor1.png"),
 ];
 
+List<CommonCardModel> MedicineCategoryCardModelDummyData = [
+  CommonCardModel(
+      mainText: "Covid Essentials",
+      subText: "",
+      img: "assets/images/doctor1.png"),
+  CommonCardModel(
+      mainText: "Skin Care",
+      subText:"",
+      img: "assets/images/doctor1.png"),
+  CommonCardModel(
+      mainText: "Vitamins And Minerals",
+      subText: "",
+      img: "assets/images/doctor1.png"),
+  CommonCardModel(
+      mainText: "Health Food and Drinks",
+      subText:"",
+      img: "assets/images/doctor1.png"),
+  CommonCardModel(
+      mainText: "Baby Care",
+      subText:"",
+      img: "assets/images/doctor1.png"),
+  CommonCardModel(
+      mainText: "Pain Relief",
+      subText:"",
+      img: "assets/images/doctor1.png"),
+  CommonCardModel(
+      mainText: "Diabetic Care",
+      subText:"",
+      img: "assets/images/doctor1.png"),
+  CommonCardModel(
+      mainText: "Protien and Suppplements",
+      subText:"",
+      img: "assets/images/doctor1.png"),
+];
+
 List<CommonCardModel> CommonServiceModelDummyData = [
-  CommonCardModel(mainText: "Medicines", img: "assets/images/doctor1.png"),
-  CommonCardModel(mainText: "Lab Tests", img: "assets/images/doctor1.png"),
-  CommonCardModel(mainText: "Surgeries", img: "assets/images/doctor1.png"),
+  CommonCardModel(mainText: "Medicines", img: "assets/doctors/delever.png"),
+  CommonCardModel(mainText: "Lab Tests", img: "assets/doctors/lab.png"),
+  CommonCardModel(mainText: "Surgeries", img: "assets/doctors/femaleDoctor1.png"),
 ];
 
 ///////////////////////////////////////////////////////
@@ -154,7 +189,7 @@ List<DrawerMenuModel> commonSymptoms = [
   DrawerMenuModel(
       Header: "Child \nSpecialist", imageUrl: 'assets/symptoms/child.png'),
   DrawerMenuModel(
-      Header: "Homeopathy", imageUrl: 'assets/symptoms/medicine.png'),
+      Header: "Homeopathy", imageUrl: 'assets/symptoms/ayurveda.png'),
   DrawerMenuModel(
       Header: "Digestive \nIssues", imageUrl: 'assets/symptoms/digestive.png'),
   DrawerMenuModel(
@@ -165,21 +200,21 @@ List<DrawerMenuModel> commonSymptoms = [
   DrawerMenuModel(
       Header: "Brain \nand Nerves", imageUrl: 'assets/symptoms/brain.png'),
   DrawerMenuModel(
-      Header: "Lungs \nand Breathing", imageUrl: 'assets/symptoms/brain.png'),
+      Header: "Lungs \nand Breathing", imageUrl: 'assets/symptoms/lungs.png'),
   DrawerMenuModel(
       Header: "Kidney Issues", imageUrl: 'assets/symptoms/kidney.png'),
   DrawerMenuModel(
       Header: "General Surgery", imageUrl: 'assets/symptoms/surgery.png'),
   DrawerMenuModel(
-      Header: "Diabetes \nManagement", imageUrl: 'assets/symptoms/surgery.png'),
-  DrawerMenuModel(Header: "Ayurveda ", imageUrl: 'assets/symptoms/surgery.png'),
-  DrawerMenuModel(Header: "Cancer", imageUrl: 'assets/symptoms/surgery.png'),
+      Header: "Diabetes \nManagement", imageUrl: 'assets/symptoms/diabetes.png'),
+  DrawerMenuModel(Header: "Ayurveda ", imageUrl: 'assets/symptoms/ayurveda.png'),
+  DrawerMenuModel(Header: "Cancer", imageUrl: 'assets/symptoms/cancer.png'),
   DrawerMenuModel(
-      Header: "Urinary \nIssues", imageUrl: 'assets/symptoms/surgery.png'),
+      Header: "Urinary \nIssues", imageUrl: 'assets/symptoms/urinaryInfectin.png'),
   DrawerMenuModel(
-      Header: "Veterinary", imageUrl: 'assets/symptoms/surgery.png'),
+      Header: "Veterinary", imageUrl: 'assets/symptoms/veterinary.png'),
   DrawerMenuModel(
-      Header: "Diet & \nNutrition", imageUrl: 'assets/symptoms/surgery.png'),
+      Header: "Diet & \nNutrition", imageUrl: 'assets/symptoms/diet.png'),
 ];
 
 List<DrawerMenuModel> surgeriesSymptoms = [
@@ -215,69 +250,69 @@ List<DrawerMenuModel> mostCommonSymptoms = [
 List<DrawerMenuModel> skinAndHair = [
   DrawerMenuModel(
       Header: "Psoriasis/Scaly patches",
-      imageUrl: 'assets/symptoms/coronavirus.png'),
+      imageUrl: 'assets/skin/eczema.png'),
   DrawerMenuModel(
-      Header: "Skin Allergies", imageUrl: 'assets/symptoms/hair.png'),
+      Header: "Skin Allergies", imageUrl: 'assets/skin/skinAllergies.png'),
   DrawerMenuModel(
-      Header: "Eczema/itchy red skin", imageUrl: 'assets/symptoms/women.png'),
-  DrawerMenuModel(Header: "Acne", imageUrl: 'assets/symptoms/general.png'),
+      Header: "Eczema/itchy red skin", imageUrl: 'assets/skin/fungal.png'),
+  DrawerMenuModel(Header: "Acne", imageUrl: 'assets/skin/ance.png'),
   DrawerMenuModel(
       Header: "Vitiligo/ white patches",
-      imageUrl: 'assets/symptoms/dental.png'),
-  DrawerMenuModel(Header: "Hair loss", imageUrl: 'assets/symptoms/bones.png'),
+      imageUrl: 'assets/skin/eczema.png'),
+  DrawerMenuModel(Header: "Hair loss", imageUrl: 'assets/skin/hairLoss.png'),
   DrawerMenuModel(
-      Header: "Fungal Infection", imageUrl: 'assets/symptoms/headache.png'),
+      Header: "Fungal Infection", imageUrl: 'assets/skin/fungal.png'),
   DrawerMenuModel(
-      Header: "Dandruff problems", imageUrl: 'assets/symptoms/ear.png'),
+      Header: "Dandruff problems", imageUrl: 'assets/skin/dandruff.png'),
 ];
 
 List<DrawerMenuModel> womensHealthConcerns = [
-  DrawerMenuModel(Header: "PCOS", imageUrl: 'assets/symptoms/coronavirus.png'),
-  DrawerMenuModel(Header: "Menopause", imageUrl: 'assets/symptoms/hair.png'),
+  DrawerMenuModel(Header: "PCOS", imageUrl: 'assets/women/pcos.png'),
+  DrawerMenuModel(Header: "Menopause", imageUrl: 'assets/women/pcos.png'),
   DrawerMenuModel(
-      Header: "Ovarian Cysts", imageUrl: 'assets/symptoms/women.png'),
-  DrawerMenuModel(Header: "Pregnancy", imageUrl: 'assets/symptoms/general.png'),
+      Header: "Ovarian Cysts", imageUrl: 'assets/women/ovarian.png'),
+  DrawerMenuModel(Header: "Pregnancy", imageUrl: 'assets/women/preg.png'),
   DrawerMenuModel(
-      Header: "Infertility", imageUrl: 'assets/symptoms/dental.png'),
+      Header: "Infertility", imageUrl: 'assets/women/infertility.png'),
   DrawerMenuModel(
-      Header: "Vaginal Discharge", imageUrl: 'assets/symptoms/bones.png'),
+      Header: "Vaginal Discharge", imageUrl: 'assets/women/vaginalDischarge.png'),
   DrawerMenuModel(
-      Header: "Irregular Periods", imageUrl: 'assets/symptoms/headache.png'),
+      Header: "Irregular Periods", imageUrl: 'assets/women/irregularPeriods.png'),
   DrawerMenuModel(
-      Header: "Urinary Tract Infection", imageUrl: 'assets/symptoms/ear.png'),
+      Header: "Urinary Tract Infection", imageUrl: 'assets/women/urinaryInfectin.png'),
 ];
 
 List<DrawerMenuModel> chronicProblems = [
   DrawerMenuModel(
-      Header: "Diabetes", imageUrl: 'assets/symptoms/coronavirus.png'),
-  DrawerMenuModel(Header: "Cholestrol", imageUrl: 'assets/symptoms/hair.png'),
-  DrawerMenuModel(Header: "Asthma", imageUrl: 'assets/symptoms/women.png'),
+      Header: "Diabetes", imageUrl: 'assets/chronic/diabetes.png'),
+  DrawerMenuModel(Header: "Cholestrol", imageUrl: 'assets/chronic/cancer.png'),
+  DrawerMenuModel(Header: "Asthma", imageUrl: 'assets/chronic/asthma.png'),
   DrawerMenuModel(
-      Header: "Hypertension", imageUrl: 'assets/symptoms/general.png'),
-  DrawerMenuModel(Header: "Cancer", imageUrl: 'assets/symptoms/dental.png'),
+      Header: "Hypertension", imageUrl: 'assets/chronic/hypertension.png'),
+  DrawerMenuModel(Header: "Cancer", imageUrl: 'assets/chronic/cancer.png'),
   DrawerMenuModel(
-      Header: "Insomnia/sleeplessness", imageUrl: 'assets/symptoms/bones.png'),
+      Header: "Insomnia/sleeplessness", imageUrl: 'assets/chronic/insomnia.png'),
   DrawerMenuModel(
-      Header: "Kidney failure", imageUrl: 'assets/symptoms/headache.png'),
-  DrawerMenuModel(Header: "Thyroid", imageUrl: 'assets/symptoms/ear.png'),
+      Header: "Kidney failure", imageUrl: 'assets/chronic/kidneyFailure.png'),
+  DrawerMenuModel(Header: "Thyroid", imageUrl: 'assets/chronic/thyroid.png'),
 ];
 
 List<DrawerMenuModel> boneAndJoint = [
   DrawerMenuModel(
-      Header: "Knee Pain", imageUrl: 'assets/symptoms/coronavirus.png'),
-  DrawerMenuModel(Header: "Arthritis", imageUrl: 'assets/symptoms/hair.png'),
+      Header: "Knee Pain", imageUrl: 'assets/bone/kneePain.png'),
+  DrawerMenuModel(Header: "Arthritis", imageUrl: 'assets/bone/arthritis.png'),
   DrawerMenuModel(
       Header: "Osteoporosis/ week bones",
-      imageUrl: 'assets/symptoms/women.png'),
+      imageUrl: 'assets/bone/osteoporosis.png'),
   DrawerMenuModel(
       Header: "Fibromyalgia/Muscle pain",
-      imageUrl: 'assets/symptoms/general.png'),
+      imageUrl: 'assets/bone/musclePain.png'),
   DrawerMenuModel(
-      Header: "Lower Back Pain", imageUrl: 'assets/symptoms/dental.png'),
+      Header: "Lower Back Pain", imageUrl: 'assets/bone/backPain.png'),
   DrawerMenuModel(
-      Header: "Fractures/Sprains", imageUrl: 'assets/symptoms/bones.png'),
+      Header: "Fractures/Sprains", imageUrl: 'assets/bone/fractu.png'),
   DrawerMenuModel(
-      Header: "Carpal Tunnel", imageUrl: 'assets/symptoms/headache.png'),
+      Header: "Carpal Tunnel", imageUrl: 'assets/bone/carpal.png'),
 ];
 
 class ConsultationType {
@@ -385,3 +420,43 @@ List<TimeModel> timedata = [
 
 ];
 
+class ShowOffCardModel {
+  Icon icon;
+  String text1;
+  String text2;
+  ShowOffCardModel({required this.icon,required this.text1,required this.text2});
+}
+
+List<ShowOffCardModel> showoffcarddata = [
+  ShowOffCardModel(icon: const Icon(Icons.person), text1:'Our Users', text2: '30 Crores'),
+  ShowOffCardModel(icon:const Icon(Icons.medical_services), text1:'Our Users', text2: '1 Lakh'),
+  ShowOffCardModel(icon:const Icon(Icons.local_hospital), text1:'Our Users', text2: '20,000'),
+  ShowOffCardModel(icon:const Icon(Icons.message_outlined), text1:'Our Users', text2: '40 Lakh'),
+];
+
+
+List<ShowOffCardModel> showoffcarddata2 = [
+  ShowOffCardModel(icon: const Icon(Icons.person), text1:'Our Users', text2: '1 Crore+'),
+  ShowOffCardModel(icon:const Icon(Icons.medical_services), text1:'Our Products', text2: '1 Lakh'),
+  ShowOffCardModel(icon:const Icon(Icons.star), text1:'Original Products', text2: '100%'),
+  ShowOffCardModel(icon:const Icon(Icons.message_outlined), text1:'Secured Transaction', text2: '5 Lakh+'),
+];
+
+
+class OrderProductModel{
+  Icon icon;
+  String header;
+  String subText;
+  String price;
+  Callback callback;
+
+  OrderProductModel({required this.icon,required this.header,required this.subText,required this.price,required this.callback});
+}
+
+List<OrderProductModel> orderProductData =[
+  OrderProductModel(subText: '', header: '', callback: () {  }, price: '', icon: Icon(Icons.person)),
+  OrderProductModel(subText: '', header: '', callback: () {  }, price: '', icon: Icon(Icons.person)),
+  OrderProductModel(subText: '', header: '', callback: () {  }, price: '', icon: Icon(Icons.person)),
+  OrderProductModel(subText: '', header: '', callback: () {  }, price: '', icon: Icon(Icons.person)),
+
+];

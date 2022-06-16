@@ -17,6 +17,8 @@ class CommonCard extends StatelessWidget {
       required this.bottomLeftRadius,
       required this.bottomRightRadius,
       required this.defaultSubTextSize,
+      required this.imageBackground,
+      required this.borderColor,
       required this.defaultTextHeaderSize})
       : super(key: key);
 
@@ -29,12 +31,20 @@ class CommonCard extends StatelessWidget {
   double bottomLeftRadius = 1.0;
   double bottomRightRadius = 1.0;
   Callback? callback;
+  Color? imageBackground;
+  Color? borderColor;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: callback,
       child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(Dimensions.d2),
+          border: Border.all(
+            color: borderColor!,
+          ),
+        ),
         height: height,
         width: width,
         child: Column(
@@ -45,7 +55,7 @@ class CommonCard extends StatelessWidget {
                 height: height,
                 width: width,
                 decoration: BoxDecoration(
-                    color: Colors.amber,
+                    color: imageBackground,
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(Dimensions.d2),
                         bottomLeft: Radius.circular(bottomLeftRadius),
@@ -58,7 +68,6 @@ class CommonCard extends StatelessWidget {
               flex: 3,
               child: Container(
                 decoration: BoxDecoration(
-                    color: containerColor,
                     borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(Dimensions.d2),
                         bottomRight: Radius.circular(Dimensions.d2))),
@@ -67,19 +76,23 @@ class CommonCard extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.all(Dimensions.d2),
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    // crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
+                        textAlign: TextAlign.center,
                         commonCardModel.mainText,
                         overflow: TextOverflow.visible,
                         style: TextStyle(
                             fontSize: defaultTextHeaderSize,
                             fontWeight: FontWeight.bold),
                       ),
-                      Text(
-                        commonCardModel.subText ?? '',
-                        overflow: TextOverflow.visible,
-                        style: TextStyle(fontSize: defaultSubTextSize),
+                      Align(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          commonCardModel.subText ?? '',
+                          overflow: TextOverflow.visible,
+                          style: TextStyle(fontSize: defaultSubTextSize),
+                        ),
                       ),
                     ],
                   ),
@@ -160,7 +173,7 @@ class CommonContainerButton extends StatelessWidget {
     return InkWell(
       onTap: callback,
       child: Container(
-        height: Dimensions.d11,
+        height: Dimensions.d13,
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(Dimensions.d2),
@@ -237,22 +250,27 @@ class ProductCard extends StatelessWidget {
 }
 
 class PractoDataWidget extends StatelessWidget {
-  const PractoDataWidget({Key? key}) : super(key: key);
+  PractoDataWidget({Key? key, required this.showOffCardModel})
+      : super(key: key);
+  ShowOffCardModel showOffCardModel;
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: Dimensions.d35,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Icon(Icons.person),
+          SizedBox(
+            child: showOffCardModel.icon,
+          ),
           Text(
-            "Our Users",
+            showOffCardModel.text1,
             style:
                 TextStyle(fontWeight: FontWeight.w600, fontSize: Dimensions.d4),
           ),
           Text(
-            "30 Crores",
+            showOffCardModel.text2,
             style:
                 TextStyle(fontWeight: FontWeight.bold, fontSize: Dimensions.d7),
           )
@@ -431,7 +449,7 @@ class ModalBottomSheet {
     required String heading,
     required List<DrawerMenuModel> listOfData,
   }) {
-   // Size size = MediaQuery.of(context).size;
+    // Size size = MediaQuery.of(context).size;
     showModalBottomSheet(
         isScrollControlled: true,
         shape: RoundedRectangleBorder(
@@ -441,7 +459,7 @@ class ModalBottomSheet {
         builder: (BuildContext bc) {
           return Container(
             height: Dimensions.dh650,
-            decoration:  BoxDecoration(
+            decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(
                 topRight: Radius.circular(Dimensions.d5),
@@ -449,7 +467,8 @@ class ModalBottomSheet {
               ),
             ),
             child: Padding(
-                padding:  EdgeInsets.fromLTRB(Dimensions.d5, Dimensions.d5, Dimensions.d5, 0),
+                padding: EdgeInsets.fromLTRB(
+                    Dimensions.d5, Dimensions.d5, Dimensions.d5, 0),
                 child: SingleChildScrollView(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -540,7 +559,7 @@ class DoctorDetailCard extends StatelessWidget {
                         width: Dimensions.dw120,
                         height: Dimensions.dh120,
                         decoration: BoxDecoration(
-                           // color: Colors.red,
+                            // color: Colors.red,
                             borderRadius:
                                 BorderRadius.circular(Dimensions.d15)),
                         child: Image.asset(
@@ -625,7 +644,8 @@ class DoctorDetailCard extends StatelessWidget {
                           width: Dimensions.d1,
                           decoration: BoxDecoration(
                               color: Colors.black,
-                              borderRadius: BorderRadius.circular(Dimensions.d5)),
+                              borderRadius:
+                                  BorderRadius.circular(Dimensions.d5)),
                         ),
                         SizedBox(
                           width: Dimensions.d1,
@@ -785,21 +805,94 @@ class TimeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.only(left:Dimensions.d3),
+      padding: EdgeInsets.only(left: Dimensions.d3),
       child: InkWell(
-        onTap: (){Get.toNamed('/appointmentConform');},
+        onTap: () {
+          Get.toNamed('/appointmentConform');
+        },
         child: Container(
-          decoration:BoxDecoration(color: Colors.blue,borderRadius:BorderRadius.circular(Dimensions.d1)),
+          decoration: BoxDecoration(
+              color: Colors.blue,
+              borderRadius: BorderRadius.circular(Dimensions.d1)),
           child: Center(
               child: Padding(
-                padding: EdgeInsets.only(left:Dimensions.d2,right:Dimensions.d2),
-                child: Text(
-            "${timeModel.time} ${timeModel.hour}",
-            style:
-                  const TextStyle(fontWeight: FontWeight.w500, color: Colors.white),
-          ),
-              )),
+            padding: EdgeInsets.only(left: Dimensions.d2, right: Dimensions.d2),
+            child: Text(
+              "${timeModel.time} ${timeModel.hour}",
+              style: const TextStyle(
+                  fontWeight: FontWeight.w500, color: Colors.white),
+            ),
+          )),
         ),
+      ),
+    );
+  }
+}
+
+class OrderProductCard extends StatelessWidget {
+  const OrderProductCard({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Divider(color:Colors.black,thickness: 1,),
+              SizedBox(
+                width: Dimensions.d20,
+              ),
+              SizedBox(
+                child: Column(
+                  crossAxisAlignment:CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Dettol Squeezy Hand Wash',
+                      style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: Dimensions.d4),
+                    ),
+                    Text(
+                      'By Reckitt Benckiser',
+                      style: TextStyle(fontSize: Dimensions.d3),
+                    ),
+                    SizedBox(height:Dimensions.d2,),
+                    Row(
+                      children: [
+                        Text(
+                          'MRP 30',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w800,
+                              fontSize: Dimensions.d4),
+                        ),
+                        SizedBox(
+                          width: Dimensions.d20,
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(
+                                Dimensions.d2,
+                              ),
+                              border: Border.all(color: Colors.black12)),
+                          child: Padding(
+                            padding: EdgeInsets.all(Dimensions.d3),
+                            child: Text('Add to Cart',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: Dimensions.d4)),
+                          ),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height:Dimensions.d4,),
+          const Divider(color:Colors.black12,thickness:1,),
+        ],
       ),
     );
   }

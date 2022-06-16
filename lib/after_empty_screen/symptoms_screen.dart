@@ -166,7 +166,7 @@ class SymptomsScreen extends StatelessWidget {
                       commonCardModel: symptomCommonCardModelDummyData[index],
                       defaultSubTextSize: Dimensions.d3,
                       defaultTextHeaderSize: Dimensions.d4,
-                      width: Dimensions.commomcardwidth,
+                      width: Dimensions.commomcardwidth, imageBackground: null, borderColor:Colors.black26,
                       //callback: ,
                     ),
                   );

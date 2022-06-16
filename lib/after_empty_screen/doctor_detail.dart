@@ -14,7 +14,8 @@ class DoctorDetail extends StatelessWidget {
       appBar: CommonAppBar(
         context: context,
         appBarTitle: 'Doctor Detail',
-        addBackButton: true, actionWidgets: const [],
+        addBackButton: true,
+        actionWidgets: const [],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -78,11 +79,19 @@ class DoctorDetail extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("Apollo Hospital"),
+                          const Text(
+                            "Apollo Hospital",
+                            style: TextStyle(
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
                           SizedBox(
                             height: Dimensions.d1,
                           ),
-                          Text("Gajapati Nagar"),
+                          Text("Gajapati Nagar",
+                              style: TextStyle(
+                                fontWeight: FontWeight.w500,
+                              )),
                           SizedBox(
                             height: Dimensions.d1,
                           ),
@@ -95,7 +104,7 @@ class DoctorDetail extends StatelessWidget {
                       thickness: 1,
                     ),
                     SizedBox(
-                      height:Dimensions.d13,
+                      height: Dimensions.d13,
                       child: Scrollbar(
                         thumbVisibility: true,
                         child: ListView.builder(
@@ -124,14 +133,13 @@ class DoctorDetail extends StatelessWidget {
                         ),
                         Visibility(
                           child: SizedBox(
-                            height:Dimensions.d10,
+                            height: Dimensions.d10,
                             child: ListView.builder(
                                 scrollDirection: Axis.horizontal,
                                 shrinkWrap: true,
                                 itemCount: timedata.length,
                                 itemBuilder: (context, index) {
-                                  return TimeCard(
-                                    timeModel: timedata[index],
+                                  return TimeCard(                                    timeModel: timedata[index],
                                   );
                                 }),
                           ),
@@ -142,7 +150,15 @@ class DoctorDetail extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-                            Text("View all Slots"),
+                            InkWell(
+                                onTap: () {},
+                                child: Text(
+                                  "View all Slots",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w800,
+                                      fontSize: Dimensions.d4,
+                                      color: Colors.blue),
+                                )),
                             ElevatedButton(
                                 onPressed: () {},
                                 child: Row(
@@ -263,10 +279,13 @@ class DoctorDetail extends StatelessWidget {
                             color: Colors.black,
                             borderRadius: BorderRadius.circular(Dimensions.d5)),
                       ),
-                      SizedBox(width:Dimensions.d3,),
-                      Text("Viral Fever Treatment", style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: Dimensions.d4))
+                      SizedBox(
+                        width: Dimensions.d3,
+                      ),
+                      Text("Viral Fever Treatment",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: Dimensions.d4))
                     ],
                   ),
                   SizedBox(
@@ -282,10 +301,13 @@ class DoctorDetail extends StatelessWidget {
                             color: Colors.black,
                             borderRadius: BorderRadius.circular(Dimensions.d5)),
                       ),
-                      SizedBox(width:Dimensions.d3,),
-                      Text("Coronavirus Symptoms Treatment", style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: Dimensions.d4))
+                      SizedBox(
+                        width: Dimensions.d3,
+                      ),
+                      Text("Coronavirus Symptoms Treatment",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: Dimensions.d4))
                     ],
                   ),
                   SizedBox(
@@ -301,10 +323,13 @@ class DoctorDetail extends StatelessWidget {
                             color: Colors.black,
                             borderRadius: BorderRadius.circular(Dimensions.d5)),
                       ),
-                      SizedBox(width:Dimensions.d3,),
-                      Text("Diabetes Management", style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: Dimensions.d4))
+                      SizedBox(
+                        width: Dimensions.d3,
+                      ),
+                      Text("Diabetes Management",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: Dimensions.d4))
                     ],
                   ),
                   SizedBox(
@@ -320,10 +345,13 @@ class DoctorDetail extends StatelessWidget {
                             color: Colors.black,
                             borderRadius: BorderRadius.circular(Dimensions.d5)),
                       ),
-                      SizedBox(width:Dimensions.d3,),
-                      Text("Piles Treatment", style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: Dimensions.d4))
+                      SizedBox(
+                        width: Dimensions.d3,
+                      ),
+                      Text("Piles Treatment",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: Dimensions.d4))
                     ],
                   ),
                   SizedBox(

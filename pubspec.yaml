@@ -63,6 +63,12 @@ flutter:
      - assets/images/
      - assets/drawer/
      - assets/symptoms/
+     - assets/ad/
+     - assets/doctors/
+     - assets/women/
+     - assets/skin/
+     - assets/chronic/
+     - assets/bone/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
