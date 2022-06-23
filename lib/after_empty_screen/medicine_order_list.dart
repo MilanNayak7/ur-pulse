@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:ur_pulse_modified/common/app_bar/common_app_bar.dart';
 import 'package:ur_pulse_modified/common/theme/app_theme.dart';
 
 import '../common/app_bar/app_bar_action_widget.dart';
 import '../common/card/common_card.dart';
+import '../data_model/data_model.dart';
+import 'order_product_detail_screen.dart';
 
 class MedicineOrderList extends StatelessWidget {
   const MedicineOrderList({Key? key}) : super(key: key);
@@ -18,7 +22,7 @@ class MedicineOrderList extends StatelessWidget {
         actionWidgets: appBarBaseActionWidgets,
       ),
       body: Padding(
-        padding:  EdgeInsets.only(left:Dimensions.d3,right:Dimensions.d3),
+        padding: EdgeInsets.only(left: Dimensions.d3, right: Dimensions.d3),
         child: CustomScrollView(
           slivers: [
             SliverToBoxAdapter(
@@ -36,14 +40,16 @@ class MedicineOrderList extends StatelessWidget {
             SliverToBoxAdapter(
               child: SizedBox(
                 child: Column(
-                  crossAxisAlignment:CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       "All Products",
                       style: TextStyle(
                           fontWeight: FontWeight.w800, fontSize: Dimensions.d5),
                     ),
-                    SizedBox(height:Dimensions.d2,),
+                    SizedBox(
+                      height: Dimensions.d2,
+                    ),
                     Text(
                       '147 Products available',
                       style: TextStyle(
@@ -53,12 +59,13 @@ class MedicineOrderList extends StatelessWidget {
                 ),
               ),
             ),
-            SliverToBoxAdapter(
-              child:SizedBox(height:Dimensions.d3,),
+            SliverList(
+              delegate:
+                  SliverChildBuilderDelegate((context,index) {
+                return OrderProductCard(
+                    orderProductModel: orderProductData[index], callback: () {Get.to(OrderProductDetailScreen(index: index,));});
+              }, childCount: orderProductData.length),
             ),
-            SliverToBoxAdapter(
-              child:OrderProductCard()
-            )
           ],
         ),
       ),

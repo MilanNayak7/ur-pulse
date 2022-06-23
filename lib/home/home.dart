@@ -15,9 +15,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: DrawerBody(),
-      appBar: commonAppBar(
-        appBarTitle: 'UrPulse Pharmacy',
-      ),
+      appBar: commonAppBar(appBarTitle: 'UrPulse Pharmacy',),
       body: SingleChildScrollView(
         child: Column(
           children: [

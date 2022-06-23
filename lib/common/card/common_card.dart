@@ -185,9 +185,9 @@ class CommonContainerButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Flexible(fit: FlexFit.loose, child: Icon(icon)),
+            Icon(icon),
             Center(
-              child: Flexible(fit: FlexFit.loose, child: Text(txt)),
+              child: Text(txt),
             )
           ],
         ),
@@ -830,38 +830,50 @@ class TimeCard extends StatelessWidget {
 }
 
 class OrderProductCard extends StatelessWidget {
-  const OrderProductCard({Key? key}) : super(key: key);
+  OrderProductCard(
+      {Key? key, required this.orderProductModel, required this.callback})
+      : super(key: key);
+  OrderProductModel orderProductModel;
+  Callback callback;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       child: Column(
         children: [
+          SizedBox(
+            height: Dimensions.d3,
+          ),
           Row(
             children: [
-              Divider(color:Colors.black,thickness: 1,),
               SizedBox(
+                height: Dimensions.d20,
                 width: Dimensions.d20,
+                child: Image.network(orderProductModel.image),
               ),
               SizedBox(
                 child: Column(
-                  crossAxisAlignment:CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Dettol Squeezy Hand Wash',
+                      orderProductModel.header,
                       style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: Dimensions.d4),
+                          fontWeight: FontWeight.w500, fontSize: Dimensions.d4),
+                    ),
+                    SizedBox(
+                      height: Dimensions.d2,
                     ),
                     Text(
-                      'By Reckitt Benckiser',
+                      orderProductModel.subText,
                       style: TextStyle(fontSize: Dimensions.d3),
                     ),
-                    SizedBox(height:Dimensions.d2,),
+                    SizedBox(
+                      height: Dimensions.d2,
+                    ),
                     Row(
                       children: [
                         Text(
-                          'MRP 30',
+                          'MRP ${orderProductModel.price}',
                           style: TextStyle(
                               fontWeight: FontWeight.w800,
                               fontSize: Dimensions.d4),
@@ -869,18 +881,22 @@ class OrderProductCard extends StatelessWidget {
                         SizedBox(
                           width: Dimensions.d20,
                         ),
-                        Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(
-                                Dimensions.d2,
-                              ),
-                              border: Border.all(color: Colors.black12)),
-                          child: Padding(
-                            padding: EdgeInsets.all(Dimensions.d3),
-                            child: Text('Add to Cart',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: Dimensions.d4)),
+                        InkWell(
+                          onTap: callback,
+                          child: Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(
+                                  Dimensions.d2,
+                                ),
+                                border: Border.all(color: Colors.black12)),
+                            child: Padding(
+                              padding: EdgeInsets.all(Dimensions.d3),
+                              child: Text('Add to Cart',
+                                  style: TextStyle(
+                                      color: Colors.blue,
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: Dimensions.d4)),
+                            ),
                           ),
                         )
                       ],
@@ -890,11 +906,15 @@ class OrderProductCard extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height:Dimensions.d4,),
-          const Divider(color:Colors.black12,thickness:1,),
+          SizedBox(
+            height: Dimensions.d4,
+          ),
+          const Divider(
+            color: Colors.black12,
+            thickness: 1,
+          ),
         ],
       ),
     );
   }
 }
-

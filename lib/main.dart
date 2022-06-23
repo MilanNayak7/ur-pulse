@@ -5,8 +5,10 @@ import 'package:ur_pulse_modified/after_empty_screen/doctor_list_screen.dart';
 import 'package:ur_pulse_modified/common/main_drawer/drawer_body.dart';
 
 import 'after_empty_screen/appointment_conformation_screen.dart';
+import 'after_empty_screen/cart_screen.dart';
 import 'after_empty_screen/doctor_detail.dart';
 import 'after_empty_screen/medicine_order_list.dart';
+import 'after_empty_screen/order_payment_screen.dart';
 import 'after_empty_screen/order_screen.dart';
 import 'after_empty_screen/symptoms_screen.dart';
 import 'features_module/appointments.dart';
@@ -62,6 +64,7 @@ class MyApp extends StatelessWidget {
         GetPage(name:"/appointmentConform", page:()=> const AppointmentConformationScreen()),
         GetPage(name:"/orderScreen", page:()=> const OrderScreen()),
         GetPage(name:"/medOrderList", page:()=> const MedicineOrderList()),
+        GetPage(name:"/orderPayment", page:()=> const OrderPayment()),
       ],
     );
   }
