@@ -1,30 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ur_pulse_modified/after_empty_screen/consult_a_doctor.dart';
-import 'package:ur_pulse_modified/after_empty_screen/doctor_list_screen.dart';
+import 'package:ur_pulse_modified/features_module/appointments/doctor_list_screen.dart';
 import 'package:ur_pulse_modified/common/main_drawer/drawer_body.dart';
 
-import 'after_empty_screen/appointment_conformation_screen.dart';
-import 'after_empty_screen/cart_screen.dart';
-import 'after_empty_screen/doctor_detail.dart';
-import 'after_empty_screen/medicine_order_list.dart';
-import 'after_empty_screen/order_payment_screen.dart';
-import 'after_empty_screen/order_screen.dart';
-import 'after_empty_screen/symptoms_screen.dart';
-import 'features_module/appointments.dart';
-import 'features_module/are_you_a_doctor.dart';
-import 'features_module/consultation.dart';
-import 'features_module/help_center.dart';
-import 'features_module/like_us_give_us_5_stars.dart';
-import 'features_module/medical_records.dart';
-import 'features_module/my_doctors.dart';
-import 'features_module/my_insurance_policy.dart';
-import 'features_module/orders.dart';
-import 'features_module/payments_health_cash.dart';
-import 'features_module/read_about_health.dart';
-import 'features_module/reminder.dart';
-import 'features_module/setting.dart';
-import 'features_module/test_booking.dart';
+import 'admin/admin_home/admin.dart';
+import 'admin/screen/appointments/appointments.dart';
+import 'admin/screen/disease/disease.dart';
+import 'admin/screen/doctors/doctors.dart';
+import 'admin/screen/earning/earning.dart';
+import 'admin/screen/hospitals/hospital.dart';
+import 'admin/screen/orders/admin_orders.dart';
+import 'admin/screen/patient/patient.dart';
+import 'features_module/appointments/appointment_conformation_screen.dart';
+import 'features_module/orders/cart_screen.dart';
+import 'features_module/appointments/doctor_detail.dart';
+import 'features_module/orders/medicine_order_list.dart';
+import 'features_module/orders/order_conformation_screen.dart';
+import 'features_module/orders/order_screen.dart';
+import 'features_module/appointments/symptoms_screen.dart';
+import 'features_module/appointments/appointments.dart';
+import 'features_module/are_you_a_doctor/are_you_a_doctor.dart';
+import 'features_module/consultation/consultation.dart';
+import 'features_module/help_center/help_center.dart';
+import 'features_module/like_us_give_us_starts/like_us_give_us_5_stars.dart';
+import 'features_module/medical_records/medical_records.dart';
+import 'features_module/my_doctors/my_doctors.dart';
+import 'features_module/my_insurance_policy/my_insurance_policy.dart';
+import 'features_module/orders/orders.dart';
+import 'features_module/payments_&_healthcash/payments_health_cash.dart';
+import 'features_module/read_about_health/read_about_health.dart';
+import 'features_module/reminders/reminder.dart';
+import 'features_module/settings/setting.dart';
+import 'features_module/test_bookings/test_booking.dart';
 import 'home/home.dart';
 
 void main() {
@@ -40,7 +48,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+    //  home: const HomePage(),
+      home:AdminHomePage(),
       getPages: [
         GetPage(name:"/drawer", page:()=>const DrawerBody()),
         GetPage(name:"/appointment", page:()=>const Appointment()),
@@ -59,12 +68,18 @@ class MyApp extends StatelessWidget {
         GetPage(name:"/areYouADoctor", page:()=>const AreYouADoctor()),
         GetPage(name:"/symptoms", page:()=> const SymptomsScreen()),
         GetPage(name:"/doctorList", page:()=> const DoctorListScreen()),
-        GetPage(name:"/consultADoctor", page:()=> const ConsultADoctor()),
         GetPage(name:"/doctorDetail", page:()=> const DoctorDetail()),
         GetPage(name:"/appointmentConform", page:()=> const AppointmentConformationScreen()),
         GetPage(name:"/orderScreen", page:()=> const OrderScreen()),
         GetPage(name:"/medOrderList", page:()=> const MedicineOrderList()),
-        GetPage(name:"/orderPayment", page:()=> const OrderPayment()),
+        GetPage(name:"/orderPayment", page:()=> const OrderConformation()),
+        GetPage(name:"/adminAppointment", page:()=> const AdminAppointments()),
+        GetPage(name:"/adminDisease", page:()=> const AdminDisease()),
+        GetPage(name:"/adminDoctors", page:()=> const AdminDoctors()),
+        GetPage(name:"/adminEarning", page:()=> const AdminEarning()),
+        GetPage(name:"/adminHospital", page:()=> const AdminHospital()),
+        GetPage(name:"/adminPatient", page:()=> const AdminPatient()),
+        GetPage(name:"/adminOrders", page:()=> const AdminOrders()),
       ],
     );
   }

@@ -185,9 +185,21 @@ class CommonContainerButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(icon),
-            Center(
-              child: Text(txt),
+            Visibility(
+              visible: icon != null,
+              child: Flexible(flex: 1, child: Icon(icon)),
+            ),
+            Flexible(
+              flex: 2,
+              child: Center(
+                child: Text(
+                  txt,
+                  style: TextStyle(
+                      fontSize: Dimensions.d4,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blue),
+                ),
+              ),
             )
           ],
         ),
