@@ -7,6 +7,7 @@ import 'package:ur_pulse_modified/common/main_drawer/drawer_body.dart';
 import 'admin/admin_home/admin.dart';
 import 'admin/screen/appointments/appointments.dart';
 import 'admin/screen/disease/disease.dart';
+import 'admin/screen/doctors/doctor_data_modification.dart';
 import 'admin/screen/doctors/doctors.dart';
 import 'admin/screen/earning/earning.dart';
 import 'admin/screen/hospitals/hospital.dart';
@@ -80,6 +81,7 @@ class MyApp extends StatelessWidget {
         GetPage(name:"/adminHospital", page:()=> const AdminHospital()),
         GetPage(name:"/adminPatient", page:()=> const AdminPatient()),
         GetPage(name:"/adminOrders", page:()=> const AdminOrders()),
+        GetPage(name:"/addDoctorPage", page:()=> const DoctorDataModification()),
       ],
     );
   }
