@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../data_model/data_model.dart';
+import '../../user/data_model/data_model.dart';
 import '../card/common_card.dart';
 
 

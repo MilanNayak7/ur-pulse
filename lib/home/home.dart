@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:ur_pulse_modified/common/theme/app_theme.dart';
-import 'package:ur_pulse_modified/common/app_bar/common_appbar.dart';
 
-import '../ad_card/ad_card.dart';
-import '../common/carousel/carousel.dart';
+import '../common/app_bar/common_appbar.dart';
 import '../common/card/common_card.dart';
+import '../common/carousel/carousel.dart';
 import '../common/main_drawer/drawer_body.dart';
-import '../data_model/data_model.dart';
+import '../common/theme/app_theme.dart';
+import '../user/ad_card/ad_card.dart';
+import '../user/data_model/data_model.dart';
+
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -109,7 +110,7 @@ class HomePage extends StatelessWidget {
                               fontWeight: FontWeight.w400,
                               fontSize: Dimensions.d4)),
                     ),
-                    ImageCarousel(),
+                    const ImageCarousel(),
                   ],
                 ),
               ),
@@ -342,7 +343,7 @@ class HomePage extends StatelessWidget {
                       right: Dimensions.d4,
                       top: Dimensions.d1,
                       bottom: Dimensions.d1),
-                  child: Text(
+                  child: const Text(
                     'Know More',
                     style: TextStyle(color: Colors.white),
                   ),
@@ -426,7 +427,7 @@ class HomePage extends StatelessWidget {
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(Dimensions.d3),
                   topRight: Radius.circular(Dimensions.d3)),
-              gradient: LinearGradient(
+              gradient: const LinearGradient(
                   colors: [Colors.blueGrey, Colors.pinkAccent],
                   begin: Alignment.bottomCenter),
             ),
@@ -435,11 +436,9 @@ class HomePage extends StatelessWidget {
               children: [
                 Padding(
                   padding: EdgeInsets.all(Dimensions.d2),
-                  child: Container(
-                    child: Text(
-                      'Term Life \nInsurance',
-                      style: TextStyle(fontSize: Dimensions.d5),
-                    ),
+                  child: Text(
+                    'Term Life \nInsurance',
+                    style: TextStyle(fontSize: Dimensions.d5),
                   ),
                 ),
                 Container(

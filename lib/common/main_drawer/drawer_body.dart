@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:ur_pulse_modified/common/theme/app_theme.dart';
 
-import '../../data_model/data_model.dart';
+import '../../user/data_model/data_model.dart';
+import '../theme/app_theme.dart';
 import 'main_drawer.dart';
+
+
 
 class DrawerBody extends StatefulWidget {
   const DrawerBody({Key? key}) : super(key: key);
@@ -38,7 +40,7 @@ class _DrawerBodyState extends State<DrawerBody> {
                 ),
                 height:Dimensions.dh110,
               ),
-              Container(
+              SizedBox(
                 height:Dimensions.d91,
                 width: MediaQuery.of(context).size.width,
                 child: Row(

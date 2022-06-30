@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_rx/src/rx_typedefs/rx_typedefs.dart';
-import 'package:ur_pulse_modified/common/theme/app_theme.dart';
 
-import '../../data_model/data_model.dart';
+import '../../user/data_model/data_model.dart';
 import '../main_drawer/main_drawer.dart';
+import '../theme/app_theme.dart';
 
 class CommonCard extends StatelessWidget {
   CommonCard(
@@ -124,9 +124,7 @@ class MedicalCardWidget extends StatelessWidget {
           children: [
             Flexible(
                 flex: 3,
-                child: Container(
-                  child: Image.asset(''),
-                )),
+                child: Image.asset('')),
             Flexible(
                 flex: 6,
                 child: Padding(
@@ -147,7 +145,7 @@ class MedicalCardWidget extends StatelessWidget {
                             "Multispeciality Hospital",
                             style: TextStyle(fontSize: Dimensions.d4),
                           )),
-                      Align(
+                      const Align(
                           alignment: Alignment.topLeft,
                           child: Text("Nayapalli")),
                     ],
@@ -268,7 +266,7 @@ class PractoDataWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: Dimensions.d35,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -397,12 +395,12 @@ class MenuCard extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('${menuModel.Header}'),
-                  SizedBox(height: 2),
+                  Text(menuModel.Header),
+                  const SizedBox(height: 2),
                 ],
               ),
             ),
-            Icon(Icons.arrow_right)
+            const Icon(Icons.arrow_right)
           ],
         ),
       ),
@@ -439,7 +437,7 @@ class SymptomsWidgets extends StatelessWidget {
           SizedBox(
             height: Dimensions.d3,
           ),
-          Container(
+          SizedBox(
             width: Dimensions.d12,
             child: Text(
               symptomsModel.Header,
@@ -492,7 +490,7 @@ class ModalBottomSheet {
                         onPressed: () {
                           Get.back();
                         },
-                        icon: Icon(Icons.close),
+                        icon: const Icon(Icons.close),
                       ),
                       SizedBox(
                         height: Dimensions.d2,
@@ -628,7 +626,7 @@ class DoctorDetailCard extends StatelessWidget {
                   ],
                 ),
               ),
-              Divider(
+              const Divider(
                 height: 1,
                 thickness: 1,
               ),
