@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:ur_pulse_modified/common/app_bar/common_app_bar.dart';
 import 'package:ur_pulse_modified/common/theme/app_theme.dart';
-import '../../../common/card/common_card.dart';
+import '../../../common/card/doctor_detail_card.dart';
+import '../../../common/card/time_card.dart';
+import '../../../common/card/time_slot_horizontal_bar.dart';
 import '../../data_model/data_model.dart';
 
 class DoctorDetail extends StatelessWidget {
@@ -22,14 +24,13 @@ class DoctorDetail extends StatelessWidget {
           children: [
             ListView.builder(
                 padding: EdgeInsets.zero,
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 //scrollDirection: Axis.vertical,
                 shrinkWrap: true,
                 itemCount: 1,
                 itemBuilder: (context, index) {
                   return DoctorDetailCard(
-                    commonDoctorDetailCard: doctorDetail[index],
-                    visible: false,
+                    commonDoctorDetailCard: doctorDetail[index], address_and_fee_visibility:true, callback: () {  }, buttonText: '', next_available_time_visibility:false,
                   );
                 }),
             SizedBox(
@@ -53,7 +54,7 @@ class DoctorDetail extends StatelessWidget {
                           children: [
                             Row(
                               children: [
-                                Icon(Icons.video_call_outlined),
+                                const Icon(Icons.video_call_outlined),
                                 SizedBox(
                                   width: Dimensions.d2,
                                 ),
@@ -87,18 +88,18 @@ class DoctorDetail extends StatelessWidget {
                           SizedBox(
                             height: Dimensions.d1,
                           ),
-                          Text("Gajapati Nagar",
+                          const Text("Gajapati Nagar",
                               style: TextStyle(
                                 fontWeight: FontWeight.w500,
                               )),
                           SizedBox(
                             height: Dimensions.d1,
                           ),
-                          Text("60 mins or less wait time"),
+                          const Text("60 mins or less wait time"),
                         ],
                       ),
                     ),
-                    Divider(
+                    const Divider(
                       height: 1,
                       thickness: 1,
                     ),
@@ -117,7 +118,7 @@ class DoctorDetail extends StatelessWidget {
                             }),
                       ),
                     ),
-                    Divider(
+                    const Divider(
                       height: 1,
                       thickness: 1,
                     ),

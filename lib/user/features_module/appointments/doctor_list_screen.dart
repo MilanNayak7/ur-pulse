@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../../common/app_bar/common_app_bar.dart';
-import '../../../common/card/common_card.dart';
+import '../../../common/card/common_container_button.dart';
+import '../../../common/card/consultation_type_widget.dart';
+import '../../../common/card/doctor_detail_card.dart';
 import '../../../common/theme/app_theme.dart';
 import '../../data_model/data_model.dart';
 
@@ -87,7 +89,7 @@ class DoctorListScreen extends StatelessWidget {
                           itemCount: doctorDetail.length,
                           itemBuilder: (context, index) {
                             return DoctorDetailCard(
-                              commonDoctorDetailCard: doctorDetail[index], visible:true,
+                              commonDoctorDetailCard: doctorDetail[index], address_and_fee_visibility: true, buttonText: 'book now', callback: () {  }, next_available_time_visibility:true,
                             );
                           }),
                     ],

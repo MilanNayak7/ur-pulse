@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../user/data_model/data_model.dart';
-import '../card/common_card.dart';
+import '../card/symptoms_widgets.dart';
 
 
 class CustomDrawer2 extends StatefulWidget {

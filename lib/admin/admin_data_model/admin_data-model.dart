@@ -25,7 +25,8 @@ List<AdminDataModel> adminDataModel = [
       bottomString: 'View Hospitals',
       callBack: () {
         Get.toNamed('/adminHospital');
-      }),
+      }
+      ),
   AdminDataModel(
       cardName: 'Patient',
       totalNo: '6',
@@ -73,7 +74,17 @@ List<AdminDataModel> adminDataModel = [
       bottomString: 'Orders',
       callBack: () {
         Get.toNamed('/adminOrders');
-      }),
+      }
+      ),
+  AdminDataModel(
+      cardName: 'Doctor Requests',
+      totalNo: '6',
+      iconData: 'assets/admin/hospital.png',
+      bottomString: 'View all requested doctor',
+      callBack: () {
+        Get.toNamed('/doctorApproval');
+      }
+  ),
 ];
 
 class AdminDataModel2 {

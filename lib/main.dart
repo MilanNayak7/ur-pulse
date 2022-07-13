@@ -25,6 +25,7 @@ import 'package:ur_pulse_modified/user/features_module/test_bookings/test_bookin
 import 'admin/admin_home/admin.dart';
 import 'admin/screen/appointments/appointments.dart';
 import 'admin/screen/disease/disease.dart';
+import 'admin/screen/doctor_request/doctor_request.dart';
 import 'admin/screen/doctors/doctor_data_modification.dart';
 import 'admin/screen/doctors/doctors.dart';
 import 'admin/screen/earning/earning.dart';
@@ -34,6 +35,7 @@ import 'admin/screen/patient/patient.dart';
 import 'doctor/doctor_home/doctor_home_page.dart';
 import 'doctor/screen/request_screen.dart';
 import 'home/home.dart';
+import 'home/home2.dart';
 
 void main() {
   runApp(const MyApp());
@@ -49,7 +51,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
     //  home: const HomePage(),
-      home:const DoctorHomePage(),
+      home: HomePage(),
       getPages: [
         GetPage(name:"/drawer", page:()=>const DrawerBody()),
         GetPage(name:"/appointment", page:()=>const Appointment()),
@@ -82,6 +84,7 @@ class MyApp extends StatelessWidget {
         GetPage(name:"/adminOrders", page:()=> const AdminOrders()),
         GetPage(name:"/addDoctorPage", page:()=> const DoctorDataModification()),
         GetPage(name:"/doctorRequest", page:()=> DoctorRequest()),
+        GetPage(name:"/doctorApproval", page:()=> DoctorApprovalRequest()),
       ],
     );
   }

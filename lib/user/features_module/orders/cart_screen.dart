@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
 import '../../../common/app_bar/common_app_bar.dart';
-import '../../../common/card/common_card.dart';
+import '../../../common/card/common_container_button.dart';
 import '../../../common/theme/app_theme.dart';
 import '../../data_model/data_model.dart';
 

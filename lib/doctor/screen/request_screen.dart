@@ -1,14 +1,19 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:get/get.dart' hide Response;
+import 'package:ur_pulse_modified/networking/doctor.dart';
+
 
 import '../../admin/admin_data_model/specialities_list.dart';
-import '../../common/card/common_card.dart';
+import '../../common/card/common_container_button.dart';
 import '../../common/theme/app_theme.dart';
+import '../../networking/doctor_dio_client.dart';
 
 
 class DoctorRequest extends StatelessWidget {
    DoctorRequest({Key? key}) : super(key: key);
 
+   
    final _chosenValue = "Please Choose Specialization".obs;
    final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -18,6 +23,7 @@ class DoctorRequest extends StatelessWidget {
    String _yearExperience='';
    String _mobileNumber='';
    String _mailId='';
+   DoctorDioClient _client = DoctorDioClient();
 
   @override
   Widget build(BuildContext context) {
@@ -228,12 +234,31 @@ class DoctorRequest extends StatelessWidget {
                           return;
                         }
                         _formKey.currentState!.save();
-                        print(_name);
-                        print(_appointmentDetail);
-                        print(_medicalName);
-                        print(_yearExperience);
-                        print(_chosenValue);
+                        var doctor = Doctor(
+                            doctorName:_name,
+                            mobileNumber:_mobileNumber,
+                            mailId:_mailId,
+                            appointmentDetail:_appointmentDetail,
+                            medicalName:_medicalName
+                        );
+
+                       // var flag = _client.postDoctor(data);
+                       //  print(flag.size);
+                       //  if(flag != null){
+                       //    Get.defaultDialog(
+                       //      title: "Successfully Register",
+                       //      middleText: "Your request will be proceed further and will notify once your detail verification completed",
+                       //      onConfirm:(){Get.back();}
+                       //    );
+                       //  }else{
+                       //    Get.defaultDialog(
+                       //        title: "Register Failed",
+                       //        middleText: "Something went wrong please try again later",
+                       //        onConfirm:(){Get.back();}
+                       //    );
+                       //  }
                       }),
+
                       SizedBox(height:Dimensions.d10,),
                     ],
                   ),

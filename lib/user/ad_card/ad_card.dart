@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../common/card/common_card.dart';
+import '../../common/card/practo_data_widget.dart';
 import '../../common/theme/app_theme.dart';
 import '../data_model/data_model.dart';
 

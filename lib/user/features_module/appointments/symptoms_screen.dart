@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:ur_pulse_modified/common/app_bar/common_app_bar.dart';
 import 'package:ur_pulse_modified/common/theme/app_theme.dart';
 import '../../../common/card/common_card.dart';
+import '../../../common/card/common_container_button.dart';
+import '../../../common/card/modal_bottom_sheet.dart';
+import '../../../common/card/symptoms_widgets.dart';
 import '../../data_model/data_model.dart';
 
 class SymptomsScreen extends StatelessWidget {
