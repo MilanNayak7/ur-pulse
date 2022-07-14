@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ur_pulse_modified/common/app_bar/common_app_bar.dart';
-import 'package:ur_pulse_modified/networking/doctor_dio_client.dart';
 import '../../../common/card/doctor_detail_card.dart';
+import '../../../network_operation/dio_response.dart';
 import '../../../user/data_model/data_model.dart';
 
 

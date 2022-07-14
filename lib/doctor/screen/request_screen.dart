@@ -1,13 +1,13 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Response;
-import 'package:ur_pulse_modified/networking/doctor.dart';
 
 
 import '../../admin/admin_data_model/specialities_list.dart';
 import '../../common/card/common_container_button.dart';
 import '../../common/theme/app_theme.dart';
-import '../../networking/doctor_dio_client.dart';
+import '../../network_operation/dio_response.dart';
+import '../../network_operation/doctor.dart';
 
 
 class DoctorRequest extends StatelessWidget {
@@ -17,11 +17,13 @@ class DoctorRequest extends StatelessWidget {
    final _chosenValue = "Please Choose Specialization".obs;
    final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-   String _name ='';
-   String _appointmentDetail='';
+   String _doctorName ='';
+   String _appointmentAddress ='';
    String _medicalName='';
-   String _yearExperience='';
+   String _doctorExperience ='';
+   String _doctorImage='';
    String _mobileNumber='';
+   bool _videoConsult = true;
    String _mailId='';
    DoctorDioClient _client = DoctorDioClient();
 
@@ -83,7 +85,7 @@ class DoctorRequest extends StatelessWidget {
                           return null;
                         },
                         onSaved:(value){
-                          _name = value!;
+                          _doctorName = value!;
                         },
                       ),
                       SizedBox(height:Dimensions.d1,),
@@ -108,7 +110,7 @@ class DoctorRequest extends StatelessWidget {
                           return null;
                         },
                         onSaved:(value){
-                          _appointmentDetail = value!;
+                          _appointmentAddress = value!;
                         },
                       ),
                       SizedBox(height:Dimensions.d5,),
@@ -158,7 +160,7 @@ class DoctorRequest extends StatelessWidget {
                           return null;
                         },
                         onSaved:(value){
-                          _yearExperience = value!;
+                          _doctorExperience = value!;
                         },
                       ),
                       SizedBox(height:Dimensions.d5,),
@@ -235,11 +237,13 @@ class DoctorRequest extends StatelessWidget {
                         }
                         _formKey.currentState!.save();
                         var doctor = Doctor(
-                            doctorName:_name,
+                            doctorName:_doctorName,
                             mobileNumber:_mobileNumber,
                             mailId:_mailId,
-                            appointmentDetail:_appointmentDetail,
-                            medicalName:_medicalName
+                            appointmentAddress:_appointmentAddress,
+                            medicalName:_medicalName,
+                            doctorExperience: _doctorExperience,
+                            videoConsult:_videoConsult,
                         );
 
                        // var flag = _client.postDoctor(data);

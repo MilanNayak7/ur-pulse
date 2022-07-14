@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ur_pulse_modified/network_operation/dio_response.dart';
 import '../common/app_bar/common_appbar.dart';
 import '../common/card/common_card.dart';
 import '../common/card/common_container_button.dart';
@@ -8,14 +9,13 @@ import '../common/card/symptoms_widgets.dart';
 import '../common/carousel/carousel.dart';
 import '../common/main_drawer/drawer_body.dart';
 import '../common/theme/app_theme.dart';
-import '../networking/doctor_dio_client.dart';
 import '../user/ad_card/ad_card.dart';
 import '../user/data_model/data_model.dart';
 
 
 class HomePage extends StatelessWidget {
+  DoctorDioClient _client =  DoctorDioClient();
    HomePage({Key? key}) : super(key: key);
- final DoctorDioClient _client = DoctorDioClient();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -308,7 +308,9 @@ class HomePage extends StatelessWidget {
 
   InkWell posterOneContainer() {
     return InkWell(
-      onTap:(){},
+      onTap:(){
+        _client.getAllDoctor();
+      },
       child: Card(
         elevation:Dimensions.d3,
         color: Colors.blue,
