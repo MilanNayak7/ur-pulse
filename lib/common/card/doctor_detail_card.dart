@@ -1,25 +1,22 @@
-
-
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ur_pulse_modified/network_operation/doctor.dart';
 
 import '../../user/data_model/data_model.dart';
 import '../theme/app_theme.dart';
 
 class DoctorDetailCard extends StatelessWidget {
-
-  DoctorDetailCard({
-    Key? key,
-    required this.commonDoctorDetailCard,
-    required this.address_and_fee_visibility,
-     required this.next_available_time_visibility,
-    required this.callback,
-    required this.buttonText
-  })
+  DoctorDetailCard(
+      {Key? key,
+        required this.doctor,
+      //required this.commonDoctorDetailCard,
+      required this.address_and_fee_visibility,
+      required this.next_available_time_visibility,
+      required this.callback,
+      required this.buttonText})
       : super(key: key);
-  CommonDoctorDetailCard commonDoctorDetailCard;
-
+  Doctor doctor;
+  //CommonDoctorDetailCard commonDoctorDetailCard;
   bool address_and_fee_visibility;
   bool next_available_time_visibility;
   String buttonText;
@@ -52,9 +49,9 @@ class DoctorDetailCard extends StatelessWidget {
                         width: Dimensions.dw120,
                         height: Dimensions.dh120,
                         decoration: BoxDecoration(
-                          // color: Colors.red,
+                            // color: Colors.red,
                             borderRadius:
-                            BorderRadius.circular(Dimensions.d15)),
+                                BorderRadius.circular(Dimensions.d15)),
                         child: Image.asset(
                           'assets/images/doctor1.png',
                         ),
@@ -68,17 +65,17 @@ class DoctorDetailCard extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              commonDoctorDetailCard.name,
+                              doctor.doctorName ?? "",
                               style: TextStyle(
                                   fontWeight: FontWeight.w600,
                                   fontSize: Dimensions.d5),
                             ),
-                            Text(commonDoctorDetailCard.type,
+                            Text(doctor.doctorType ?? "",
                                 style: const TextStyle(
                                   fontWeight: FontWeight.w400,
                                 )),
                             Text(
-                              '${commonDoctorDetailCard.experience}  years experience overall',
+                              '${doctor.doctorExperience}  years experience overall',
                               style: const TextStyle(
                                 fontWeight: FontWeight.w400,
                               ),
@@ -114,7 +111,7 @@ class DoctorDetailCard extends StatelessWidget {
                 thickness: 1,
               ),
               Visibility(
-                visible:address_and_fee_visibility,
+                visible: address_and_fee_visibility,
                 child: Column(
                   children: [
                     SizedBox(
@@ -124,7 +121,7 @@ class DoctorDetailCard extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
-                          commonDoctorDetailCard.medicalName,
+                          doctor.medicalName ?? "",
                           style: TextStyle(
                               fontWeight: FontWeight.w600,
                               fontSize: Dimensions.d4),
@@ -138,13 +135,13 @@ class DoctorDetailCard extends StatelessWidget {
                           decoration: BoxDecoration(
                               color: Colors.black,
                               borderRadius:
-                              BorderRadius.circular(Dimensions.d5)),
+                                  BorderRadius.circular(Dimensions.d5)),
                         ),
                         SizedBox(
                           width: Dimensions.d1,
                         ),
                         Text(
-                          commonDoctorDetailCard.medicalName,
+                          doctor.medicalName ?? "",
                           style: TextStyle(fontSize: Dimensions.d3),
                         ),
                       ],
@@ -171,7 +168,7 @@ class DoctorDetailCard extends StatelessWidget {
                           width: Dimensions.d1,
                         ),
                         Text(
-                          commonDoctorDetailCard.fees,
+                          doctor.consultFee??"",
                           style: TextStyle(
                               fontWeight: FontWeight.w600,
                               fontSize: Dimensions.d4),
@@ -203,16 +200,17 @@ class DoctorDetailCard extends StatelessWidget {
                                     fontSize: Dimensions.d4),
                               ),
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Icon(Icons.home),
                                   SizedBox(
                                     width: Dimensions.d1,
                                   ),
-                                  Text(commonDoctorDetailCard.availableTime,
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w300,
-                                          fontSize: Dimensions.d4)),
+                                  // Text(commonDoctorDetailCard.availableTime,
+                                  //     style: TextStyle(
+                                  //         fontWeight: FontWeight.w300,
+                                  //         fontSize: Dimensions.d4)),
                                   SizedBox(
                                     width: Dimensions.d1,
                                   ),
@@ -233,7 +231,7 @@ class DoctorDetailCard extends StatelessWidget {
                           ),
                         ),
                         ElevatedButton(
-                          onPressed:callback,
+                          onPressed: callback,
                           child: Text(buttonText),
                         )
                       ],

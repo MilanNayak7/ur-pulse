@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:ur_pulse_modified/common/app_bar/common_app_bar.dart';
 import '../../../common/card/doctor_detail_card.dart';
 import '../../../network_operation/dio_response.dart';
-import '../../../user/data_model/data_model.dart';
-
 
 class DoctorApprovalRequest extends StatelessWidget {
    DoctorApprovalRequest({Key? key}) : super(key: key);
@@ -22,9 +20,8 @@ class DoctorApprovalRequest extends StatelessWidget {
         slivers: [
           SliverList(delegate:SliverChildBuilderDelegate((BuildContext context ,int index){
             return DoctorDetailCard(address_and_fee_visibility: true, buttonText: 'Approved',
-              commonDoctorDetailCard:doctorDetail[1],
               callback: () {  },
-              next_available_time_visibility:false,
+              next_available_time_visibility:false, doctor: _client.getAllDoctor(),
             );
           }))
         ],

@@ -309,7 +309,8 @@ class HomePage extends StatelessWidget {
   InkWell posterOneContainer() {
     return InkWell(
       onTap:(){
-        _client.getAllDoctor();
+       _client.getApprovedDiseasesDoctor();
+        //_client.getAllDoctor();
       },
       child: Card(
         elevation:Dimensions.d3,

@@ -24,6 +24,7 @@ class DoctorRequest extends StatelessWidget {
    String _doctorImage='';
    String _mobileNumber='';
    bool _videoConsult = true;
+   String _doctorType = '';
    String _mailId='';
    DoctorDioClient _client = DoctorDioClient();
 
@@ -244,6 +245,7 @@ class DoctorRequest extends StatelessWidget {
                             medicalName:_medicalName,
                             doctorExperience: _doctorExperience,
                             videoConsult:_videoConsult,
+                          doctorType:_doctorType,
                         );
 
                        // var flag = _client.postDoctor(data);

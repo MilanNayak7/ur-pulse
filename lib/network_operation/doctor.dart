@@ -8,46 +8,54 @@ class Doctor{
   Doctor({
     this.id,
     required this.doctorName,
-    required this.mailId,
-    required this.medicalName,
-    required this.mobileNumber,
-    required this.appointmentAddress,
-    required this.doctorExperience,
+    this.mailId,
+    this.medicalName,
+    this.mobileNumber,
+    this.appointmentAddress,
+    this.doctorExperience,
     this.doctorImage,
     this.doctorStatus,
-    required this.videoConsult,
-    this.booking
+    this.videoConsult,
+    this.booking,
+
+  required this.doctorType
 });
 
 @JsonKey(name:"_id")
 String?id;
 
-@JsonKey(required:true,name:"doctorImage")
+@JsonKey(name:"doctorImage")
 String? doctorImage;
 
 @JsonKey(required:true,name:"doctorName")
-String doctorName;
+String? doctorName;
 
-@JsonKey(required:true,name:"videoConsult")
-bool videoConsult;
+@JsonKey(name:"videoConsult")
+bool? videoConsult;
 
-@JsonKey(required:true,name:"doctorExperience")
-String doctorExperience;
+@JsonKey(name:"doctorExperience")
+String? doctorExperience;
 
-@JsonKey(required:true,name:"appointmentAddress")
-String appointmentAddress;
+@JsonKey(name:"appointmentAddress")
+String? appointmentAddress;
 
-@JsonKey(required:true,name:"medicalName")
-String medicalName;
+@JsonKey(name:"medicalName")
+String? medicalName;
 
-@JsonKey(required:true,name:"mobileNumber")
-String mobileNumber;
+@JsonKey(name:"mobileNumber")
+String? mobileNumber;
 
 @JsonKey(name:"doctorStatus")
 bool? doctorStatus;
 
-@JsonKey(required:true,name:"mailId")
-String mailId;
+@JsonKey(name:"doctorType")
+String? doctorType;
+
+@JsonKey(name:"consultFee")
+String? consultFee;
+
+@JsonKey(name:"mailId")
+String? mailId;
 
 @JsonKey(name:"booking")
   List<Booking>? booking;

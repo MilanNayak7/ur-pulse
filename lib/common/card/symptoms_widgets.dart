@@ -14,7 +14,8 @@ class SymptomsWidgets extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Get.toNamed('/doctorList');
+
+        Get.toNamed('/doctorList',arguments:symptomsModel.Header);
       },
       child: Column(
         children: [
