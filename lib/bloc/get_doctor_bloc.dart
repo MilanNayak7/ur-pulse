@@ -10,7 +10,9 @@ import '../network_operation/dio_response.dart';
 class DoctorBloc extends Bloc<DoctorFetchEvent,DoctorItemState>{
 late final DoctorRepository doctorRepository;
 
-     DoctorBloc(super.initialState);
+  DoctorBloc(super.initialState);
+
+  //   DoctorBloc(super.initialState);
  //DoctorBloc({required this.doctorRepository}):assert(doctorRepository !=null), super()
 @override
 DoctorItemState get iniState => DoctorItemRequesting();

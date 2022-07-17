@@ -3,10 +3,12 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:ur_pulse_modified/common/app_bar/common_app_bar.dart';
 import 'package:ur_pulse_modified/common/card/empty_screen.dart';
+import 'package:uuid/uuid.dart';
 
+import 'model/chat_home.dart';
+var uuid = Uuid();
 class Consultation extends StatelessWidget {
   const Consultation({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +21,7 @@ class Consultation extends StatelessWidget {
         child: Center(
           child: EmptyScreen(
             img: 'assets/drawer/messageConsultation.png',
-            callback: () {Get.toNamed('/consultADoctor');},
+            callback: () {Get.to(ChatHome());},
             buttonText: 'Consult Now',
             subText:
                 'Skip the traffic and waiting rooms. Get an expert medical opinion using online consultation without disrupting your daily life',
