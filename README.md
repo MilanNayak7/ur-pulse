@@ -1,16 +1,27 @@
-# ur_pulse_modified
+# ur_pulse_modified(online Doctor Consultation)
 
-A new Flutter project.
+A new Flutter online doctor consultation project.
 
-## Getting Started
+## There are two module
+ 1. Admin module
+ 2. User module
 
-This project is a starting point for a Flutter application.
+# User Module
+Fetures
+1. Users can select doctors according to his/her diseases.
+2. Can make online video consultation.
+3. Can order medicine online.
+4. Can set reminders of his/her medicine.
+5. Can purchase health insurance.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+# Admin Module
+Fetures
+1. Can add doctor.
+2. Can view user details.
+3. Can view orders.
+4. Can view all appointments.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+#Output Screen
+
+
