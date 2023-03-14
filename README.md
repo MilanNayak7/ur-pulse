@@ -24,4 +24,5 @@ Features
 
 #Output Screen
 
+![image (1)](https://user-images.githubusercontent.com/85428232/224895389-909a48b6-2052-4bee-a65f-d58762088e54.png)
 
