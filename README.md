@@ -7,7 +7,7 @@ A new Flutter online doctor consultation project.
  2. User module
 
 # User Module
-Fetures
+Features
 1. Users can select doctors according to his/her diseases.
 2. Can make online video consultation.
 3. Can order medicine online.
@@ -16,7 +16,7 @@ Fetures
 
 
 # Admin Module
-Fetures
+Features
 1. Can add doctor.
 2. Can view user details.
 3. Can view orders.
